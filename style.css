@@ -1,0 +1,244 @@
+/* 全局CSS样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f1f1;
+}
+
+a {
+    color: #b3c377;
+    text-decoration: none;
+}
+
+/* 头部导航栏样式 */
+.header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-item:last-child {
+    margin-right: 0;
+}
+
+.nav-item a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 背景样式 */
+.hero {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .hero img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+/* 主体内容区域样式 */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.intro {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #b3c377;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 30px;
+    text-decoration: none;
+}
+
+.cta-btn:hover {
+    background-color: #5f9e00;
+}
+
+/* 关于我们区域样式 */
+.about-us {
+    background-color: #fff;
+    color: #333;
+    padding: 50px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.about-us h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.about-us p {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 30px;
+}
+
+/* 博客文章列表区域样式 */
+.blog {
+    background-color: #fff;
+    color: #333;
+    padding: 50px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.blog h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.blog-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.blog-item {
+    width: calc(33.33% - 20px);
+    margin-bottom: 40px;
+}
+
+.blog-item a img {
+    width: 100%;
+    height: auto;
+}
+
+.blog-desc {
+    padding: 20px;
+}
+
+.blog-desc h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.blog-desc .date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.blog-desc .excerpt {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+/* 页脚样式 */
+.footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* 文章封面样式 */
+.article-header {
+    position: relative;
+}
+
+.article-header img {
+    width: 100%;
+    height: auto;
+}
+
+.article-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+/* 容器样式 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 文章内容区域样式 */
+.article-content {
+    flex-basis: 70%;
+    margin-right: 30px;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    flex-basis: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #b3c377;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}

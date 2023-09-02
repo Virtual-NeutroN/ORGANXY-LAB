@@ -10,8 +10,12 @@ body {
     background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
 }
 
+
 .PToE {
+    transform-origin:left;
     position: sticky;
+    min-width: 1558px;
+    transform: scale(1); /* 初始缩放比例为1 */
 }
 
 button {

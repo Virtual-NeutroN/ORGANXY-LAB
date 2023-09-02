@@ -218,12 +218,12 @@
                 <button class="a" onclick="return b(this.id)" id="7">7</button>
                 <button class="a" onclick="return b(this.id)" id="8">8</button>
                 <button class="a" onclick="return b(this.id)" id="n">n</button>
-                <input class="a" readonly="true" id="y"></input>
-                <button class="a" onclick="return inputC(this.id)" id="confirm">√</button>
                 <button style="background-color: rgba(0,0,0,0);" class="a"></button>
                 <button class="a" onclick="return c(this.id)" id="down">-</button>
                 <button class="a" onclick="return c(this.id)" id="x">9</button>
                 <button class="a" onclick="return c(this.id)" id="up">+</button>
+                <input class="a" readonly="true" id="y"></input>
+                <button class="a" onclick="return inputC(document.getElementById('y').value)" id="confirm">√</button>
                 <button style="background-color: rgba(0,0,0,0);" class="a"></button>
                 <button class="b" onclick="return recover(this.id)" id="recover">1↓</button>
                 <button class="b" onclick="return recover(this.id)" id="cover">1↑</button>
@@ -252,10 +252,27 @@
             </div>
         </center>
     </div>
+    <script>
+        function adjustScale() {
+            var pageWidth = window.innerWidth;
+            var element = document.querySelector('.PToE');
+            var elementWidth = element.offsetWidth;
+            var scale = pageWidth / elementWidth - 0.01;
+            element.style.transform = 'scale(' + scale + ')';
+        }
+
+        window.onresize = function () {
+            adjustScale();
+        };
+
+        // 初始加载时调整一次
+        adjustScale();
+    </script>
     <div class="input">
         <center>
             <h1 id=end></h1>
-            <h2 id=showRoot></h2>
+            <h2 id=showMidRoot></h2>
+            <h3 id=showRoot></h3>
         </center>
     </div>
     </div>

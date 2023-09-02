@@ -1,9 +1,11 @@
+
 var time = 0
 var mode = 0//是否为离子团模式
-
-var origin = "none"
-var replace = "none"
-
+//mode = 1为小括号输入时的状态
+//2为小括号输入合并到上一级的状态
+var midMode = 0
+//0没开启，1是输入时的状态
+//2是中括号并入上一级的状态
 
 function hide() {
     document.getElementById("H").className = "a";
@@ -62,6 +64,20 @@ function hide() {
     document.getElementById("Xe").className = "a";
     document.getElementById("Cs").className = "a";
     document.getElementById("Ba").className = "a";
+    document.getElementById("La").className = "a";
+    document.getElementById("Ce").className = "a";
+    document.getElementById("Pr").className = "a";
+    document.getElementById("Nd").className = "a";
+    document.getElementById("Pm").className = "a";
+    document.getElementById("Sm").className = "a";
+    document.getElementById("Eu").className = "a";
+    document.getElementById("Gd").className = "a";
+    document.getElementById("Tb").className = "a";
+    document.getElementById("Dy").className = "a";
+    document.getElementById("Ho").className = "a";
+    document.getElementById("Er").className = "a";
+    document.getElementById("Tm").className = "a";
+    document.getElementById("Yb").className = "a";
     document.getElementById("Lu").className = "a";
     document.getElementById("Hf").className = "a";
     document.getElementById("Ta").className = "a";
@@ -80,6 +96,20 @@ function hide() {
     document.getElementById("Rn").className = "a";
     document.getElementById("Fr").className = "a";
     document.getElementById("Ra").className = "a";
+    document.getElementById("Ac").className = "a";
+    document.getElementById("Th").className = "a";
+    document.getElementById("Pa").className = "a";
+    document.getElementById("U").className = "a";
+    document.getElementById("Np").className = "a";
+    document.getElementById("Pu").className = "a";
+    document.getElementById("Am").className = "a";
+    document.getElementById("Cm").className = "a";
+    document.getElementById("Bk").className = "a";
+    document.getElementById("Cf").className = "a";
+    document.getElementById("Es").className = "a";
+    document.getElementById("Fm").className = "a";
+    document.getElementById("Md").className = "a";
+    document.getElementById("No").className = "a";
     document.getElementById("Lr").className = "a";
     document.getElementById("Rf").className = "a";
     document.getElementById("Db").className = "a";
@@ -155,6 +185,20 @@ function show() {
     document.getElementById("Xe").className = "b";
     document.getElementById("Cs").className = "b";
     document.getElementById("Ba").className = "b";
+    document.getElementById("La").className = "b";
+    document.getElementById("Ce").className = "b";
+    document.getElementById("Pr").className = "b";
+    document.getElementById("Nd").className = "b";
+    document.getElementById("Pm").className = "b";
+    document.getElementById("Sm").className = "b";
+    document.getElementById("Eu").className = "b";
+    document.getElementById("Gd").className = "b";
+    document.getElementById("Tb").className = "b";
+    document.getElementById("Dy").className = "b";
+    document.getElementById("Ho").className = "b";
+    document.getElementById("Er").className = "b";
+    document.getElementById("Tm").className = "b";
+    document.getElementById("Yb").className = "b";
     document.getElementById("Lu").className = "b";
     document.getElementById("Hf").className = "b";
     document.getElementById("Ta").className = "b";
@@ -173,6 +217,20 @@ function show() {
     document.getElementById("Rn").className = "b";
     document.getElementById("Fr").className = "b";
     document.getElementById("Ra").className = "b";
+    document.getElementById("Ac").className = "b";
+    document.getElementById("Th").className = "b";
+    document.getElementById("Pa").className = "b";
+    document.getElementById("U").className = "b";
+    document.getElementById("Np").className = "b";
+    document.getElementById("Pu").className = "b";
+    document.getElementById("Am").className = "b";
+    document.getElementById("Cm").className = "b";
+    document.getElementById("Bk").className = "b";
+    document.getElementById("Cf").className = "b";
+    document.getElementById("Es").className = "b";
+    document.getElementById("Fm").className = "b";
+    document.getElementById("Md").className = "b";
+    document.getElementById("No").className = "b";
     document.getElementById("Lr").className = "b";
     document.getElementById("Rf").className = "b";
     document.getElementById("Db").className = "b";
@@ -232,8 +290,6 @@ function root(id) {
             mode = 2
             document.getElementById("root").className = "b"
             document.getElementById("put").className = "a"
-            origin = document.getElementById("end").innerHTML
-            replace = document.getElementById("showRoot").innerHTML
             //打包
             var newSpan1 = document.createElement("span");
             newSpan1.className = "include"
@@ -252,7 +308,7 @@ function root(id) {
                 targetElement.appendChild(parentElement.firstChild);
             }
             document.getElementById("showRoot").innerHTML = ""
-            
+
             d()
         }
     }
@@ -291,13 +347,45 @@ function a(id) {
 }
 
 
+
 function b(id) {
+    function insert() {
+        function getElement() {
+            // 创建新元素
+            var newSpan = document.createElement("span");
+            newSpan.className = "num"
+            newSpan.textContent = id;
+
+            // 获取容器元素
+            var container = document.getElementById("end");
+
+            // 将新元素添加到容器中
+            container.appendChild(newSpan);
+        }
+        if (mode == 1) {
+            var newSpan = document.createElement("span");
+            newSpan.className = "num"
+            newSpan.textContent = id;
+
+            // 获取容器元素
+            var container = document.getElementById("showRoot");
+
+            // 将新元素添加到容器中
+            container.appendChild(newSpan);
+            show()
+        } else if (mode == 2) {
+            getElement()
+            mode = 0
+            show()
+        } else {
+            getElement()
+        }
+    }
     if (document.getElementById(id).className == "b" && time >= 1) {
         for (let chooseNum = 0; chooseNum < 10; chooseNum++) {
             if (chooseNum == id) {
                 if (chooseNum == 1) {//特殊情况(是1时)
                     if (mode == 2) {
-                        document.getElementById("end").innerHTML = origin + replace
                         mode = 0
                         show()
                     } else {
@@ -306,39 +394,74 @@ function b(id) {
                     }
                     //返回本身(反正没变化)
                 } else {//否则
-                    if (mode == 1) {
-                        document.getElementById("showRoot").innerHTML = document.getElementById("showRoot").innerHTML + id
-                    } else if (mode == 2) {
-                        // 创建新元素
-                        var newSpan = document.createElement("span");
-                        newSpan.className = "num"
-                        newSpan.textContent = id;
-
-                        // 获取容器元素
-                        var container = document.getElementById("end");
-
-                        // 将新元素添加到容器中
-                        container.appendChild(newSpan);
-                        mode = 0
-                        show()
-                    } else {
-                        // 创建新元素
-                        var newSpan = document.createElement("span");
-                        newSpan.className = "num"
-                        newSpan.textContent = id;
-
-                        // 获取容器元素
-                        var container = document.getElementById("end");
-
-                        // 将新元素添加到容器中
-                        container.appendChild(newSpan);
-                    }
-                    d2()
-                    timeB = 0
+                    insert()
                 }
+                d2()
+                timeB = 0
             }
         }
     }
+    if (id == "n") {
+        insert()
+        d2()
+        timeB = 0
+    }
+}
+
+function inputC(value) {
+    if (value == "") {
+        alert("哥你还没输入底数呢就插入")
+    } else {
+        if (value == "1") {//特殊情况(是1时)
+            if (mode == 2) {
+                mode = 0
+                show()
+            } else {
+                d2()
+                timeB = 0
+            }
+            //返回本身(反正没变化)
+        } else {//否则
+            if (mode == 1) {
+                var newSpan = document.createElement("span");
+                newSpan.className = "num"
+                newSpan.textContent = value;
+
+                // 获取容器元素
+                var container = document.getElementById("showRoot");
+
+                // 将新元素添加到容器中
+                container.appendChild(newSpan);
+                show()
+            } else if (mode == 2) {
+                var newSpan = document.createElement("span");
+                newSpan.className = "num"
+                newSpan.textContent = value;
+
+                // 获取容器元素
+                var container = document.getElementById("end");
+
+                // 将新元素添加到容器中
+                container.appendChild(newSpan);
+                mode = 0
+                show()
+            } else {
+                var newSpan = document.createElement("span");
+                newSpan.className = "num"
+                newSpan.textContent = value;
+
+                // 获取容器元素
+                var container = document.getElementById("end");
+
+                // 将新元素添加到容器中
+                container.appendChild(newSpan);
+            }
+        }
+        d2()
+        timeB = 0
+    }
+
+
 }
 
 function c(id) {
@@ -398,5 +521,3 @@ function recover(id) {
         document.getElementById("end").innerHTML = document.getElementById("end").innerHTML.replace(/₀/, "0")
     }
 }
-
-

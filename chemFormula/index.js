@@ -314,6 +314,18 @@ function root(id) {
     }
 }
 
+function midroot(id) {
+
+    if (id == "midroot") {
+        if (document.getElementById("midroot").className == "b") {
+            document.getElementById("midroot").className = "a"
+            document.getElementById("midput").className = "b"
+            show()
+            mode = 2
+        }
+    }
+}
+
 function a(id) {
     if (document.getElementById(id).className == "b") {
         time++
@@ -379,6 +391,9 @@ function b(id) {
             show()
         } else {
             getElement()
+        }
+        if (mode == 2) {
+            
         }
     }
     if (document.getElementById(id).className == "b" && time >= 1) {
@@ -477,14 +492,38 @@ function c(id) {
             console.log(document.getElementById("x").innerHTML)
         } else if (id == "x") {
             if (mode == 1) {
-                mode = 0
-                document.getElementById("showRoot").innerHTML = document.getElementById("showRoot").innerHTML + document.getElementById("x").innerHTML
+                var newSpan = document.createElement("span");
+                newSpan.className = "num"
+                newSpan.textContent = document.getElementById("x").innerHTML;
+
+                // 获取容器元素
+                var container = document.getElementById("showRoot");
+
+                // 将新元素添加到容器中
+                container.appendChild(newSpan);
+                show()
             } else if (mode == 2) {
+                var newSpan = document.createElement("span");
+                newSpan.className = "num"
+                newSpan.textContent = document.getElementById("x").innerHTML;
+
+                // 获取容器元素
+                var container = document.getElementById("end");
+
+                // 将新元素添加到容器中
+                container.appendChild(newSpan);
                 mode = 0
-                document.getElementById("end").innerHTML = document.getElementById("end").innerHTML + document.getElementById("x").innerHTML
                 show()
             } else {
-                document.getElementById("end").innerHTML = document.getElementById("end").innerHTML + document.getElementById("x").innerHTML
+                var newSpan = document.createElement("span");
+                newSpan.className = "num"
+                newSpan.textContent = document.getElementById("x").innerHTML;
+
+                // 获取容器元素
+                var container = document.getElementById("end");
+
+                // 将新元素添加到容器中
+                container.appendChild(newSpan);
             }
             d2()
         }

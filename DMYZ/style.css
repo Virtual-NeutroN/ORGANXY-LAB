@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, rgb(20, 24, 59), #2d1c3c);
+    /* 蓝色到紫色的渐变色 */
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 0px 0;
+    height: 100vh;
+    /* 设置为浏览器视口高度 */
+    margin-bottom: 20px;
+    /* 添加底部间距 */
+    flex-direction: column;
+    overflow-x: auto;
+}
+
+.title {
+    padding-left: 100px;
+}
+
+.timeAxis {
+    position: relative;
+    align-items: center;
+    background-color: white;
+    height: 10px;
+    width: 550%;
+}
+
+.timeLine {
+    position: relative;
+    top: -45px;
+    left: 1000px;
+    display: flex;
+    flex-direction: row;
+    width: 450%;
+}
+
+.s-event {
+    width: 300px;
+    padding: 20px;
+}
+
+.l-event {
+    width: 300px;
+    padding: 20px;
+}
+
+.s-circle {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: 5px solid white;
+    background: linear-gradient(to left, rgb(82, 94, 195), rgb(139, 95, 177));
+}
+
+.l-circle {
+    position: relative;
+    top: -10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    border: 5px solid white;
+    background: linear-gradient(to left, rgb(82, 94, 195), rgb(139, 95, 177));
+}
+
+.content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    /* 圆角 */
+    max-width: 160vh;
+    margin: 0 auto;
+    /* 水平居中 */
+}
+
+h1 {
+    font-size: 5vh;
+}
+
+.article-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.article-list li {
+    margin-bottom: 10px;
+}
+
+.article-list a {
+    color: #333;
+    text-decoration: none;
+}
+
+.article-list a:hover {
+    text-decoration: underline;
+}

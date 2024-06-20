@@ -157,7 +157,7 @@ a {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
     transition: transform .3s;
-    width: 155px;
+    width: 200px;
     overflow: hidden; /* 隐藏溢出的部分 */
 }
 

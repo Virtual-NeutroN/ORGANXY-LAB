@@ -2,14 +2,30 @@ h1{
     font-size: 72px;
     color: #FFFFFF;
     word-wrap: break-word;
+    margin: 0px
 }
 h2{
+    font-size: 64px;
+    color: #FFFFFF;
+    word-wrap: break-word;
+    margin: 0px
+}
+h3{
     font-size: 48px;
+    color: #FFFFFF;
+    word-wrap: break-word;
+    margin: 0px
 }
 body {
-    background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
+    background-image: linear-gradient(to right, #383632 0%, #0a1117 100%);
+    overflow-y: hidden; /* 隐藏垂直滚动条 */
 }
-
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
 
 .PToE {
     transform-origin:left;
@@ -19,7 +35,7 @@ body {
 }
 
 button {
-    background-color: #000000d5;
+    background-color: #000000aa;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -56,6 +72,11 @@ input {
 }
 
 .b {
+    opacity: 0.8;
+    cursor: auto
+}
+
+.f {
     opacity: 0.8;
     cursor: auto
 }

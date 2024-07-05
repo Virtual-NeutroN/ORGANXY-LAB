@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>现代简约网页主页示例</title>
   <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
 </head>
 
 <body>
@@ -76,115 +77,120 @@
     </div>
     <!-- 成员区域-->
     <div class="p-members">
-      <h2 style="font-size: 36px;">ORGANXY成员</h2>
-      <p>就这些。还在增加</p>
-      <div class="members">
-        <div class="member">
-          <img src="img/members/Patchoulene.png" alt="patchoulene" class="m-img">
-          <h2>Patchoulene</h2>
-          <p class="text">“神金”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Paclitaxel.png" alt="成员1" class="m-img">
-          <h2>Paclitaxel</h2>
-          <p class="text">“你说句话啊”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Curcumol.png" alt="成员1" class="m-img">
-          <h2>Curcumol</h2>
-          <p class="text">“唐”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Guaiol.png" alt="成员1" class="m-img">
-          <h2>Guaiol</h2>
-          <p class="text">“懒虫”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Apalutamide.png" alt="成员1" class="m-img">
-          <h2>Apalutamide</h2>
-          <p class="text">“科技哥”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Milnaclpran.png" alt="成员1" class="m-img">
-          <h2>Milnaclpran</h2>
-          <p class="text">“急急急急急”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Eplerenone.png" alt="成员1" class="m-img">
-          <h2>Eplerenone</h2>
-          <p class="text">“可爱捏”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Quinine.png" alt="成员1" class="m-img">
-          <h2>Quinine</h2>
-          <p class="text">“傲娇是吧”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Anisodamine.png" alt="成员1" class="m-img">
-          <h2>Anisodamine</h2>
-          <p class="text">“猫猫！”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Aminopterin.png" alt="成员1" class="m-img">
-          <h2>Aminopterin</h2>
-          <p class="text">“人呢？”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Ritonavir.png" alt="成员1" class="m-img">
-          <h2>Ritonavir</h2>
-          <p class="text">“你怎么也不说话”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Oseltamivir.png" alt="成员12" class="m-img">
-          <h2>Oseltamivir</h2>
-          <p class="text">“太纯真了哥”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Mezerein.png" alt="成员13" class="m-img">
-          <h2>Mezerein</h2>
-          <p class="text">“玩游戏玩的”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Delphinine.png" alt="成员14" class="m-img">
-          <h2>Delphinine</h2>
-          <p class="text">“喜欢瞎逛是吧”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Spiramine A.png" alt="成员14" class="m-img">
-          <h2>Spiramine A</h2>
-          <p class="text">“这个时钟是干嘛的？”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Homoharringtonine.png" alt="成员14" class="m-img">
-          <h2>Homoharringtonine</h2>
-          <p class="text">“不是，兄弟？”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Indocyanine Green.png" alt="成员14" class="m-img">
-          <h2>Indocyanine Green</h2>
-          <p class="text">“这个算闷骚吗”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Bromothymol Blue.png" alt="成员14" class="m-img">
-          <h2>Bromothymol Blue</h2>
-          <p class="text">“头脑过于简单”</p>
-        </div>
-        <div class="member">
-          <img src="img/members/Nomilin.png" alt="成员14" class="m-img">
-          <h2>Nomilin</h2>
-          <p class="text">“别种花了”</p>
-        </div>
-        <div class="member">
-          <img src="https://via.placeholder.com/300x300" alt="成员14" class="m-img">
-          <h2>Suberogorgin</h2>
-          <p class="text">“春竹”</p>
+      <h2 style="font-size: 36px; display: flex; align-items: center; justify-content: center;">
+        ORGANXY成员
+        <span id="toggle-icon" class="toggle-icon">&#x25BC;</span>
+      </h2>
+      <p>单击可展开</p>
+      <div class="members-container" id="members-container">
+        <div class="members">
+          <div class="member">
+            <img src="img/members/Patchoulene.png" alt="patchoulene" class="m-img">
+            <h2>Patchoulene</h2>
+            <p class="text">“神金”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Paclitaxel.png" alt="成员1" class="m-img">
+            <h2>Paclitaxel</h2>
+            <p class="text">“你说句话啊”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Curcumol.png" alt="成员1" class="m-img">
+            <h2>Curcumol</h2>
+            <p class="text">“唐”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Guaiol.png" alt="成员1" class="m-img">
+            <h2>Guaiol</h2>
+            <p class="text">“懒虫”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Apalutamide.png" alt="成员1" class="m-img">
+            <h2>Apalutamide</h2>
+            <p class="text">“科技哥”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Milnaclpran.png" alt="成员1" class="m-img">
+            <h2>Milnaclpran</h2>
+            <p class="text">“急急急急急”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Eplerenone.png" alt="成员1" class="m-img">
+            <h2>Eplerenone</h2>
+            <p class="text">“可爱捏”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Quinine.png" alt="成员1" class="m-img">
+            <h2>Quinine</h2>
+            <p class="text">“傲娇是吧”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Anisodamine.png" alt="成员1" class="m-img">
+            <h2>Anisodamine</h2>
+            <p class="text">“猫猫！”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Aminopterin.png" alt="成员1" class="m-img">
+            <h2>Aminopterin</h2>
+            <p class="text">“人呢？”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Ritonavir.png" alt="成员1" class="m-img">
+            <h2>Ritonavir</h2>
+            <p class="text">“你怎么也不说话”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Oseltamivir.png" alt="成员12" class="m-img">
+            <h2>Oseltamivir</h2>
+            <p class="text">“太纯真了哥”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Mezerein.png" alt="成员13" class="m-img">
+            <h2>Mezerein</h2>
+            <p class="text">“玩游戏玩的”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Delphinine.png" alt="成员14" class="m-img">
+            <h2>Delphinine</h2>
+            <p class="text">“喜欢瞎逛是吧”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Spiramine A.png" alt="成员14" class="m-img">
+            <h2>Spiramine A</h2>
+            <p class="text">“这个时钟是干嘛的？”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Homoharringtonine.png" alt="成员14" class="m-img">
+            <h2>Homoharringtonine</h2>
+            <p class="text">“不是，兄弟？”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Indocyanine Green.png" alt="成员14" class="m-img">
+            <h2>Indocyanine Green</h2>
+            <p class="text">“这个算闷骚吗”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Bromothymol Blue.png" alt="成员14" class="m-img">
+            <h2>Bromothymol Blue</h2>
+            <p class="text">“头脑过于简单”</p>
+          </div>
+          <div class="member">
+            <img src="img/members/Nomilin.png" alt="成员14" class="m-img">
+            <h2>Nomilin</h2>
+            <p class="text">“别种花了”</p>
+          </div>
+          <div class="member">
+            <img src="https://via.placeholder.com/300x300" alt="成员14" class="m-img">
+            <h2>Suberogorgin</h2>
+            <p class="text">“春竹”</p>
+          </div>
         </div>
       </div>
     </div>
   </main>
   <!-- 页脚 -->
   <footer class="footer">
-    &copy; 2023 Virtual-NeutroN/ORGANXY LAB，保留所有权利。
+    &copy; 2024 Virtual-NeutroN & ORGANXY LAB，保留所有权利。
   </footer>
 </body>
 

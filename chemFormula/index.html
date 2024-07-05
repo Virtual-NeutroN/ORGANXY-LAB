@@ -236,17 +236,17 @@
                 <button style="background-color: rgba(0,0,0,0);" class="a"></button>
                 <button style="background-color: rgba(0,0,0,0);" class="a"></button>
                 <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                <button class="b" onclick="return pIon(this.id)" id="pIon">+n</button>
-                <button class="b" onclick="return nIon(this.id)" id="nIon">-n</button>
+                <button class="a" onclick="return gas(this.id)" id="↑">↑</button>
+                <button class="a" onclick="return solid(this.id)" id="↓">↓</button>
+                <button class="a" onclick="return Ion(this.id)" id="pIon">+n</button>
+                <button class="a" onclick="return Ion(this.id)" id="nIon">-n</button>
                 <button class="a" onclick="return result(this.id)" id="+">+</button>
                 <button class="a" onclick="return result(this.id)" id="==">==</button>
+                <input class="a" readonly="true" id="st"></input>
+                <button class="a" onclick="return InputD(document.getElementById('st').value)" id="confirmSt">√</button>
+                <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                <button class="a" id="-undo">↩</button>
+                <button class="a" id="-redo">↪</button>
             </div>
         </center>
     </div>
@@ -258,13 +258,52 @@
             var scale = pageWidth / elementWidth - 0.01;
             element.style.transform = 'scale(' + scale + ')';
         }
-
         window.onresize = function () {
             adjustScale();
         };
-
         // 初始加载时调整一次
         adjustScale();
+        // 撤销和恢复功能
+        document.addEventListener('DOMContentLoaded', () => {
+            let undoStack = [];
+            let redoStack = [];
+            const inputDivs = document.querySelectorAll('.input');
+
+            inputDivs.forEach(div => {
+                // 监听内容变化
+                div.addEventListener('input', () => {
+                    const state = Array.from(inputDivs).map(div => div.innerHTML);
+                    undoStack.push(state);
+                    redoStack = [];
+                });
+            });
+
+            // 撤销
+            document.getElementById('undo').addEventListener('click', () => {
+                if (undoStack.length > 0) {
+                    redoStack.push(Array.from(inputDivs).map(div => div.innerHTML));
+                    const previousState = undoStack.pop();
+                    inputDivs.forEach((div, index) => {
+                        div.innerHTML = previousState[index];
+                    });
+                }
+            });
+
+            // 恢复
+            document.getElementById('redo').addEventListener('click', () => {
+                if (redoStack.length > 0) {
+                    undoStack.push(Array.from(inputDivs).map(div => div.innerHTML));
+                    const nextState = redoStack.pop();
+                    inputDivs.forEach((div, index) => {
+                        div.innerHTML = nextState[index];
+                    });
+                }
+            });
+
+            // 初始化
+            const initialState = Array.from(inputDivs).map(div => div.innerHTML);
+            undoStack.push(initialState);
+        });
     </script>
     <div class="input">
         <center>
@@ -273,16 +312,10 @@
             <h3 id=showRoot></h3>
         </center>
     </div>
-    <div class="empty">
-        <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-    </div>
-    <div class="empty">
-        <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-    </div>
     </div>
     <!-- 页脚 -->
     <footer class="footer">
-        &copy; 2023 Virtual-NeutroN/ORGANXY LAB，保留所有权利。
+        &copy; 2024 Virtual-NeutroN & ORGANXY LAB，保留所有权利。
     </footer>
 </body>
 

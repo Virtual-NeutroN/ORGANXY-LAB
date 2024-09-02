@@ -1,43 +1,119 @@
-h1{
+/* 标题样式 */
+h1 {
     font-size: 72px;
-    color: #FFFFFF;
+    color: #333333;
     word-wrap: break-word;
-    margin: 0px
+    margin: 0px;
 }
-h2{
+
+h2 {
     font-size: 64px;
-    color: #FFFFFF;
+    color: #333333; /* 调整为深色 */
     word-wrap: break-word;
-    margin: 0px
+    margin: 0px;
 }
-h3{
+
+h3 {
     font-size: 48px;
-    color: #FFFFFF;
+    color: #333333; /* 调整为深色 */
     word-wrap: break-word;
-    margin: 0px
+    margin: 0px;
 }
+/* 头部导航栏样式 */
+.header {
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-item:last-child {
+    margin-right: 0;
+}
+
+.nav-item a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 身体背景颜色 */
 body {
-    background-image: linear-gradient(to right, #383632 0%, #0a1117 100%);
+    background-color: #f1f1f1; /* 使用较为柔和的背景色 */
     overflow-y: hidden; /* 隐藏垂直滚动条 */
 }
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/b.png);
+    background-size: cover;      /* 使图片覆盖整个窗口 */
+    background-attachment: fixed; /* 使背景图片固定不动 */
+    background-position: center; /* 图片居中显示 */
+    background-repeat: no-repeat; /* 禁止图片重复 */ 
+    filter: blur(15px); /* 设置模糊效果 */
+    transform: 103%;
+    opacity: 40%;
+    z-index: -1; /* 确保伪元素在内容之下 */
+}
+
+.main {
+    position: relative;
+    z-index: 1; /* 确保内容在背景之上 */
+}
+
+.title {
+    color: #f1f1f1;
+}
+
+/* 页脚样式 */
 .footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+    background-color: #333333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 5px solid; 
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #C070B5, #6AA0EB); /* 页脚顶部添加渐变色边框 */
 }
 
+/* 保留原始设计的PToE样式 */
 .PToE {
-    transform-origin:left;
+    transform-origin: left;
     position: sticky;
     min-width: 1558px;
     transform: scale(1); /* 初始缩放比例为1 */
 }
 
+/* 按钮样式 - 恢复为半透明黑色 */
 button {
-    background-color: #000000aa;
+    background-color: #0000009d; /* 恢复为半透明黑色 */
     border: none;
-    color: white;
+    color: #fff;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -50,13 +126,13 @@ button {
     width: 80px;
 }
 
+/* 输入框样式 */
 input {
-    background-color: #000000d5;
-    border: none;
-    color: white;
+    background-color: rgb(163,163,163); /* 使用较为柔和的背景色 */
+    color: #333; /* 调整为深色字体 */ 
     padding: 0px 0px;
+    border: none;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     border-radius: 4px;
     font-size: 16px;
@@ -65,18 +141,13 @@ input {
     width: 80px;
 }
 
-
+/* 禁用和激活状态样式 */
 .a {
     opacity: 0.5;
-    cursor: not-allowed 
+    cursor: not-allowed;
 }
 
-.b {
+.b, .f {
     opacity: 0.8;
-    cursor: auto
-}
-
-.f {
-    opacity: 0.8;
-    cursor: auto
+    cursor: auto;
 }

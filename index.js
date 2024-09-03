@@ -21,8 +21,10 @@
         
         click++
         if (click == 1 || click ==2) {
-        var blur = document.getElementById("blur"); // 根据id获取元素
-        blur.classList.toggle("active"); // 切换指定id对应的class
+        var blurA = document.getElementById("blurA"); // 根据id获取元素
+        blurA.classList.toggle("active"); // 切换指定id对应的class
+        var blurB = document.getElementById("blurB"); // 根据id获取元素
+        blurB.classList.toggle("active"); // 切换指定id对应的class
         var popup = document.getElementById("popup"); // 同上
         popup.classList.toggle("active"); // 同上
         }

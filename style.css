@@ -94,6 +94,15 @@ a {
     transform: translate(-50%, -50%);
 }
 
+.title-page {
+    height: 100vh;
+    text-align: center;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.548), rgba(209, 209, 209, 0));
+    border-bottom: 5px solid; 
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #C070B5, #6AA0EB); /* 页脚顶部添加渐变色边框 */
+}
+
 /* 主体内容区域样式 */
 .main {
     max-width: 1200px;
@@ -155,6 +164,13 @@ a {
     transition: opacity 1s ease, width 1s ease ,padding 1s ease;
 }
 
+.egg {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+}
+
 .chat.show {
     opacity: 1;
     width: 85%;
@@ -194,7 +210,7 @@ a {
     background-color: #fff; /*背景颜色*/
     visibility: hidden; /*隐藏元素*/
     opacity: 0; /*不透明度*/
-    transition: 0.5s; /*过渡时间*/
+    transition: 1s; /*过渡时间*/
 }
 .popup-title{
     margin-top: 0;
@@ -206,15 +222,22 @@ a {
     opacity: 1; /*不透明度*/
     transition: 0.5s; /*过渡时间*/
 }
-#blur{
+#blurA{
     filter: none;
     transition: filter 0.5s; /*过渡时间*/
 }
-#blur.active{
-    filter: blur(5px); /* 初始模糊效果 */
+#blurA.active{
+    filter: blur(7px); /* 初始模糊效果 */
+    transition: filter 0.5; /* 平滑过渡效果 */
+}
+#blurB{
+    filter: none;
+    transition: filter 0.5s; /*过渡时间*/
+}
+#blurB.active{
+    filter: blur(7px); /* 初始模糊效果 */
     transition: filter 0.5s; /* 平滑过渡效果 */
 }
-
 
 /* 关于我们区域样式 */
 .about-us {
@@ -245,6 +268,7 @@ a {
     margin-top: 50px;
     text-align: center;
     padding: 13px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.514); /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
 }
 
 .members {
@@ -252,7 +276,6 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
-    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.514); /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
 }
 
 .member {

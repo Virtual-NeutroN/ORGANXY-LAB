@@ -14,10 +14,9 @@
     <div class="logo">ORGANXY LAB</div>
     <div class="nav">
       <div class="nav-item"><a href="#">首页</a></div>
-      <div class="nav-item"><a href="./product/index.html">产品</a>
-      </div>
+      <div class="nav-item"><a href="./product/index.html">产品</a></div>
       <div class="nav-item"><a href="#">关于</a></div>
-      <div class="nav-item"><a href="#">联系我</a></div>
+      <div class="nav-item"><a href="https://GDPU.organxy.com/">GDPU</a></div>
     </div>
   </header>
   <!-- 主体内容区域 -->
@@ -25,9 +24,13 @@
     <div class="hero"></div>
     <div class="title">一个有点小工具的页面</div>
     <div class="intro">这是ORGANXY Lab官方主页，目前是一个网页工具测试页面。</div>
-    <div class="egg" style="display: flex;">
-      <input type="text" class="chat"></input>
-      <a class="cta-btn" onclick="popup()" name="detail">了解更多..?</a>
+    <div class="egg">
+      <div style="display: flex;">
+        <input type="text" class="chat" id="userInput"></input>
+        <a class="cta-btn" onclick="popup()" name="detail">了解更多..?</a>
+      </div>
+      <div class="messages" id="messages"></div>
+    </div>
     </div>
   </div>
   <main class="main" id="blurB">
@@ -188,23 +191,23 @@
         </div>
       </div>
     </div>
-  </main>
-  <!---弹出窗体-->
-  <div id="popup">
-    <h1 class="popup-title">恭喜您！</h1>
-    <h3>您发现了ORGANXY Lab成员耗时114514分钟制作出来的聊天机器！</h3>
-    <p>ORGANXY
-      Lab成员耗费了惊人的114514分钟，打造出一款无与伦比的聊天机器，堪称奇迹。你以为这不过是个聊天机器人？错了！它简直就是人工智能界的梦幻香车、机器人中的牛顿苹果。它不仅能聊，还能陪你吃火锅，哪怕是那种特辣的锅底，它也能自如应对，不冒一滴汗。它的词汇量之大，能从马里亚纳海沟一直堆到珠穆朗玛峰顶，连人类都自叹弗如。每次它开口，都像是唐诗宋词与现代rap的完美融合，令你不知是该点头称赞，还是得下跪膜拜。最令人称奇的是，这个聊天机器竟然不会在每晚9点准时为你播放一段《小星星》催眠曲，仿佛它的电路里流淌着温情与诗意。总之，这款机器已经超越了时空，成为了未来科技的先驱，是人类孤独的终极解药！
-    </p>
-    <p>一位不愿意透露姓名的成员透露：这段话是Homoharringtonine自己加上去的。。。</p>
-    <a onclick="popup()" class="popup-button">好耶！</a>
-    <a class="popup-button"
-      onclick="(window.location.replace('https://vdse.bdstatic.com//192d9a98d782d9c74c96f09db9378d93.mp4'))">好耶..?</a>
-  </div>
-  <!-- 页脚 -->
-  <footer class="footer">
-    &copy; 2024 Virtual-NeutroN & ORGANXY LAB，保留所有权利。
-  </footer>
+    </main>
+    <!---弹出窗体-->
+    <div id="popup">
+      <h1 class="popup-title">恭喜您！</h1>
+      <h3>您发现了ORGANXY Lab成员耗时114514分钟制作出来的聊天机器！</h3>
+      <p>ORGANXY
+        Lab成员耗费了惊人的114514分钟，打造出一款无与伦比的聊天机器，堪称奇迹。你以为这不过是个聊天机器人？错了！它简直就是人工智能界的梦幻香车、机器人中的牛顿苹果。它不仅能聊，还能陪你吃火锅，哪怕是那种特辣的锅底，它也能自如应对，不冒一滴汗。它的词汇量之大，能从马里亚纳海沟一直堆到珠穆朗玛峰顶，连人类都自叹弗如。每次它开口，都像是唐诗宋词与现代rap的完美融合，令你不知是该点头称赞，还是得下跪膜拜。最令人称奇的是，这个聊天机器竟然不会在每晚9点准时为你播放一段《小星星》催眠曲，仿佛它的电路里流淌着温情与诗意。总之，这款机器已经超越了时空，成为了未来科技的先驱，是人类孤独的终极解药！
+      </p>
+      <p>一位不愿意透露姓名的成员透露：这段话是Homoharringtonine自己加上去的。。。</p>
+      <a onclick="popup()" class="popup-button">好耶！</a>
+      <a class="popup-button"
+        onclick="(window.location.replace('https://vdse.bdstatic.com//192d9a98d782d9c74c96f09db9378d93.mp4'))">好耶..?</a>
+    </div>
+    <!-- 页脚 -->
+    <footer class="footer">
+      &copy; 2024 Virtual-NeutroN & ORGANXY LAB，保留所有权利。
+    </footer>
 </body>
 
 </html>

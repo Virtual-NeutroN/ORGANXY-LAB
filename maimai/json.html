@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON 读取示例</title>
+</head>
+
+<body>
+    <input type="text" id="difficulty" placeholder="输入歌曲来获得难度">
+    <select id="song-select">
+        <option value="">选择歌曲</option>
+    </select>
+    
+    <script>
+    async function fetchData() {
+        try {
+            const response = await fetch('maiinfo.json');
+            const data = await response.json();
+            return data; // 返回获取的数据
+        } catch (error) {
+            console.error('获取数据时出错:', error);
+            return [];
+        }
+    }
+    
+    async function updateSongOptions() {
+        const input = document.getElementById('difficulty').value.trim().toLowerCase(); // 转为小写
+        const select = document.getElementById('song-select');
+        select.innerHTML = '<option value="">选择歌曲</option>'; // 清空下拉列表
+    
+        if (input) {
+            const data = await fetchData();
+            const difficultyLabels = ['bas', 'adv', 'exp', 'mas', 'rem'];
+    
+            data.forEach(item => {
+                if (item.title.toLowerCase().includes(input)) { // 转为小写进行匹配
+                    const title = item.title;
+                    const levels = item.ds;
+                    const types = item.type;
+    
+                    levels.forEach((ds, index) => {
+                        const option = document.createElement('option');
+                        option.value = ds; 
+                        option.textContent = `${title}: 定数: [${types}] ${ds} (${difficultyLabels[index]})`;
+                        select.appendChild(option);
+                    });
+                }
+            });
+        }
+    }
+    
+    document.getElementById('difficulty').addEventListener('input', updateSongOptions);
+    
+    document.getElementById('song-select').addEventListener('change', function() {
+        const selectedValue = this.value;
+        document.getElementById('difficulty').value = selectedValue; // 填入输入框
+    });
+    </script>
+
+
+</body>
+
+</html>

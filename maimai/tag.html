@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating ratingCard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .ratingCard {
+            width: 800px;
+            height: 300px;
+            background: linear-gradient(to bottom left, #f9fcea 0%, #89d3c5 45%, #1c1b59 91%, #311648 100%);
+            border-radius: 20px;
+            padding: 20px 40px;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ratingCard .left-section {
+            width: 65%;
+            position: relative;
+        }
+
+        .ratingCard .left-section h1 {
+            font-family: Verdana, Arial, sans-serif;
+            font-weight: bold;
+            filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.2));
+            font-size: 156px;
+            background: linear-gradient(to bottom left, #fbfdf1 27%, #7bdddb 60%, #c776e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ratingCard .left-section h2 {
+            font-family: Verdana, Arial, sans-serif;
+            font-weight: bold;
+            filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.2));
+            font-size: 108px;
+            background: linear-gradient(to bottom left, #fbfdf1 40%, #7acdbe 55%, #ed89f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 2;
+            top: -35px;
+        }
+
+        .ratingCard .left-section p {
+            font-size: 24px;
+            letter-spacing: 2px;
+            color: rgb(255, 255, 255, 0.5);
+        }
+
+        .ratingCard .left-section .background-ratingtext {
+            font-family: Verdana, Arial, sans-serif;
+            position: absolute;
+            top: 115px;
+            left: -5px;
+            font-size: 60px;
+            font-weight: bold;
+            color: transparent;
+            -webkit-text-stroke: 2px rgb(255, 255, 255);
+            z-index: 1;
+        }
+
+        .ratingCard .left-section .background-ranktext {
+            font-family: Verdana, Arial, sans-serif;
+            position: absolute;
+            top: 245px;
+            left: -5px;
+            font-size: 48px;
+            font-weight: bold;
+            color: transparent;
+            -webkit-text-stroke: 2px rgb(255, 255, 255);
+            z-index: 1;
+        }
+
+        .ratingCard .left-section .background-text:nth-child(1) {
+            top: 60px;
+        }
+
+        .ratingCard .left-section .background-text:nth-child(2) {
+            top: 140px;
+        }
+
+        .ratingCard .right-section {
+            width: 35%;
+            margin-left: 65px;
+            color: white;
+            font-size: 18px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .ratingCard .right-section h3 {
+            font-weight: bold;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .ratingCard .right-section p {
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ratingCard .right-section .label {
+            font-weight: bold;
+            width: 30%;
+        }
+
+        .ratingCard .right-section .value {
+            font-weight: bold;
+            width: 70%;
+            text-align: left;
+            margin-left: 90px;
+        }
+
+        .ratingCard .divider {
+            width: 5px;
+            height: 100%;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .ratingCard .note {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 70px;
+        }
+
+        .ratingCard .note p {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ratingCard">
+        <div class="left-section">
+            <h1>288</h1>
+            <h2>SSS<sup>+</sup></h2>
+            <div class="background-ratingtext">RATING</div>
+            <div class="background-ranktext">RANK</div>
+        </div>
+        <div class="divider"></div>
+        <div class="right-section">
+            <h3>Lv. 12.8</h3>
+            <p><span class="label">Acc:</span> <span class="value">100.7826</span></p>
+            <p><span class="label">RaF:</span> <span class="value">0.224</span></p>
+            <p><span class="label">Rat:</span> <span class="value">228.1536</span></p>
+            <div class="note">
+                <p>*   Lv.-定数, Acc-达成率, RaF-Rating因子, Rat-计算得出的原始Rating</p>
+                <p>**  Generate by: ORGANXY Lab,仅供参考</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

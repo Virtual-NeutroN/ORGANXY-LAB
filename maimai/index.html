@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maimai工具区</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <!-- 头部导航栏 -->
+    <header class="header">
+        <div class="logo">ORGANXY LAB</div>
+        <div class="nav">
+            <div class="nav-item"><a href="#">首页</a></div>
+            <div class="nav-item"><a href="./product/index.html">产品</a></div>
+            <div class="nav-item"><a href="#">关于</a></div>
+            <div class="nav-item"><a href="https://GDPU.organxy.com/">GDPU</a></div>
+        </div>
+    </header>
+    <!-- 主体内容区域 -->
+    <div class="title-page">
+        <div class="hero"></div>
+        <div class="title">主要是舞萌信息查询站</div>
+    </div>
+    <div class="main">
+        <div class="query-container">
+            <div class="button-group">
+                <button class="query-btn" onclick="toggleDiv('rating', this)">成绩Rating查询</button>
+                <button class="query-btn" onclick="toggleDiv('achievement', this)">单曲达成率查询</button>
+                <button class="query-btn" onclick="toggleDiv('track-info', this)">曲目信息查询</button>
+                <button class="query-btn" onclick="toggleDiv('brand', this)">牌子查询</button>
+                <button class="query-btn" onclick="toggleDiv('rank', this)">段位查询</button>
+                <button class="query-btn" onclick="toggleDiv('reference', this)">参考表格</button>
+            </div>
+        
+            <div id="rating" class="query-content">
+                <div class="divider">输入曲目定数</div>
+                <div class="input-group">
+                    <input type="text" id="difficulty" placeholder="输入定数或在此查询歌曲来获得难度">
+                    <select id="song-select">
+                        <option value="">选择歌曲</option>
+                    </select>
+                </div>
+                <div class="divider">输入达成率</div>
+                <div class="input-group">
+                    <input type="text" id="accuracy" placeholder="输入达成率">
+                </div>
+                <div class="divider"></div>
+                <button class="submit-btn" onclick="rating()">查询</button>
+                <div class="rating-result">
+                    <div class="ratingCard" id="ratingCard">
+                        <div class="left-section">
+                            <h1 class="rating-score"></h1>
+                            <h2 class="rank-score"><sup style="visibility: hidden;">+</sup></h2>
+                            <div class="background-ratingtext">RATING</div>
+                            <div class="background-ranktext">RANK</div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="right-section">
+                            <h3 class="dif">Lv. --.-</h3>
+                            <p><span class="label">Acc:</span> <span class="value acc">--/--</span></p>
+                            <p><span class="label">RaF:</span> <span class="value raf">---</span></p>
+                            <p><span class="label">Rat:</span> <span class="value rat">---/----</span></p>
+                            <div class="note">
+                                <p>*  Lv.-定数, Acc-达成率, RaF-Rating因子, Rat-计算得出的原始Rating</p>
+                                <p>** Generate by: ORGANXY Lab,仅供参考</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="download" class="download-button">保存查询的信息为图片</button>
+                </div>
+            </div>
+
+            <div id="achievement" class="query-content">单曲达成率查询内容...</div>
+            <div id="track-info" class="query-content">曲目信息查询内容...</div>
+            <div id="brand" class="query-content">牌子查询内容...</div>
+            <div id="rank" class="query-content">段位查询内容...</div>
+            <div id="reference" class="query-content">参考表格内容...</div>
+        </div>
+        <div class="introduce-container">
+            <div class="intro">‌‌
+                <p>舞萌（Maimai）和‌舞萌DX（Maimai DX）是一款由SEGA开发的，形似洗衣机的街机音乐游戏。</p>
+                <p>其主要玩法为配合音乐节奏，通过按下按键或触摸屏幕进行相应操作。</p>
+                <p>maimai初代于2012年7月11日在日本开始运营。游戏内置多首乐曲并配有不同难度的谱面供玩家游玩。</p>
+                <p>游戏定期通过网络更新来进行版本、UI、乐曲、谱面、游戏机制等内容的更新。</p>
+                <p>游戏中有多种难度级别，从低到高分别为‌绿谱、‌黄谱、‌红谱、‌紫谱和‌白谱。</p>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <p>© 2024 数据查询站. 版权所有.</p>
+    </footer>
+</body>
+<script src="index.js"></script>
+
+</html>

@@ -1,0 +1,202 @@
+/* 全局CSS样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-size: cover;      
+    background-attachment: fixed; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    overflow-x: hidden; 
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 0px; 
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+}
+
+.header {
+    background-color: #313131;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.info {
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.button-container {
+    display: flex;
+    z-index: -1;
+    margin-top: -15px; /* 调整为负值使按钮紧贴图片 */
+}
+
+.image-button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.image-button:hover {
+    background-color: #bdbdbd;
+}
+
+.color-box {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ddd;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.sidebar-table {
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.sidebar-table th, .sidebar-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+.sidebar-table th {
+
+    color: black;
+}
+.sidebar-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.sidebar-table tr:hover {
+    background-color: #f1f1f1;
+}
+.sidebar-table td {
+    width: 150px; /* 根据需要调整宽度 */
+}
+.sidebar-table .header {
+    font-weight: bold;
+    text-align: right;
+    background-color: #f0f0f0;
+}
+
+
+
+.nav {
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-item:last-child {
+    margin-right: 0;
+}
+
+.nav-item a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.article-content {
+    padding: 20px;
+    background-color: #f1f1f1;
+    flex-basis: 75%;
+    margin-right: 30px;
+}
+
+.sidebar {
+    flex-basis: 25%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #b3c377;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.intro {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 5px solid; 
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #C070B5, #6AA0EB);
+}

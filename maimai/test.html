@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签页示例</title>
+    <style>
+        .query-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .button-group {
+            display: flex;
+            background-color: #f1f1f1;
+        }
+        .query-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: #e7e7e7;
+            transition: background-color 0.3s;
+        }
+        .query-btn:hover {
+            background-color: #ddd;
+        }
+        .query-btn.active {
+            background-color: #ffffff; /* 选中按钮高亮 */
+            color: rgb(0, 0, 0); /* 文字颜色变为白色 */
+        }
+        .query-content {
+            background-color: #fff;
+            padding: 15px;
+        }
+        .hidden {
+            display: none; /* 隐藏内容 */
+        }
+    </style>
+</head>
+<body>
+
+<div class="query-container">
+    <div class="button-group">
+        <button class="query-btn" onclick="toggleDiv('rating', this)">成绩Rating查询</button>
+        <button class="query-btn" onclick="toggleDiv('achievement', this)">单曲达成率查询</button>
+        <button class="query-btn" onclick="toggleDiv('track-info', this)">曲目信息查询</button>
+        <button class="query-btn" onclick="toggleDiv('brand', this)">牌子查询</button>
+        <button class="query-btn" onclick="toggleDiv('rank', this)">段位查询</button>
+        <button class="query-btn" onclick="toggleDiv('reference', this)">参考表格</button>
+    </div>
+
+    <div id="rating" class="query-content">成绩Rating查询内容...</div>
+    <div id="achievement" class="query-content">单曲达成率查询内容...</div>
+    <div id="track-info" class="query-content">曲目信息查询内容...</div>
+    <div id="brand" class="query-content">牌子查询内容...</div>
+    <div id="rank" class="query-content">段位查询内容...</div>
+    <div id="reference" class="query-content">参考表格内容...</div>
+</div>
+
+<script>
+    // 默认显示第一个内容
+    document.addEventListener("DOMContentLoaded", function() {
+        toggleDiv('rating', document.querySelector('.query-btn'));
+    });
+
+    function toggleDiv(divId, btn) {
+        // 隐藏所有内容
+        const contents = document.querySelectorAll('.query-content');
+        contents.forEach(content => {
+            content.classList.add('hidden');
+        });
+
+        // 移除所有按钮的active类
+        const buttons = document.querySelectorAll('.query-btn');
+        buttons.forEach(button => {
+            button.classList.remove('active');
+        });
+
+        // 显示当前点击的内容
+        const currentContent = document.getElementById(divId);
+        if (currentContent) {
+            currentContent.classList.remove('hidden');
+            btn.classList.add('active'); // 添加active类
+        }
+    }
+</script>
+
+</body>
+</html>

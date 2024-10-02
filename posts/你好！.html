@@ -1,49 +1,91 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>你和我的第一面！</title>
-  <link rel="stylesheet" href="../style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>角色介绍</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-  <!-- 头部导航栏 -->
-  <header class="header">
-    <div class="logo">ORGANXY LAB</div>
-    <nav class="nav">
-      <div class="nav-item"><a href="../index.html">首页</a></div>
-      <div class="nav-item"><a href="#">关于我们</a></div>
-      <div class="nav-item"><a href="#">联系我们</a></div>
-    </nav>
-  </header>
+    <header class="header">
+        <div class="logo">ORGANXY LAB</div>
+        <div class="nav">
+            <div class="nav-item"><a href="#">首页</a></div>
+            <div class="nav-item"><a href="../product/index.html">产品</a></div>
+            <div class="nav-item"><a href="#">关于</a></div>
+            <div class="nav-item"><a href="https://GDPU.organxy.com/">GDPU</a></div>
+        </div>
+    </header>
 
-  <!-- 文章封面 -->
-  <div class="article-header">
-    <img src="../img/topimg.png" alt="文章封面">
-    <h1 class="article-title">你和我的第一面！</h1>
-  </div>
+    <div class="container">
+        <main class="article-content">
+            <h1 class="title">广藿香烯</h1>
+            <div class="intro">
+                <p>“豆叶曰藿，其叶似之，而草味芳香，故曰藿香。枝香者，亦以香气得名”——《本草纲目》</p>
+            </div>
+            <div class="blog">
+                <h2>更多信息</h2>
+                <div class="date">创建日期: 2024-01-01</div>
+                <div class="excerpt">这里是角色的详细背景介绍...</div>
+            </div>
+        </main>
 
-  <div class="container">
-    <!-- 文章内容区域 -->
-    <article class="article-content">
-      <p>这里是文章的正文内容，可以包含大段的文字、图片、视频等等。</p>
-      <p>文章内容可以根据需求进行排版，保持良好的可读性，吸引读者的关注。</p>
-    </article>
+        <aside class="sidebar">
+            <h2>Patchoulene</h2>
+            <div class="img-container">
+                <img src="../img/members/Patchoulene.png" alt="" class="info">
+                <div class="button-container">
+                    <button class="image-button" onclick="changeImage('../img/members/Patchoulene.png')">形象</button>
+                    <button class="image-button" onclick="changeImage('../img/members-formula/Patchoulene.png')">原型</button>
+                </div>
+            </div>
+            <table class="sidebar-table">
+                <tbody>
+                    <tr>
+                        <th class="header">性别</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th class="header">种类</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th class="header">组别</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th class="header">发色</th>
+                        <td>
+                            <span class="color-box" style="background-color: black;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="header">瞳色</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th class="header">身高</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th class="header">别称</th>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>相关链接</h2>
+            <ul>
+                <li><a href="https://example.com">维基百科</a></li>
+                <li><a href="https://example.com">角色相关资料</a></li>
+            </ul>
+        </aside>
+    </div>
 
-    <!-- 侧边栏 -->
-    <aside class="sidebar">
-      <h2>侧边栏标题</h2>
-      <ul>
-        <li><a href="#">菜单项 1</a></li>
-        <li><a href="#">菜单项 2</a></li>
-        <li><a href="#">菜单项 3</a></li>
-      </ul>
-    </aside>
-  </div>
-
-  <!-- 页脚 -->
-  <footer class="footer">
-    版权信息等等
-  </footer>
+    <footer class="footer">
+        &copy;
+    </footer>
 </body>
+<script src="index.js"></script>
 </html>

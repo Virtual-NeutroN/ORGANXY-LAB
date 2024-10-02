@@ -126,6 +126,15 @@ a {
     color: #fff;
 }
 
+
+.intro p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px rgb(0, 0, 0); /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
+    color: #fff;
+}
+
+
 .cta-btn {
     display: inline-block;
     margin-left: 0px;

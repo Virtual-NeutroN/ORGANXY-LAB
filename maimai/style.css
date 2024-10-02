@@ -1,0 +1,313 @@
+body {
+    background-image: url(../img/bg.png);
+}
+
+
+.divider {
+    margin: 15px;
+    margin: 5px;
+    text-align: left;
+    color: rgb(60, 60, 60);
+    font-size: 18px;
+}
+
+.title-page {
+    height: 50vh;
+    text-align: center;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(209, 209, 209, 0));
+    border-image-source: linear-gradient(to right,  #00000000, #b7ffee00); /* 页脚顶部添加渐变色边框 */
+    border-bottom: 5px solid;
+    border-image-slice: 1;
+}
+
+.hero {
+    height: 250px;
+}
+
+.introduce-container .intro p {
+    margin-bottom: 0px;
+    font-size: 18px;
+    text-shadow: 0 0 0px rgb(0, 0, 0);
+    color: #000000;
+}
+.title {
+    text-shadow: 0 0 0px rgb(0, 0, 0);
+}
+
+.intro p {
+    margin-bottom: 0px;
+}
+
+.query-container {
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.introduce-container {
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.button-group {
+    display: flex;
+    background-color: rgb(60, 60, 60);
+}
+.query-btn {
+    color: #fff;
+    font-size: 18px;
+    flex: 1;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(60, 60, 60);
+    transition: background-color 0.3s;
+}
+.query-btn:hover {
+    background-color: #535353;
+}
+.query-btn.active {
+    background-color: #ffffff; /* 选中按钮高亮 */
+    color: rgb(0, 0, 0); /* 文字颜色变为白色 */
+}
+.query-content {
+    background-color: #fff;
+    padding: 15px 60px;
+}
+.hidden {
+    display: none; /* 隐藏内容 */
+}
+
+.input-group {
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex; /* 使用flex布局 */
+    justify-content: space-between; /* 在两侧对齐 */
+    gap: 20px;
+}
+.input-group div {
+    flex: 1; /* 每个子元素占用相同空间 */
+    margin-right: 10px; /* 添加间距 */
+}
+.input-group div:last-child {
+    margin-right: 0; /* 最后一个元素不加间距 */
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 10px;
+    border: transparent;
+    box-sizing: border-box;
+    min-height: 56px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.377);
+    border-radius: 5px;
+}
+.submit-btn {
+    background-image: linear-gradient(to right,  #e97bff, #75ffdf);
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 98.5%;
+    transition: background-image 0.3s;
+    border-radius: 5px;
+}
+.submit-btn:hover {
+    background-image: linear-gradient(to right,  #a13ab6, #40b69a);
+}
+
+.rating-result {
+    font-size: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.146);
+    border-radius: 20px;
+    margin:50px 10px ;
+    min-height: 300px;
+    align-content: center;
+    display: flex;
+}
+
+.ratingCard * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.ratingCard {
+    width: 740px;
+    height: 260px;
+    background: linear-gradient(to bottom left, #f9fcea 0%, #89d3c5 45%, #1c1b59 91%, #311648 100%);
+    border-radius: 20px;
+    padding: 20px 40px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ratingCard .left-section {
+    width: 65%;
+    position: relative;
+}
+
+.ratingCard .left-section h1 {
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: bold;
+    filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.2));
+    font-size: 156px;
+    /*
+    background: linear-gradient(to bottom left, #fbfdf1 27%, #7bdddb 60%, #c776e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    由于捕获不支持高级css书写，因此暂时渐变需要隐藏
+    */
+
+    color: #fbfdf1;
+    position: relative;
+    z-index: 2;
+    top: 3px;
+    text-align: left;
+}
+
+.ratingCard .left-section h2 {
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: bold;
+    filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.2));
+    font-size: 108px;
+        /*
+    background: linear-gradient(to bottom left, #fbfdf1 40%, #7acdbe 55%, #ed89f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    由于捕获不支持高级css书写，因此暂时渐变需要隐藏
+    */
+
+    color: #c8e6d8;
+    position: relative;
+    z-index: 2;
+    top: -35px;
+    text-align: left;
+}
+
+.ratingCard .left-section p {
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: rgb(255, 255, 255, 0.5);
+}
+
+.ratingCard .left-section .background-ratingtext {
+    font-family: Verdana, Arial, sans-serif;
+    position: absolute;
+    top: 115px;
+    left: -5px;
+    font-size: 60px;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 1.25px rgba(255, 255, 255, 1);
+    letter-spacing: 1px;
+    z-index: 1;
+}
+
+.ratingCard .left-section .background-ranktext {
+    font-family: Verdana, Arial, sans-serif;
+    position: absolute;
+    top: 245px;
+    left: -5px;
+    font-size: 48px;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 1.25px rgba(255, 255, 255, 1);
+    letter-spacing: 5px;
+    z-index: 1;
+}
+
+.ratingCard .left-section .background-text:nth-child(1) {
+    top: 60px;
+}
+
+.ratingCard .left-section .background-text:nth-child(2) {
+    top: 140px;
+}
+
+.ratingCard .right-section {
+    width: 35%;
+    margin-left: 65px;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ratingCard .right-section h3 {
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.ratingCard .right-section p {
+        text-align: left; 
+        margin-top: 0;
+        color: #999;
+        line-height: 1.0; 
+        font-size: 18px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.ratingCard .right-section .label {
+    font-weight: bold;
+    width: 30%;
+}
+
+.ratingCard .right-section .value {
+    font-weight: bold;
+    width: 70%;
+    text-align: left;
+    margin-left: 90px;
+}
+
+.ratingCard .divider {
+    width: 5px;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.ratingCard .note {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 75px;
+}
+
+.ratingCard .note p {
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.download-button {
+    width: 240px;
+    background-image: url(button.png);
+    background-color: transparent;
+    padding: 0px 0px 32px 50px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+.footer {
+    border-image-source: linear-gradient(to right,  #f2b1ff, #b7ffee); /* 页脚顶部添加渐变色边框 */
+}

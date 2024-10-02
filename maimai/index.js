@@ -1,6 +1,30 @@
+function adjustScale() {
+    const designWidth = 1640;
+    // 获取当前窗口的宽度
+    const windowWidth = window.innerWidth;
+    // 计算缩放比例
+    const scale = windowWidth / designWidth;
+
+    // 设置body的缩放比例
+    document.body.style.transform = `scale(${scale})`;
+    // 设置缩放后中心对齐
+    document.body.style.transformOrigin = '0 0';
+    // 修复缩放后可能出现的溢出滚动条
+    document.body.style.width = `${designWidth}px`;
+}
+
+// 页面加载时调用调整函数
+window.addEventListener('load', adjustScale);
+// 窗口大小改变时也调用调整函数
+window.addEventListener('resize', adjustScale);
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     toggleDiv('rating', document.querySelector('.query-btn'));
 });
+
+
 
 function toggleDiv(divId, btn) {
     // 隐藏所有内容

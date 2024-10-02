@@ -1,7 +1,7 @@
 body {
     background-image: url(../img/bg.png);
+    transition: transform 0.3s ease;
 }
-
 
 .divider {
     margin: 15px;

@@ -7,7 +7,7 @@
     <title>maimai工具区</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="./style.css">
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <!--<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>-->
 </head>
 
 <body>
@@ -36,7 +36,7 @@
                 <button class="query-btn" onclick="toggleDiv('rank', this)">段位查询</button>
                 <button class="query-btn" onclick="toggleDiv('reference', this)">参考表格</button>
             </div>
-        
+
             <div id="rating" class="query-content">
                 <div class="divider">输入曲目定数</div>
                 <div class="input-group">
@@ -66,7 +66,7 @@
                             <p><span class="label">RaF:</span> <span class="value raf">---</span></p>
                             <p><span class="label">Rat:</span> <span class="value rat">---/----</span></p>
                             <div class="note">
-                                <p>*  Lv.-定数, Acc-达成率, RaF-Rating因子, Rat-计算得出的原始Rating</p>
+                                <p>* Lv.-定数, Acc-达成率, RaF-Rating因子, Rat-计算得出的原始Rating</p>
                                 <p>** Generate by: ORGANXY Lab,仅供参考</p>
                             </div>
                         </div>
@@ -75,7 +75,68 @@
                 </div>
             </div>
 
-            <div id="achievement" class="query-content">单曲达成率查询内容...</div>
+            <div id="achievement" class="query-content">
+                <div class="divider">输入歌曲</div>
+                <div class="input-group">
+                    <input type="text" id="songs-input" placeholder="输入查询歌曲来获得难度" style="flex: 4;">
+                    <select id="acc-song-select" onchange="updateLevels()" style="flex: 4;">
+                        <option value="">选择歌曲</option>
+                    </select>
+                    <select id="acc-level-select" style="flex: 1;">
+                        <option value="">选择难度</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <button class="submit-btn" onclick="getNotes()" style="flex: 12">查询</button>
+                    <p style="flex: 2;margin-top: 20px;font-size: 20px;color: #000;">计算差值：</p>
+                    <div style="flex: 1;">
+                        <input type="checkbox" id="deduction" class="acc-checkbox" style="width:56px;outline: none;border: none;"></input>
+                    </div>
+
+                </div>
+                <div class="acc-container">
+                    <div class="acc-divider">该曲配置如下</div>
+                    <div class="acc-rating-result" style="min-height: 100px;">
+                        <table id="resultTable" style="display: none;font-size: 18px;">
+                            <thead>
+                                <tr>
+                                    <th>歌曲名称</th>
+                                    <th>难度</th>
+                                    <th>类型</th>
+                                    <th>Tap</th>
+                                    <th>Hold</th>
+                                    <th>Slide</th>
+                                    <th>Touch</th>
+                                    <th>Break</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="acc-divider" style="margin-top: 35px;">该曲各键形各准度acc如下</div>
+                    <div class="acc-rating-result" style="min-height: 400px; margin-top: 75px;">
+                        <table id="infoTable" style="display: none;font-size: 18px;">
+                            <thead>
+                                <tr>
+                                    <th>键形/准度</th>
+                                    <th>Critical perfect</th>
+                                    <th>Perfect<sup>high</sup></th>
+                                    <th>Perfect<sup>low</sup></th>
+                                    <th>Great<sup>high</sup></th>
+                                    <th>Great<sup>medium</sup></th>
+                                    <th>Great<sup>low</sup></th>
+                                    <th>Good</th>
+                                    <th>Miss</th>
+                                </tr>
+                            </thead>
+                            <tbody id="infoBody"></tbody>
+                        </table>
+                    </div>
+                    <p style="top: 35px;position: relative;color: #fff;">* 数据来源于谱面自身，占比意思为一个note占整个铺面的比分</p>
+                </div>
+
+            </div>
             <div id="track-info" class="query-content">曲目信息查询内容...</div>
             <div id="brand" class="query-content">牌子查询内容...</div>
             <div id="rank" class="query-content">段位查询内容...</div>

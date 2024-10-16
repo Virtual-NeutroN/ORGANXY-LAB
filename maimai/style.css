@@ -115,7 +115,7 @@ body {
     cursor: pointer;
     width: 98.5%;
     transition: background-image 0.3s;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 .submit-btn:hover {
     background-image: linear-gradient(to right,  #a13ab6, #40b69a);
@@ -123,6 +123,7 @@ body {
 
 .rating-result {
     font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.146);
     border-radius: 20px;
     margin:50px 10px ;
@@ -307,6 +308,60 @@ body {
     justify-content: flex-end;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    color: #fff;
+    padding: 8px;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.357);
+}
+
+th {
+    color: #7c7c7c;
+    padding: 8px;
+    background-color: #f4f4f4;
+}
+
+.acc-container {
+    margin: 20px 10px;
+    padding: 20px 0px 50px 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.146);
+    border-radius: 20px;
+    background: linear-gradient(to bottom left, #f9fcea 0%, #89d3c5 45%, #1c1b59 91%, #311648 100%);
+}
+
+.acc-divider {
+    font-weight: bold;
+    font-size: 64px;
+    font-weight: bold;
+    text-align: left;
+    padding: 0px 25px;
+    color: transparent;
+    -webkit-text-stroke: 1.25px rgba(255, 255, 255, 1);
+    position: absolute;
+}
+
+.acc-rating-result {
+    margin-left: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    margin: 20px 20px 20px 50px;
+    top: 30px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.146);
+    border-radius: 20px;
+    align-content: center;
+    display: flex;
+}
+
+.acc-checkbox {
+    border: none ;
+    outline: none;
+    border-radius: 20px;
+}
 
 .footer {
     border-image-source: linear-gradient(to right,  #f2b1ff, #b7ffee); /* 页脚顶部添加渐变色边框 */

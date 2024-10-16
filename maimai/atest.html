@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歌曲查询</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>歌曲铺面查询</h1>
+    <label for="search">搜索歌名:</label>
+    <input type="text" id="search" oninput="filterTitles()" placeholder="输入歌名" />
+    <br>
+    <label for="title">选择歌曲:</label>
+    <select id="title" onchange="updateLevels()"></select>
+    <br>
+    <label for="level">难度:</label>
+    <select id="level"></select>
+    <br>
+    <button onclick="getNotes()">查询</button>
+
+    <h2>铺面信息:</h2>
+    <table id="resultTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>歌曲名称</th>
+                <th>难度</th>
+                <th>类型</th>
+                <th>Tap</th>
+                <th>Hold</th>
+                <th>Slide</th>
+                <th>touch</th>
+                <th>Break</th>
+            </tr>
+        </thead>
+        <tbody id="resultBody"></tbody>
+    </table>
+    <input type="checkbox" id="deduction">计算扣分</input>
+    <table id="infoTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>键形/准度</th>
+                <th>critical perfect</th>
+                <th>perfect high</th>
+                <th>perfect low</th>
+                <th>great high</th>
+                <th>great medium</th>
+                <th>great low</th>
+                <th>good</th>
+                <th>miss</th>
+            </tr>
+        </thead>
+        <tbody id="infoBody"></tbody>
+    </table>
+
+    <script>
+        let songs = [];
+
+        // 从 JSON 文件加载数据
+        fetch('maiinfo.json')
+            .then(response => response.json())
+            .then(data => {
+                songs = data; // 假设 data 是一个数组
+                populateTitles();
+            });
+
+        function populateTitles() {
+            const titleSelect = document.getElementById('title');
+            titleSelect.innerHTML = ''; // 清空当前选项
+            songs.forEach(song => {
+                const option = document.createElement('option');
+                option.value = song.title;
+                option.textContent = song.title;
+                titleSelect.appendChild(option);
+            });
+        }
+
+        function filterTitles() {
+            const searchValue = document.getElementById('search').value.toLowerCase();
+            const titleSelect = document.getElementById('title');
+            Array.from(titleSelect.options).forEach(option => {
+                option.style.display = option.textContent.toLowerCase().includes(searchValue) ? 'block' : 'none';
+            });
+        }
+
+        function updateLevels() {
+            const titleSelect = document.getElementById('title');
+            const selectedTitle = titleSelect.value;
+            const levelSelect = document.getElementById('level');
+            levelSelect.innerHTML = '';
+
+            const song = songs.find(s => s.title === selectedTitle);
+            if (song) {
+                song.level.forEach(level => {
+                    const option = document.createElement('option');
+                    option.value = level;
+                    option.textContent = level;
+                    levelSelect.appendChild(option);
+                });
+            }
+        }
+
+        function getNotes() {
+            const titleSelect = document.getElementById('title');
+            const levelSelect = document.getElementById('level');
+            const resultBody = document.getElementById('resultBody');
+            const resultTable = document.getElementById('resultTable');
+            const infoBody = document.getElementById('infoBody');
+            const infoTable = document.getElementById('infoTable');
+            const deduction = document.getElementById('deduction')
+
+            const selectedTitle = titleSelect.value;
+            const selectedLevel = levelSelect.value;
+
+            const song = songs.find(s => s.title === selectedTitle);
+            if (song) {
+                const levelIndex = song.level.indexOf(selectedLevel);
+                if (levelIndex !== -1 && levelIndex < song.charts.length) {
+                    const notes = song.charts[levelIndex].notes;
+                    // 清空之前的结果
+                    resultBody.innerHTML = '';
+                    // 创建新行 
+                    const row = document.createElement('tr');
+                    if (song.type == 'SD') {
+                        if (notes.length == 4) {
+                            notes.splice(3, 0, 0)
+                        }
+                        console.log(notes)
+                        row.innerHTML = ` <td>${song.title}</td> <td>${selectedLevel}</td> <td>${song.type}</td> <td>${notes[0]}</td> <td>${notes[1]}</td> <td>${notes[2]}</td> <td>/</td> <td>${notes[4]}</td>`;
+                    } else {
+                        row.innerHTML = ` <td>${song.title}</td> <td>${selectedLevel}</td> <td>${song.type}</td> <td>${notes[0]}</td> <td>${notes[1]}</td> <td>${notes[2]}</td> <td>${notes[3]}</td> <td>${notes[4]}</td> `;
+                    }
+                    resultBody.appendChild(row);
+                    resultTable.style.display = 'table';
+                    // 显示表格
+                    infoBody.innerHTML = '';
+                    // 创建新行 
+                    var tscore = 0
+                    var irow = [0, 1, 2, 3, 4]
+                    var keytype = ['tap', 'hold', 'slide', 'touch', 'break', 'add-break']
+                    var keyscore = [500, 500, 500, 400, 400, 400, 250, 0]
+                    var brescore = [2500, 2500, 2500, 2000, 1500, 1250, 1000, 0]
+                    var mulscore = [1, 2, 3, 1, 5,]
+                    var addscore = [100, 75, 50, 40, 40, 40, 30, 0]
+                    for (let i = 0; i < 5; i++) {
+                        tscore = tscore + (notes[i] * mulscore[i] * 500)
+                    }
+                    for (let i = 0; i < 6; i++) {
+                        irow[i] = document.createElement('tr');
+                        irow[i].innerHTML = `<td>${keytype[i]}</td>`
+                        for (let j = 0; j < 8; j++) {
+                            if (notes[i] == 0) {
+                                irow[i].innerHTML = irow[i].innerHTML + `<td>/</td>`
+                            } else {
+                                if (song.type == 'SD' && i == 3) {
+                                    irow[i].innerHTML = irow[i].innerHTML + `<td>/</td>`
+                                } else if (i == 4) { //绝赞
+                                    if (deduction.checked == true) {
+                                        irow[i].innerHTML = irow[i].innerHTML + `<td>${((((2500 / tscore) - (brescore[j] / tscore)) * 100) + (100 / (notes[4] * 100)) - (addscore[j] / (notes[4] * 100))).toFixed(4)}%</td>`
+                                    } else {
+                                        irow[i].innerHTML = irow[i].innerHTML + `<td>${(((brescore[j] / tscore) * 100) + (addscore[j] / (notes[4] * 100))).toFixed(4)}%</td>`
+                                    }
+                                }
+                                else if (i == 5) { //附加分计算
+                                    if (deduction.checked == true) {
+                                        irow[i].innerHTML = irow[i].innerHTML + `<td>${((100 / (notes[4] * 100)) - (addscore[j] / (notes[4] * 100))).toFixed(4)}%</td>`
+                                    } else {
+                                        irow[i].innerHTML = irow[i].innerHTML + `<td>${((addscore[j] / (notes[4] * 100))).toFixed(4)}%</td>`
+                                    }
+                                } else {
+                                    if (deduction.checked == true) {
+                                        irow[i].innerHTML = irow[i].innerHTML + `<td>${((((500 * mulscore[i]) / tscore) - (keyscore[j] * mulscore[i] / tscore)) * 100).toFixed(4)}%</td>`
+                                    } else {
+                                        irow[i].innerHTML = irow[i].innerHTML + `<td>${((keyscore[j] * mulscore[i] / tscore) * 100).toFixed(4)}%</td>`
+                                    }
+                                }
+                            }
+                        }
+                        infoBody.appendChild(irow[i]);
+                    }
+                    infoTable.style.display = 'table';
+                } else {
+                    alert('未找到对应的难度。');
+                }
+            }
+            else {
+                alert('未找到对应的歌曲。');
+            }
+        }
+    </script>
+</body>
+
+</html>

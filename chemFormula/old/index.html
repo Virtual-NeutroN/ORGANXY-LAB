@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>化学式输入器</title>
+    <link type="text/css" rel="styleSheet" href="style.css" />
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <!-- 头部导航栏 -->
+        <header class="header">
+            <div class="logo">ORGANXY LAB</div>
+            <nav class="nav">
+                <div class="nav-item"><a href="../index.html">首页</a></div>
+            </nav>
+        </header>
+
+        <!-- 文章内容区域 -->
+        <div class="PToE">
+            <center>
+                <h1 class="title">化学式输入器</h1>
+                <div class="element">
+                    <button class="b" onclick="return a(this.id)" id="H">H</button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button class="b" onclick="return  a(this.id)" id="He">He</button>
+                </div>
+                <div class="line2">
+                    <button class="b" onclick="return a(this.id)" id="Li">Li</button>
+                    <button class="b" onclick="return a(this.id)" id="Be">Be</button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button class="b" onclick="return a(this.id)" id="B">B</button>
+                    <button class="b" onclick="return a(this.id)" id="C">C</button>
+                    <button class="b" onclick="return a(this.id)" id="N">N</button>
+                    <button class="b" onclick="return a(this.id)" id="O">O</button>
+                    <button class="b" onclick="return a(this.id)" id="F">F</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ne">Ne</button>
+                </div>
+                <div class="line3">
+                    <button class="b" onclick="return a(this.id)" id="Na">Na</button>
+                    <button class="b" onclick="return a(this.id)" id="Mg">Mg</button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button class="b" onclick="return a(this.id)" id="Al">Al</button>
+                    <button class="b" onclick="return a(this.id)" id="Si">Si</button>
+                    <button class="b" onclick="return a(this.id)" id="P">P</button>
+                    <button class="b" onclick="return a(this.id)" id="S">S</button>
+                    <button class="b" onclick="return a(this.id)" id="Cl">Cl</button>
+                    <button class="b" onclick="return a(this.id)" id="Ar">Ar</button>
+                </div>
+                <div class="line4">
+                    <button class="b" onclick="return a(this.id)" id="K">K</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ca">Ca</button>
+                    <button class="b" onclick="return  a(this.id)" id="Sc">Sc</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ti">Ti</button>
+                    <button class="b" onclick="return a(this.id)" id="V">V</button>
+                    <button class="b" onclick="return  a(this.id)" id="Cr">Cr</button>
+                    <button class="b" onclick="return  a(this.id)" id="Mn">Mn</button>
+                    <button class="b" onclick="return  a(this.id)" id="Fe">Fe</button>
+                    <button class="b" onclick="return  a(this.id)" id="Co">Co</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ni">Ni</button>
+                    <button class="b" onclick="return  a(this.id)" id="Cu">Cu</button>
+                    <button class="b" onclick="return  a(this.id)" id="Zn">Zn</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ga">Ga</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ge">Ge</button>
+                    <button class="b" onclick="return  a(this.id)" id="As">As</button>
+                    <button class="b" onclick="return  a(this.id)" id="Se">Se</button>
+                    <button class="b" onclick="return  a(this.id)" id="Br">Br</button>
+                    <button class="b" onclick="return  a(this.id)" id="Kr">Kr</button>
+                </div>
+                <div class="line5">
+                    <button class="b" onclick="return  a(this.id)" id="Rb">Rb</button>
+                    <button class="b" onclick="return  a(this.id)" id="Sr">Sr</button>
+                    <button class="b" onclick="return a(this.id)" id="Y">Y</button>
+                    <button class="b" onclick="return  a(this.id)" id="Zr">Zr</button>
+                    <button class="b" onclick="return  a(this.id)" id="Nb">Nb</button>
+                    <button class="b" onclick="return  a(this.id)" id="Mo">Mo</button>
+                    <button class="b" onclick="return  a(this.id)" id="Tc">Tc</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ru">Ru</button>
+                    <button class="b" onclick="return  a(this.id)" id="Rh">Rh</button>
+                    <button class="b" onclick="return  a(this.id)" id="Pd">Pd</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ag">Ag</button>
+                    <button class="b" onclick="return  a(this.id)" id="Cd">Cd</button>
+                    <button class="b" onclick="return  a(this.id)" id="In">In</button>
+                    <button class="b" onclick="return  a(this.id)" id="Sn">Sn</button>
+                    <button class="b" onclick="return  a(this.id)" id="Sb">Sb</button>
+                    <button class="b" onclick="return  a(this.id)" id="Te">Te</button>
+                    <button class="b" onclick="return a(this.id)" id="I">I</button>
+                    <button class="b" onclick="return  a(this.id)" id="Xe">Xe</button>
+                </div>
+                <div class="line6-1">
+                    <button class="b" onclick="return  a(this.id)" id="Cs">Cs</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ba">Ba</button>
+                    <button class="a">Ln</button>
+                    <button class="b" onclick="return  a(this.id)" id="Hf">Hf</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ta">Ta</button>
+                    <button class="b" onclick="return a(this.id)" id="W">W</button>
+                    <button class="b" onclick="return  a(this.id)" id="Re">Re</button>
+                    <button class="b" onclick="return  a(this.id)" id="Os">Os</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ir">Ir</button>
+                    <button class="b" onclick="return  a(this.id)" id="Pt">Pt</button>
+                    <button class="b" onclick="return  a(this.id)" id="Au">Au</button>
+                    <button class="b" onclick="return  a(this.id)" id="Hg">Hg</button>
+                    <button class="b" onclick="return  a(this.id)" id="Tl">Tl</button>
+                    <button class="b" onclick="return  a(this.id)" id="Pb">Pb</button>
+                    <button class="b" onclick="return  a(this.id)" id="Bi">Bi</button>
+                    <button class="b" onclick="return  a(this.id)" id="Po">Po</button>
+                    <button class="b" onclick="return  a(this.id)" id="At">At</button>
+                    <button class="b" onclick="return  a(this.id)" id="Rn">Rn</button>
+                </div>
+                <div class="line7-1">
+                    <button class="b" onclick="return  a(this.id)" id="Fr">Fr</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ra">Ra</button>
+                    <button class="a">An</button>
+                    <button class="b" onclick="return  a(this.id)" id="Rf">Rf</button>
+                    <button class="b" onclick="return  a(this.id)" id="Db">Db</button>
+                    <button class="b" onclick="return  a(this.id)" id="Sg">Sg</button>
+                    <button class="b" onclick="return  a(this.id)" id="Bh">Bh</button>
+                    <button class="b" onclick="return  a(this.id)" id="Hs">Hs</button>
+                    <button class="b" onclick="return  a(this.id)" id="Mt">Mt</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ds">Ds</button>
+                    <button class="b" onclick="return  a(this.id)" id="Rg">Rg</button>
+                    <button class="b" onclick="return  a(this.id)" id="Cn">Cn</button>
+                    <button class="b" onclick="return  a(this.id)" id="Nh">Nh</button>
+                    <button class="b" onclick="return  a(this.id)" id="Fl">Fl</button>
+                    <button class="b" onclick="return  a(this.id)" id="Mc">Mc</button>
+                    <button class="b" onclick="return  a(this.id)" id="Lv">Lv</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ts">Ts</button>
+                    <button class="b" onclick="return  a(this.id)" id="Og">Og</button>
+                </div>
+                <div class="line6-2">
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button class="a">Ln</button>
+                    <button class="b" onclick="return  a(this.id)" id="La">La</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ce">Ce</button>
+                    <button class="b" onclick="return  a(this.id)" id="Pr">Pr</button>
+                    <button class="b" onclick="return  a(this.id)" id="Nd">Nd</button>
+                    <button class="b" onclick="return  a(this.id)" id="Pm">Pm</button>
+                    <button class="b" onclick="return  a(this.id)" id="Sm">Sm</button>
+                    <button class="b" onclick="return  a(this.id)" id="Eu">Eu</button>
+                    <button class="b" onclick="return  a(this.id)" id="Gd">Gd</button>
+                    <button class="b" onclick="return  a(this.id)" id="Tb">Tb</button>
+                    <button class="b" onclick="return  a(this.id)" id="Dy">Dy</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ho">Ho</button>
+                    <button class="b" onclick="return  a(this.id)" id="Er">Er</button>
+                    <button class="b" onclick="return  a(this.id)" id="Tm">Tm</button>
+                    <button class="b" onclick="return  a(this.id)" id="Yb">Yb</button>
+                    <button class="b" onclick="return  a(this.id)" id="Lu">Lu</button>
+                </div>
+                <div class="line7-2">
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button class="a">An</button>
+                    <button class="b" onclick="return  a(this.id)" id="Ac">Ac</button>
+                    <button class="b" onclick="return  a(this.id)" id="Th">Th</button>
+                    <button class="b" onclick="return  a(this.id)" id="Pa">Pa</button>
+                    <button class="b" onclick="return a(this.id)" id="U">U</button>
+                    <button class="b" onclick="return  a(this.id)" id="Np">Np</button>
+                    <button class="b" onclick="return  a(this.id)" id="Pu">Pu</button>
+                    <button class="b" onclick="return  a(this.id)" id="Am">Am</button>
+                    <button class="b" onclick="return  a(this.id)" id="Cm">Cm</button>
+                    <button class="b" onclick="return  a(this.id)" id="Bk">Bk</button>
+                    <button class="b" onclick="return  a(this.id)" id="Cf">Cf</button>
+                    <button class="b" onclick="return  a(this.id)" id="Es">Es</button>
+                    <button class="b" onclick="return  a(this.id)" id="Fm">Fm</button>
+                    <button class="b" onclick="return  a(this.id)" id="Md">Md</button>
+                    <button class="b" onclick="return  a(this.id)" id="No">No</button>
+                    <button class="b" onclick="return  a(this.id)" id="Lr">Lr</button>
+                </div>
+                <div class="empty">
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                </div>
+                <div class="ctrl-1">
+                    <button class="a" onclick="return b(this.id)" id="1">1</button>
+                    <button class="a" onclick="return b(this.id)" id="2">2</button>
+                    <button class="a" onclick="return b(this.id)" id="3">3</button>
+                    <button class="a" onclick="return b(this.id)" id="4">4</button>
+                    <button class="a" onclick="return b(this.id)" id="5">5</button>
+                    <button class="a" onclick="return b(this.id)" id="6">6</button>
+                    <button class="a" onclick="return b(this.id)" id="7">7</button>
+                    <button class="a" onclick="return b(this.id)" id="8">8</button>
+                    <button class="a" onclick="return b(this.id)" id="n">n</button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button class="a" onclick="return c(this.id)" id="down">-</button>
+                    <button class="a" onclick="return c(this.id)" id="x">9</button>
+                    <button class="a" onclick="return c(this.id)" id="up">+</button>
+                    <input class="a" readonly="true" id="y"></input>
+                    <button class="a" onclick="return inputC(document.getElementById('y').value)"
+                        id="confirm">√</button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button class="b" onclick="return recover(this.id)" id="recover">1↓</button>
+                    <button class="b" onclick="return recover(this.id)" id="cover">1↑</button>
+
+
+                </div>
+                <div class="ctrl-2">
+                    <button class="b" onclick="return midroot(this.id)" id="midroot">[...]</button>
+                    <button class="a" onclick="return midroot(this.id)" id="midput">⇧</button>
+                    <button class="b" onclick="return root(this.id)" id="root">(...)</button>
+                    <button class="a" onclick="return root(this.id)" id="put">⇡</button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button class="a" onclick="return gas(this.id)" id="↑">↑</button>
+                    <button class="a" onclick="return solid(this.id)" id="↓">↓</button>
+                    <button class="a" onclick="return Ion(this.id)" id="pIon">+n</button>
+                    <button class="a" onclick="return Ion(this.id)" id="nIon">-n</button>
+                    <button class="a" onclick="return result(this.id)" id="+">+</button>
+                    <button class="a" onclick="return result(this.id)" id="==">==</button>
+                    <input class="a" readonly="true" id="st"></input>
+                    <button class="a" onclick="return InputD(document.getElementById('st').value)"
+                        id="confirmSt">√</button>
+                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                    <button class="a" id="-undo">↩</button>
+                    <button class="a" id="-redo">↪</button>
+                </div>
+            </center>
+        </div>
+        <script>
+            function adjustScale() {
+                var pageWidth = window.innerWidth;
+                var element = document.querySelector('.PToE');
+                var elementWidth = element.offsetWidth;
+                var scale = pageWidth / elementWidth - 0.01;
+                element.style.transform = 'scale(' + scale + ')';
+            }
+            window.onresize = function () {
+                adjustScale();
+            };
+            // 初始加载时调整一次
+            adjustScale();
+            // 撤销和恢复功能
+            document.addEventListener('DOMContentLoaded', () => {
+                let undoStack = [];
+                let redoStack = [];
+                const inputDivs = document.querySelectorAll('.input');
+
+                inputDivs.forEach(div => {
+                    // 监听内容变化
+                    div.addEventListener('input', () => {
+                        const state = Array.from(inputDivs).map(div => div.innerHTML);
+                        undoStack.push(state);
+                        redoStack = [];
+                    });
+                });
+
+                // 撤销
+                document.getElementById('undo').addEventListener('click', () => {
+                    if (undoStack.length > 0) {
+                        redoStack.push(Array.from(inputDivs).map(div => div.innerHTML));
+                        const previousState = undoStack.pop();
+                        inputDivs.forEach((div, index) => {
+                            div.innerHTML = previousState[index];
+                        });
+                    }
+                });
+
+                // 恢复
+                document.getElementById('redo').addEventListener('click', () => {
+                    if (redoStack.length > 0) {
+                        undoStack.push(Array.from(inputDivs).map(div => div.innerHTML));
+                        const nextState = redoStack.pop();
+                        inputDivs.forEach((div, index) => {
+                            div.innerHTML = nextState[index];
+                        });
+                    }
+                });
+
+                // 初始化
+                const initialState = Array.from(inputDivs).map(div => div.innerHTML);
+                undoStack.push(initialState);
+            });
+        </script>
+        <div class="input">
+            <center>
+                <h1 id=end></h1>
+                <h2 id=showMidRoot></h2>
+                <h3 id=showRoot></h3>
+            </center>
+        </div>
+    </div>
+    <!-- 页脚 -->
+    <footer class="footer">
+        &copy; 2024 Virtual-NeutroN & ORGANXY LAB，保留所有权利。
+    </footer>
+
+</body>
+
+</html>

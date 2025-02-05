@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>现代百科 - 量子计算</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2A5CAA;
+            --background: #f0f2f5;
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --text-primary: #1a1a1a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            background: var(--background);
+            color: var(--text-primary);
+            padding: 2rem;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        /* 毛玻璃效果容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* 信息框样式 */
+        .infobox {
+            background: var(--glass-bg);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        .infobox:hover {
+            transform: translateY(-3px);
+        }
+
+        /* 目录导航 */
+        .toc {
+            position: sticky;
+            top: 2rem;
+            background: var(--glass-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            backdrop-filter: blur(8px);
+        }
+
+        .toc li {
+            list-style: none;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .toc li:hover {
+            background: rgba(42, 92, 170, 0.1);
+            transform: translateX(5px);
+        }
+
+        /* 内容区域 */
+        .content-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--glass-bg);
+            border-radius: 12px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .content-section:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 图片样式 */
+        .float-right {
+            float: right;
+            margin: 0 0 1rem 2rem;
+            border-radius: 12px;
+            max-width: 300px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            .container { border-radius: 12px; }
+            .float-right { float: none; margin: 1rem auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>量子计算</h1>
+        
+        <div class="infobox">
+            <p><i class="fas fa-info-circle"></i> 量子计算是利用量子力学现象（如叠加和纠缠）来执行计算的技术。</p>
+            <p>▸ 领域：计算机科学、量子物理<br>
+               ▸ 提出时间：1980年代<br>
+               ▸ 典型应用：密码学、药物研发</p>
+        </div>
+
+        <nav class="toc">
+            <h2><i class="fas fa-list"></i> 目录</h2>
+            <ul>
+                <li><a href="#history">发展历史</a></li>
+                <li><a href="#principle">基本原理</a></li>
+                <li><a href="#application">实际应用</a></li>
+            </ul>
+        </nav>
+
+        <img src="https://via.placeholder.com/300x200" alt="量子计算机" class="float-right">
+
+        <section class="content-section" id="history">
+            <h2>发展历史</h2>
+            <p>1981年，理查德·费曼首次提出量子计算的概念...</p>
+        </section>
+
+        <section class="content-section" id="principle">
+            <h2>基本原理</h2>
+            <p>量子比特（Qubit）是量子计算的基本单位...</p>
+        </section>
+
+        <section class="content-section" id="application">
+            <h2>实际应用</h2>
+            <p>在密码学领域，量子计算机可能破解传统加密算法...</p>
+        </section>
+    </div>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // 目录高亮
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.toc a');
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 150 && rect.bottom >= 150) {
+                    const id = section.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

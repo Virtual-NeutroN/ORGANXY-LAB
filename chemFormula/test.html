@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>收藏功能示例</title>
+    <style>
+        .item {
+            width: 150px;
+            height: 150px;
+            background-color: lightblue;
+            margin: 10px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .favorite-container {
+            width: 200px;
+            border-left: 2px solid #333;
+            padding: 10px;
+            height: 100vh;
+            position: fixed;
+            right: 0;
+            top: 0;
+            overflow-y: auto;
+        }
+
+        .favorite-wrapper {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: lightgreen;
+            border-radius: 4px;
+            word-wrap: break-word;
+        }
+
+        .favorite-item {
+            display: inline-block;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="item-container">
+    <div class="item" id="item1">Item 1: A sample item with longer text.</div>
+    <div class="item" id="item2">Item 2</div>
+    <div class="item" id="item3">Item 3: This one has a bit more text to show how the size adjusts.</div>
+</div>
+
+<div class="favorite-container" id="favoriteContainer">
+    <h2>收藏夹</h2>
+</div>
+
+<script>
+    const items = document.querySelectorAll('.item');
+    const favoriteContainer = document.getElementById('favoriteContainer');
+
+    // 禁用浏览器默认右键菜单
+    document.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
+    });
+
+    items.forEach(item => {
+        item.addEventListener('contextmenu', (event) => {
+            // 创建外层 div 用来包裹克隆的 item 和删除按钮
+            const favoriteWrapper = document.createElement('div');
+            favoriteWrapper.className = 'favorite-wrapper';
+
+            // 克隆元素
+            const clonedItem = item.cloneNode(true);
+
+            // 修改 class 名
+            clonedItem.className = 'favorite-item';
+
+            // 添加删除按钮
+            const deleteBtn = document.createElement('button');
+            deleteBtn.innerText = 'X';
+            deleteBtn.className = 'delete-btn';
+
+            // 点击删除按钮从收藏夹移除
+            deleteBtn.addEventListener('click', () => {
+                favoriteContainer.removeChild(favoriteWrapper);
+            });
+
+            // 将克隆的 item 和删除按钮加入到 favoriteWrapper 中
+            favoriteWrapper.appendChild(clonedItem);
+            favoriteWrapper.appendChild(deleteBtn);
+
+            // 将 favoriteWrapper 添加到收藏栏
+            favoriteContainer.appendChild(favoriteWrapper);
+        });
+    });
+</script>
+
+</body>
+</html>

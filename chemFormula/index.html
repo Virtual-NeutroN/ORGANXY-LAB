@@ -1,325 +1,657 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>化学式输入器</title>
+    <title>Periodic Table of b Elements</title>
     <link type="text/css" rel="styleSheet" href="style.css" />
-    <script src="index.js"></script>
 </head>
 
 <body>
+    <!-- 头部导航栏 -->
+
+
     <div class="main">
-        <!-- 头部导航栏 -->
-        <header class="header">
-            <div class="logo">ORGANXY LAB</div>
-            <nav class="nav">
-                <div class="nav-item"><a href="../index.html">首页</a></div>
-            </nav>
-        </header>
+        <div class="container">
+            <div class="periodic-table">
+                <!-- 周期 1 -->
+                <div class="b element nonmetal hydrogen" onclick="a(this.id)" id="H">
+                    <h2>H</h2>
+                    <p>1.00</p>
+                </div>
+                <div class="b element noble-gas helium" onclick="a(this.id)" id="He">
+                    <h2>He</h2>
+                    <p>4.00</p>
+                </div>
 
-        <!-- 文章内容区域 -->
-        <div class="PToE">
-            <center>
-                <h1 class="title">化学式输入器</h1>
-                <div class="element">
-                    <button class="b" onclick="return a(this.id)" id="H">H</button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button class="b" onclick="return  a(this.id)" id="He">He</button>
+                <!-- 周期 2 -->
+                <div class="b element alkali-metal lithium" onclick="a(this.id)" id="Li">
+                    <h2>Li</h2>
+                    <p>6.94</p>
                 </div>
-                <div class="line2">
-                    <button class="b" onclick="return a(this.id)" id="Li">Li</button>
-                    <button class="b" onclick="return a(this.id)" id="Be">Be</button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button class="b" onclick="return a(this.id)" id="B">B</button>
-                    <button class="b" onclick="return a(this.id)" id="C">C</button>
-                    <button class="b" onclick="return a(this.id)" id="N">N</button>
-                    <button class="b" onclick="return a(this.id)" id="O">O</button>
-                    <button class="b" onclick="return a(this.id)" id="F">F</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ne">Ne</button>
+                <div class="b element alkaline-earth-metal beryllium" onclick="a(this.id)" id="Be">
+                    <h2>Be</h2>
+                    <p>9.01</p>
                 </div>
-                <div class="line3">
-                    <button class="b" onclick="return a(this.id)" id="Na">Na</button>
-                    <button class="b" onclick="return a(this.id)" id="Mg">Mg</button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button class="b" onclick="return a(this.id)" id="Al">Al</button>
-                    <button class="b" onclick="return a(this.id)" id="Si">Si</button>
-                    <button class="b" onclick="return a(this.id)" id="P">P</button>
-                    <button class="b" onclick="return a(this.id)" id="S">S</button>
-                    <button class="b" onclick="return a(this.id)" id="Cl">Cl</button>
-                    <button class="b" onclick="return a(this.id)" id="Ar">Ar</button>
+                <div class="b element post-transition-metal boron" onclick="a(this.id)" id="B">
+                    <h2>B</h2>
+                    <p>10.81</p>
                 </div>
-                <div class="line4">
-                    <button class="b" onclick="return a(this.id)" id="K">K</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ca">Ca</button>
-                    <button class="b" onclick="return  a(this.id)" id="Sc">Sc</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ti">Ti</button>
-                    <button class="b" onclick="return a(this.id)" id="V">V</button>
-                    <button class="b" onclick="return  a(this.id)" id="Cr">Cr</button>
-                    <button class="b" onclick="return  a(this.id)" id="Mn">Mn</button>
-                    <button class="b" onclick="return  a(this.id)" id="Fe">Fe</button>
-                    <button class="b" onclick="return  a(this.id)" id="Co">Co</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ni">Ni</button>
-                    <button class="b" onclick="return  a(this.id)" id="Cu">Cu</button>
-                    <button class="b" onclick="return  a(this.id)" id="Zn">Zn</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ga">Ga</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ge">Ge</button>
-                    <button class="b" onclick="return  a(this.id)" id="As">As</button>
-                    <button class="b" onclick="return  a(this.id)" id="Se">Se</button>
-                    <button class="b" onclick="return  a(this.id)" id="Br">Br</button>
-                    <button class="b" onclick="return  a(this.id)" id="Kr">Kr</button>
+                <div class="b element nonmetal carbon" onclick="a(this.id)" id="C">
+                    <h2>C</h2>
+                    <p>12.01</p>
                 </div>
-                <div class="line5">
-                    <button class="b" onclick="return  a(this.id)" id="Rb">Rb</button>
-                    <button class="b" onclick="return  a(this.id)" id="Sr">Sr</button>
-                    <button class="b" onclick="return a(this.id)" id="Y">Y</button>
-                    <button class="b" onclick="return  a(this.id)" id="Zr">Zr</button>
-                    <button class="b" onclick="return  a(this.id)" id="Nb">Nb</button>
-                    <button class="b" onclick="return  a(this.id)" id="Mo">Mo</button>
-                    <button class="b" onclick="return  a(this.id)" id="Tc">Tc</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ru">Ru</button>
-                    <button class="b" onclick="return  a(this.id)" id="Rh">Rh</button>
-                    <button class="b" onclick="return  a(this.id)" id="Pd">Pd</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ag">Ag</button>
-                    <button class="b" onclick="return  a(this.id)" id="Cd">Cd</button>
-                    <button class="b" onclick="return  a(this.id)" id="In">In</button>
-                    <button class="b" onclick="return  a(this.id)" id="Sn">Sn</button>
-                    <button class="b" onclick="return  a(this.id)" id="Sb">Sb</button>
-                    <button class="b" onclick="return  a(this.id)" id="Te">Te</button>
-                    <button class="b" onclick="return a(this.id)" id="I">I</button>
-                    <button class="b" onclick="return  a(this.id)" id="Xe">Xe</button>
+                <div class="b element nonmetal nitrogen" onclick="a(this.id)" id="N">
+                    <h2>N</h2>
+                    <p>14.01</p>
                 </div>
-                <div class="line6-1">
-                    <button class="b" onclick="return  a(this.id)" id="Cs">Cs</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ba">Ba</button>
-                    <button class="a">Ln</button>
-                    <button class="b" onclick="return  a(this.id)" id="Hf">Hf</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ta">Ta</button>
-                    <button class="b" onclick="return a(this.id)" id="W">W</button>
-                    <button class="b" onclick="return  a(this.id)" id="Re">Re</button>
-                    <button class="b" onclick="return  a(this.id)" id="Os">Os</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ir">Ir</button>
-                    <button class="b" onclick="return  a(this.id)" id="Pt">Pt</button>
-                    <button class="b" onclick="return  a(this.id)" id="Au">Au</button>
-                    <button class="b" onclick="return  a(this.id)" id="Hg">Hg</button>
-                    <button class="b" onclick="return  a(this.id)" id="Tl">Tl</button>
-                    <button class="b" onclick="return  a(this.id)" id="Pb">Pb</button>
-                    <button class="b" onclick="return  a(this.id)" id="Bi">Bi</button>
-                    <button class="b" onclick="return  a(this.id)" id="Po">Po</button>
-                    <button class="b" onclick="return  a(this.id)" id="At">At</button>
-                    <button class="b" onclick="return  a(this.id)" id="Rn">Rn</button>
+                <div class="b element nonmetal oxygen" onclick="a(this.id)" id="O">
+                    <h2>O</h2>
+                    <p>16.00</p>
                 </div>
-                <div class="line7-1">
-                    <button class="b" onclick="return  a(this.id)" id="Fr">Fr</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ra">Ra</button>
-                    <button class="a">An</button>
-                    <button class="b" onclick="return  a(this.id)" id="Rf">Rf</button>
-                    <button class="b" onclick="return  a(this.id)" id="Db">Db</button>
-                    <button class="b" onclick="return  a(this.id)" id="Sg">Sg</button>
-                    <button class="b" onclick="return  a(this.id)" id="Bh">Bh</button>
-                    <button class="b" onclick="return  a(this.id)" id="Hs">Hs</button>
-                    <button class="b" onclick="return  a(this.id)" id="Mt">Mt</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ds">Ds</button>
-                    <button class="b" onclick="return  a(this.id)" id="Rg">Rg</button>
-                    <button class="b" onclick="return  a(this.id)" id="Cn">Cn</button>
-                    <button class="b" onclick="return  a(this.id)" id="Nh">Nh</button>
-                    <button class="b" onclick="return  a(this.id)" id="Fl">Fl</button>
-                    <button class="b" onclick="return  a(this.id)" id="Mc">Mc</button>
-                    <button class="b" onclick="return  a(this.id)" id="Lv">Lv</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ts">Ts</button>
-                    <button class="b" onclick="return  a(this.id)" id="Og">Og</button>
+                <div class="b element halogen fluorine" onclick="a(this.id)" id="F">
+                    <h2>F</h2>
+                    <p>19.00</p>
                 </div>
-                <div class="line6-2">
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button class="a">Ln</button>
-                    <button class="b" onclick="return  a(this.id)" id="La">La</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ce">Ce</button>
-                    <button class="b" onclick="return  a(this.id)" id="Pr">Pr</button>
-                    <button class="b" onclick="return  a(this.id)" id="Nd">Nd</button>
-                    <button class="b" onclick="return  a(this.id)" id="Pm">Pm</button>
-                    <button class="b" onclick="return  a(this.id)" id="Sm">Sm</button>
-                    <button class="b" onclick="return  a(this.id)" id="Eu">Eu</button>
-                    <button class="b" onclick="return  a(this.id)" id="Gd">Gd</button>
-                    <button class="b" onclick="return  a(this.id)" id="Tb">Tb</button>
-                    <button class="b" onclick="return  a(this.id)" id="Dy">Dy</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ho">Ho</button>
-                    <button class="b" onclick="return  a(this.id)" id="Er">Er</button>
-                    <button class="b" onclick="return  a(this.id)" id="Tm">Tm</button>
-                    <button class="b" onclick="return  a(this.id)" id="Yb">Yb</button>
-                    <button class="b" onclick="return  a(this.id)" id="Lu">Lu</button>
+                <div class="b element noble-gas neon" onclick="a(this.id)" id="Ne">
+                    <h2>Ne</h2>
+                    <p>20.18</p>
                 </div>
-                <div class="line7-2">
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button class="a">An</button>
-                    <button class="b" onclick="return  a(this.id)" id="Ac">Ac</button>
-                    <button class="b" onclick="return  a(this.id)" id="Th">Th</button>
-                    <button class="b" onclick="return  a(this.id)" id="Pa">Pa</button>
-                    <button class="b" onclick="return a(this.id)" id="U">U</button>
-                    <button class="b" onclick="return  a(this.id)" id="Np">Np</button>
-                    <button class="b" onclick="return  a(this.id)" id="Pu">Pu</button>
-                    <button class="b" onclick="return  a(this.id)" id="Am">Am</button>
-                    <button class="b" onclick="return  a(this.id)" id="Cm">Cm</button>
-                    <button class="b" onclick="return  a(this.id)" id="Bk">Bk</button>
-                    <button class="b" onclick="return  a(this.id)" id="Cf">Cf</button>
-                    <button class="b" onclick="return  a(this.id)" id="Es">Es</button>
-                    <button class="b" onclick="return  a(this.id)" id="Fm">Fm</button>
-                    <button class="b" onclick="return  a(this.id)" id="Md">Md</button>
-                    <button class="b" onclick="return  a(this.id)" id="No">No</button>
-                    <button class="b" onclick="return  a(this.id)" id="Lr">Lr</button>
+
+                <!-- 周期 3 -->
+                <div class="b element alkali-metal sodium" onclick="a(this.id)" id="Na">
+                    <h2>Na</h2>
+                    <p>22.99</p>
                 </div>
-                <div class="empty">
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
+                <div class="b element alkaline-earth-metal magnesium" onclick="a(this.id)" id="Mg">
+                    <h2>Mg</h2>
+                    <p>24.31</p>
                 </div>
-                <div class="ctrl-1">
-                    <button class="a" onclick="return b(this.id)" id="1">1</button>
-                    <button class="a" onclick="return b(this.id)" id="2">2</button>
-                    <button class="a" onclick="return b(this.id)" id="3">3</button>
-                    <button class="a" onclick="return b(this.id)" id="4">4</button>
-                    <button class="a" onclick="return b(this.id)" id="5">5</button>
-                    <button class="a" onclick="return b(this.id)" id="6">6</button>
-                    <button class="a" onclick="return b(this.id)" id="7">7</button>
-                    <button class="a" onclick="return b(this.id)" id="8">8</button>
-                    <button class="a" onclick="return b(this.id)" id="n">n</button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button class="a" onclick="return c(this.id)" id="down">-</button>
-                    <button class="a" onclick="return c(this.id)" id="x">9</button>
-                    <button class="a" onclick="return c(this.id)" id="up">+</button>
-                    <input class="a" readonly="true" id="y"></input>
-                    <button class="a" onclick="return inputC(document.getElementById('y').value)"
-                        id="confirm">√</button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button class="b" onclick="return recover(this.id)" id="recover">1↓</button>
-                    <button class="b" onclick="return recover(this.id)" id="cover">1↑</button>
+                <div class="b element metalloid aluminum" onclick="a(this.id)" id="Al">
+                    <h2>Al</h2>
+                    <p>26.98</p>
+                </div>
+                <div class="b element post-transition-metal silicon" onclick="a(this.id)" id="Si">
+                    <h2>Si</h2>
+                    <p>28.09</p>
+                </div>
+                <div class="b element nonmetal phosphorus" onclick="a(this.id)" id="P">
+                    <h2>P</h2>
+                    <p>30.97</p>
+                </div>
+                <div class="b element nonmetal sulfur" onclick="a(this.id)" id="S">
+                    <h2>S</h2>
+                    <p>32.07</p>
+                </div>
+                <div class="b element halogen chlorine" onclick="a(this.id)" id="Cl">
+                    <h2>Cl</h2>
+                    <p>35.45</p>
+                </div>
+                <div class="b element noble-gas argon" onclick="a(this.id)" id="Ar">
+                    <h2>Ar</h2>
+                    <p>39.95</p>
+                </div>
+                <!-- 周期 4 -->
+                <div class="b element alkali-metal potassium" onclick="a(this.id)" id="K">
+                    <h2>K</h2>
+                    <p>39.10</p>
+                </div>
+                <div class="b element alkaline-earth-metal calcium" onclick="a(this.id)" id="Ca">
+                    <h2>Ca</h2>
+                    <p>40.08</p>
+                </div>
+                <div class="b element transition-metal scandium" onclick="a(this.id)" id="Sc">
+                    <h2>Sc</h2>
+                    <p>44.96</p>
+                </div>
+                <div class="b element transition-metal titanium" onclick="a(this.id)" id="Ti">
+                    <h2>Ti</h2>
+                    <p>47.87</p>
+                </div>
+                <div class="b element transition-metal vanadium" onclick="a(this.id)" id="V">
+                    <h2>V</h2>
+                    <p>50.94</p>
+                </div>
+                <div class="b element transition-metal chromium" onclick="a(this.id)" id="Cr">
+                    <h2>Cr</h2>
+                    <p>52.00</p>
+                </div>
+                <div class="b element transition-metal manganese" id="Mn" onclick="a(this.id)">
+                    <h2>Mn</h2>
+                    <p>54.94</p>
+                </div>
+                <div class="b element transition-metal iron" id="Fe" onclick="a(this.id)">
+                    <h2>Fe</h2>
+                    <p>55.85</p>
+                </div>
+                <div class="b element transition-metal cobalt" id="Co" onclick="a(this.id)">
+                    <h2>Co</h2>
+                    <p>58.93</p>
+                </div>
+                <div class="b element transition-metal nickel" id="Ni" onclick="a(this.id)">
+                    <h2>Ni</h2>
+                    <p>58.69</p>
+                </div>
+                <div class="b element transition-metal copper" id="Cu" onclick="a(this.id)">
+                    <h2>Cu</h2>
+                    <p>63.55</p>
+                </div>
+                <div class="b element transition-metal zinc" id="Zn" onclick="a(this.id)">
+                    <h2>Zn</h2>
+                    <p>65.38</p>
+                </div>
+                <div class="b element metalloid gallium" id="Ga" onclick="a(this.id)">
+                    <h2>Ga</h2>
+                    <p>69.72</p>
+                </div>
+                <div class="b element post-transition-metal germanium" id="Ge" onclick="a(this.id)">
+                    <h2>Ge</h2>
+                    <p>72.63</p>
+                </div>
+                <div class="b element post-transition-metal arsenic" id="As" onclick="a(this.id)">
+                    <h2>As</h2>
+                    <p>74.92</p>
+                </div>
+                <div class="b element nonmetal selenium" id="Se" onclick="a(this.id)">
+                    <h2>Se</h2>
+                    <p>78.96</p>
+                </div>
+                <div class="b element halogen bromine" id="Br" onclick="a(this.id)">
+                    <h2>Br</h2>
+                    <p>79.90</p>
+                </div>
+                <div class="b element noble-gas krypton" id="Kr" onclick="a(this.id)">
+                    <h2>Kr</h2>
+                    <p>83.80</p>
+                </div>
+
+                <!-- 周期 5 -->
+                <div class="b element alkali-metal rubidium" id="Rb" onclick="a(this.id)">
+                    <h2>Rb</h2>
+                    <p>85.47</p>
+                </div>
+                <div class="b element alkaline-earth-metal strontium" id="Sr" onclick="a(this.id)">
+                    <h2>Sr</h2>
+                    <p>87.62</p>
+                </div>
+                <div class="b element transition-metal yttrium" id="Y" onclick="a(this.id)">
+                    <h2>Y</h2>
+                    <p>88.91</p>
+                </div>
+                <div class="b element transition-metal zirconium" id="Zr" onclick="a(this.id)">
+                    <h2>Zr</h2>
+                    <p>91.22</p>
+                </div>
+                <div class="b element transition-metal niobium" id="Nb" onclick="a(this.id)">
+                    <h2>Nb</h2>
+                    <p>92.91</p>
+                </div>
+                <div class="b element transition-metal molybdenum" id="Mo" onclick="a(this.id)">
+                    <h2>Mo</h2>
+                    <p>95.95</p>
+                </div>
+                <div class="b element transition-metal technetium" id="Tc" onclick="a(this.id)">
+                    <h2>Tc</h2>
+                    <p>[98]</p>
+                </div>
+                <div class="b element transition-metal ruthenium" id="Ru" onclick="a(this.id)">
+                    <h2>Ru</h2>
+                    <p>101.1</p>
+                </div>
+                <div class="b element transition-metal rhodium" id="Rh" onclick="a(this.id)">
+                    <h2>Rh</h2>
+                    <p>102.9</p>
+                </div>
+                <div class="b element transition-metal palladium" id="Pd" onclick="a(this.id)">
+                    <h2>Pd</h2>
+                    <p>106.4</p>
+                </div>
+                <div class="b element transition-metal silver" id="Ag" onclick="a(this.id)">
+                    <h2>Ag</h2>
+                    <p>107.9</p>
+                </div>
+                <div class="b element transition-metal cadmium" id="Cd" onclick="a(this.id)">
+                    <h2>Cd</h2>
+                    <p>112.4</p>
+                </div>
+                <div class="b element metalloid indium" id="In" onclick="a(this.id)">
+                    <h2>In</h2>
+                    <p>114.8</p>
+                </div>
+                <div class="b element metalloid tin" id="Sn" onclick="a(this.id)">
+                    <h2>Sn</h2>
+                    <p>118.7</p>
+                </div>
+                <div class="b element post-transition-metal antimony" id="Sb" onclick="a(this.id)">
+                    <h2>Sb</h2>
+                    <p>121.8</p>
+                </div>
+                <div class="b element post-transition-metal tellurium" id="Te" onclick="a(this.id)">
+                    <h2>Te</h2>
+                    <p>127.6</p>
+                </div>
+                <div class="b element halogen iodine" id="I" onclick="a(this.id)">
+                    <h2>I</h2>
+                    <p>126.9</p>
+                </div>
+                <div class="b element noble-gas xenon" id="Xe" onclick="a(this.id)">
+                    <h2>Xe</h2>
+                    <p>131.3</p>
+                </div>
+                <!-- 周期 6 -->
+                <div class="b element alkali-metal cesium" id="Cs" onclick="a(this.id)">
+                    <h2>Cs</h2>
+                    <p>132.91</p>
+                </div>
+                <div class="b element alkaline-earth-metal barium" id="Ba" onclick="a(this.id)">
+                    <h2>Ba</h2>
+                    <p>137.33</p>
+                </div>
+                <div class="b element lanthanideE lanthanide" id="Ln" onclick="">
+                    <h2>Ln</h2>
+                    <p>*</p>
+                </div>
+                <div class="b element lanthanide lanthanum" id="La" onclick="a(this.id)">
+                    <h2>La</h2>
+                    <p>138.91</p>
+                </div>
+                <div class="b element lanthanide cerium" id="Ce" onclick="a(this.id)">
+                    <h2>Ce</h2>
+                    <p>140.12</p>
+                </div>
+                <div class="b element lanthanide praseodymium" id="Pr" onclick="a(this.id)">
+                    <h2>Pr</h2>
+                    <p>140.91</p>
+                </div>
+                <div class="b element lanthanide neodymium" id="Nd" onclick="a(this.id)">
+                    <h2>Nd</h2>
+                    <p>144.24</p>
+                </div>
+                <div class="b element lanthanide promethium" id="Pm" onclick="a(this.id)">
+                    <h2>Pm</h2>
+                    <p>[145]</p>
+                </div>
+                <div class="b element lanthanide samarium" id="Sm" onclick="a(this.id)">
+                    <h2>Sm</h2>
+                    <p>150.36</p>
+                </div>
+                <div class="b element lanthanide europium" id="Eu" onclick="a(this.id)">
+                    <h2>Eu</h2>
+                    <p>151.96</p>
+                </div>
+                <div class="b element lanthanide gadolinium" id="Gd" onclick="a(this.id)">
+                    <h2>Gd</h2>
+                    <p>157.25</p>
+                </div>
+                <div class="b element lanthanide terbium" id="Tb" onclick="a(this.id)">
+                    <h2>Tb</h2>
+                    <p>158.93</p>
+                </div>
+                <div class="b element lanthanide dysprosium" id="Dy" onclick="a(this.id)">
+                    <h2>Dy</h2>
+                    <p>162.50</p>
+                </div>
+                <div class="b element lanthanide holmium" id="Ho" onclick="a(this.id)">
+                    <h2>Ho</h2>
+                    <p>164.93</p>
+                </div>
+                <div class="b element lanthanide erbium" id="Er" onclick="a(this.id)">
+                    <h2>Er</h2>
+                    <p>167.26</p>
+                </div>
+                <div class="b element lanthanide thulium" id="Tm" onclick="a(this.id)">
+                    <h2>Tm</h2>
+                    <p>168.93</p>
+                </div>
+                <div class="b element lanthanide ytterbium" id="Yb" onclick="a(this.id)">
+                    <h2>Yb</h2>
+                    <p>173.04</p>
+                </div>
+                <div class="b element lanthanide lutetium" id="Lu" onclick="a(this.id)">
+                    <h2>Lu</h2>
+                    <p>174.97</p>
+                </div>
+                <div class="b element transition-metal hafnium" id="Hf" onclick="a(this.id)">
+                    <h2>Hf</h2>
+                    <p>178.49</p>
+                </div>
+                <div class="b element transition-metal tantalum" id="Ta" onclick="a(this.id)">
+                    <h2>Ta</h2>
+                    <p>180.95</p>
+                </div>
+                <div class="b element transition-metal tungsten" id="W" onclick="a(this.id)">
+                    <h2>W</h2>
+                    <p>183.84</p>
+                </div>
+                <div class="b element transition-metal rhenium" id="Re" onclick="a(this.id)">
+                    <h2>Re</h2>
+                    <p>186.21</p>
+                </div>
+                <div class="b element transition-metal osmium" id="Os" onclick="a(this.id)">
+                    <h2>Os</h2>
+                    <p>190.23</p>
+                </div>
+                <div class="b element transition-metal iridium" id="Ir" onclick="a(this.id)">
+                    <h2>Ir</h2>
+                    <p>192.22</p>
+                </div>
+                <div class="b element transition-metal platinum" id="Pt" onclick="a(this.id)">
+                    <h2>Pt</h2>
+                    <p>195.08</p>
+                </div>
+                <div class="b element transition-metal gold" id="Au" onclick="a(this.id)">
+                    <h2>Au</h2>
+                    <p>196.97</p>
+                </div>
+                <div class="b element transition-metal mercury" id="Hg" onclick="a(this.id)">
+                    <h2>Hg</h2>
+                    <p>200.59</p>
+                </div>
+                <div class="b element metalloid thallium" id="Tl" onclick="a(this.id)">
+                    <h2>Tl</h2>
+                    <p>204.38</p>
+                </div>
+                <div class="b element metalloid lead" id="Pb" onclick="a(this.id)">
+                    <h2>Pb</h2>
+                    <p>207.2</p>
+                </div>
+                <div class="b element metalloid bismuth" id="Bi" onclick="a(this.id)">
+                    <h2>Bi</h2>
+                    <p>208.98</p>
+                </div>
+                <div class="b element post-transition-metal polonium" id="Po" onclick="a(this.id)">
+                    <h2>Po</h2>
+                    <p>[209]</p>
+                </div>
+                <div class="b element halogen astatine" id="At" onclick="a(this.id)">
+                    <h2>At</h2>
+                    <p>[210]</p>
+                </div>
+                <div class="b element noble-gas radon" id="Rn" onclick="a(this.id)">
+                    <h2>Rn</h2>
+                    <p>[222]</p>
+                </div>
+
+                <!-- 周期 7 -->
+                <div class="b element alkali-metal francium" id="Fr" onclick="a(this.id)">
+                    <h2>Fr</h2>
+                    <p>[223]</p>
+                </div>
+                <div class="b element alkaline-earth-metal radium" id="Ra" onclick="a(this.id)">
+                    <h2>Ra</h2>
+                    <p>[226]</p>
+                </div>
+                <div class="b element actinideE actinide" id="An" onclick="">
+                    <h2>An</h2>
+                    <p>**</p>
+                </div>
+                <div class="b element actinide actinium" id="Ac" onclick="a(this.id)">
+                    <h2>Ac</h2>
+                    <p>[227]</p>
+                </div>
+                <div class="b element actinide thorium" id="Th" onclick="a(this.id)">
+                    <h2>Th</h2>
+                    <p>232.04</p>
+                </div>
+                <div class="b element actinide protactinium" id="Pa" onclick="a(this.id)">
+                    <h2>Pa</h2>
+                    <p>231.04</p>
+                </div>
+                <div class="b element actinide uranium" id="U" onclick="a(this.id)">
+                    <h2>U</h2>
+                    <p>238.03</p>
+                </div>
+                <div class="b element actinide neptunium" id="Np" onclick="a(this.id)">
+                    <h2>Np</h2>
+                    <p>[237]</p>
+                </div>
+                <div class="b element actinide plutonium" id="Pu" onclick="a(this.id)">
+                    <h2>Pu</h2>
+                    <p>[244]</p>
+                </div>
+                <div class="b element actinide americium" id="Am" onclick="a(this.id)">
+                    <h2>Am</h2>
+                    <p>[243]</p>
+                </div>
+                <div class="b element actinide curium" id="Cm" onclick="a(this.id)">
+                    <h2>Cm</h2>
+                    <p>[247]</p>
+                </div>
+                <div class="b element actinide berkelium" id="Bk" onclick="a(this.id)">
+                    <h2>Bk</h2>
+                    <p>[247]</p>
+                </div>
+                <div class="b element actinide californium" id="Cf" onclick="a(this.id)">
+                    <h2>Cf</h2>
+                    <p>[251]</p>
+                </div>
+                <div class="b element actinide einsteinium" id="Es" onclick="a(this.id)">
+                    <h2>Es</h2>
+                    <p>[252]</p>
+                </div>
+                <div class="b element actinide fermium" id="Fm" onclick="a(this.id)">
+                    <h2>Fm</h2>
+                    <p>[257]</p>
+                </div>
+                <div class="b element actinide mendelevium" id="Md" onclick="a(this.id)">
+                    <h2>Md</h2>
+                    <p>[258]</p>
+                </div>
+                <div class="b element actinide nobelium" id="No" onclick="a(this.id)">
+                    <h2>No</h2>
+                    <p>[259]</p>
+                </div>
+                <div class="b element actinide lawrencium" id="Lr" onclick="a(this.id)">
+                    <h2>Lr</h2>
+                    <p>[262]</p>
+                </div>
+                <div class="b element transition-metal rutherfordium" id="Rf" onclick="a(this.id)">
+                    <h2>Rf</h2>
+                    <p>[267]</p>
+                </div>
+                <div class="b element transition-metal dubnium" id="Db" onclick="a(this.id)">
+                    <h2>Db</h2>
+                    <p>[270]</p>
+                </div>
+                <div class="b element transition-metal seaborgium" id="Sg" onclick="a(this.id)">
+                    <h2>Sg</h2>
+                    <p>[271]</p>
+                </div>
+                <div class="b element transition-metal bohrium" id="Bh" onclick="a(this.id)">
+                    <h2>Bh</h2>
+                    <p>[270]</p>
+                </div>
+                <div class="b element transition-metal hassium" id="Hs" onclick="a(this.id)">
+                    <h2>Hs</h2>
+                    <p>[277]</p>
+                </div>
+                <div class="b element transition-metal meitnerium" id="Mt" onclick="a(this.id)">
+                    <h2>Mt</h2>
+                    <p>[278]</p>
+                </div>
+                <div class="b element transition-metal darmstadtium" id="Ds" onclick="a(this.id)">
+                    <h2>Ds</h2>
+                    <p>[281]</p>
+                </div>
+                <div class="b element transition-metal roentgenium" id="Rg" onclick="a(this.id)">
+                    <h2>Rg</h2>
+                    <p>[282]</p>
+                </div>
+                <div class="b element transition-metal copernicium" id="Cn" onclick="a(this.id)">
+                    <h2>Cn</h2>
+                    <p>[285]</p>
+                </div>
+                <div class="b element metalloid nihonium" id="Nh" onclick="a(this.id)">
+                    <h2>Nh</h2>
+                    <p>[286]</p>
+                </div>
+                <div class="b element metalloid flerovium" id="Fl" onclick="a(this.id)">
+                    <h2>Fl</h2>
+                    <p>[289]</p>
+                </div>
+                <div class="b element metalloid moscovium" id="Mc" onclick="a(this.id)">
+                    <h2>Mc</h2>
+                    <p>[290]</p>
+                </div>
+                <div class="b element metalloid livermorium" id="Lv" onclick="a(this.id)">
+                    <h2>Lv</h2>
+                    <p>[293]</p>
+                </div>
+                <div class="b element halogen tennessine" id="Ts" onclick="a(this.id)">
+                    <h2>Ts</h2>
+                    <p>[294]</p>
+                </div>
+                <div class="b element noble-gas oganesson" id="Og" onclick="a(this.id)">
+                    <h2>Og</h2>
+                    <p>[294]</p>
+                </div>
 
 
+                <div class="b element funcs midroot" onclick="b(this.id)" id="midroot">
+                    <h2>[...]</h2>
+                    <p>中括号</p>
                 </div>
-                <div class="ctrl-2">
-                    <button class="b" onclick="return midroot(this.id)" id="midroot">[...]</button>
-                    <button class="a" onclick="return midroot(this.id)" id="midput">⇧</button>
-                    <button class="b" onclick="return root(this.id)" id="root">(...)</button>
-                    <button class="a" onclick="return root(this.id)" id="put">⇡</button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button class="a" onclick="return gas(this.id)" id="↑">↑</button>
-                    <button class="a" onclick="return solid(this.id)" id="↓">↓</button>
-                    <button class="a" onclick="return Ion(this.id)" id="pIon">+n</button>
-                    <button class="a" onclick="return Ion(this.id)" id="nIon">-n</button>
-                    <button class="a" onclick="return result(this.id)" id="+">+</button>
-                    <button class="a" onclick="return result(this.id)" id="==">==</button>
-                    <input class="a" readonly="true" id="st"></input>
-                    <button class="a" onclick="return InputD(document.getElementById('st').value)"
-                        id="confirmSt">√</button>
-                    <button style="background-color: rgba(0,0,0,0);" class="a"></button>
-                    <button class="a" id="-undo">↩</button>
-                    <button class="a" id="-redo">↪</button>
+                <div class="b element funcs root" onclick="b(this.id)" id="root">
+                    <h2>(...)</h2>
+                    <p>小括号</p>
                 </div>
-            </center>
+                <div class="expanded-containerna show">
+                    <div class="a element func num2" onclick="b(this.id)" id="2">
+                        <h2>2</h2>
+                        <p></p>
+                    </div>
+                    <div class="a element func num3" onclick="b(this.id)" id="3">
+                        <h2>3</h2>
+                        <p></p>
+                    </div>
+                    <div class="a element func num4" onclick="b(this.id)" id="4">
+                        <h2>4</h2>
+                        <p></p>
+                    </div>
+                    <div class="a element func num5" onclick="b(this.id)" id="5">
+                        <h2>5</h2>
+                        <p></p>
+                    </div>
+                    <div class="a element func num6" onclick="b(this.id)" id="6">
+                        <h2>6</h2>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="b element funcs numm" onclick="n()" id="numm">
+                    <h2>&#x25B2;</h2>
+                    <p></p>
+                </div>
+                <div class="expanded-containernb hide">
+                    <div class="a element func nump" onclick="b(this.id)" id="lpu">
+                        <h2>+</h2>
+                    </div>
+                    <div class="a element func numx" onclick="b(this.id)" id="lpu">
+                        <h2>7</h2>
+                    </div>
+                    <div class="a element func numn" onclick="b(this.id)" id="lpu">
+                        <h2>-</h2>
+                    </div><input class="a func numd" value=""></input>
+                    <div class="a element func numc" onclick="b(this.id)" id="lpu">
+                        <h2>√</h2>
+                        <p>插入</p>
+                    </div>
+                </div>
+                <div class="a element func pIon" onclick="b(this.id)" id="pIon">
+                    <h2>+n</h2>
+                    <p>阳离子</p>
+                </div>
+                <div class="a element func nIon" onclick="b(this.id)" id="nIon">
+                    <h2>-n</h2>
+                    <p>阴离子</p>
+                </div>
+                <div class="expanded-containermb">
+                    <div class="a element func ↑" onclick="b(this.id)" id="↑">
+                        <h2>↑</h2>
+                        <p>气体</p>
+                    </div>
+                    <div class="a element func ↓" onclick="b(this.id)" id="↓">
+                        <h2>↓</h2>
+                        <p>沉淀</p>
+                    </div>
+                    <div class="a element func and" onclick="b(this.id)" id="+">
+                        <h2>+</h2>
+                        <p>和</p>
+                    </div>
+                    <div class="a element func plu" onclick="b(this.id)" id="lpu">
+                        <h2>·</h2>
+                        <p>加合</p>
+                    </div>
+                </div>
+                <div class="b element funcs np" onclick="np()" id="np">
+                    <h2>&#x25B2;</h2>
+                    <p></p>
+                </div>
+                <div class="expanded-containerma">
+                    <div class="a element func equ" onclick="b(this.id)" id="equ">
+                        <h2>==</h2>
+                        <p>等号</p>
+                    </div>
+                    <div class="a element func bre" onclick="b(this.id)" id="bre">
+                        <h2>,</h2>
+                        <p>分隔</p>
+                    </div><input class="a func note" value=""></input>
+                    <div class="a element func con" onclick="b(this.id)" id="con">
+                        <h2>√</h2>
+                        <p>插入</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="search">
+                    <input type="text" placeholder="搜索..." id="search">
+                </div>
+                <div class="divider"></div>
+                <h2 class="favoritet">收藏栏</h2>
+                <div class="favorites" id="favorites">
+                    <!-- 收藏栏内容 -->
+                </div>
+                <div class="divider"></div>
+                <div class="o-func">
+                    <div class="c element func res" onclick="r()">
+                        <h2>↺</h2>
+                        <p>清除</p>
+                    </div>
+                    <div class="c element func swi" onclick="swi()">
+                        <h2>1₁</h2>
+                        <p>大小</p>
+                    </div>
+                    <div class="c element func und" onclick="und()">
+                        <h2>↩</h2>
+                        <p>撤销</p>
+                    </div>
+                    <div class="c element func und" onclick="red()">
+                        <h2>↪</h2>
+                        <p>重做</p>
+                    </div>
+                    <!-- 其他功能区 -->
+                </div>
+            </div>
         </div>
-        <script>
-            function adjustScale() {
-                var pageWidth = window.innerWidth;
-                var element = document.querySelector('.PToE');
-                var elementWidth = element.offsetWidth;
-                var scale = pageWidth / elementWidth - 0.01;
-                element.style.transform = 'scale(' + scale + ')';
-            }
-            window.onresize = function () {
-                adjustScale();
-            };
-            // 初始加载时调整一次
-            adjustScale();
-            // 撤销和恢复功能
-            document.addEventListener('DOMContentLoaded', () => {
-                let undoStack = [];
-                let redoStack = [];
-                const inputDivs = document.querySelectorAll('.input');
-
-                inputDivs.forEach(div => {
-                    // 监听内容变化
-                    div.addEventListener('input', () => {
-                        const state = Array.from(inputDivs).map(div => div.innerHTML);
-                        undoStack.push(state);
-                        redoStack = [];
-                    });
-                });
-
-                // 撤销
-                document.getElementById('undo').addEventListener('click', () => {
-                    if (undoStack.length > 0) {
-                        redoStack.push(Array.from(inputDivs).map(div => div.innerHTML));
-                        const previousState = undoStack.pop();
-                        inputDivs.forEach((div, index) => {
-                            div.innerHTML = previousState[index];
-                        });
-                    }
-                });
-
-                // 恢复
-                document.getElementById('redo').addEventListener('click', () => {
-                    if (redoStack.length > 0) {
-                        undoStack.push(Array.from(inputDivs).map(div => div.innerHTML));
-                        const nextState = redoStack.pop();
-                        inputDivs.forEach((div, index) => {
-                            div.innerHTML = nextState[index];
-                        });
-                    }
-                });
-
-                // 初始化
-                const initialState = Array.from(inputDivs).map(div => div.innerHTML);
-                undoStack.push(initialState);
-            });
-        </script>
-        <div class="input">
-            <center>
+        <div class="output">
+            <div class="tools">
                 <h1 id=end></h1>
                 <h2 id=showMidRoot></h2>
                 <h3 id=showRoot></h3>
-            </center>
+            </div>
+            <div class="star" id="s" onclick="s()">
+                <h2>★</h2>
+            </div>
         </div>
     </div>
-    <!-- 页脚 -->
-    <footer class="footer">
-        &copy; 2024 Virtual-NeutroN & ORGANXY LAB，保留所有权利。
-    </footer>
 
+    <!---弹出窗体-->
+    <div id="popupN">
+        <p>dgyshbjgyghjb jhbjhbn mjh nm</p>
+    </div>
+
+    <!-- 页脚 -->
 </body>
+<script src="index.js"></script>
 
 </html>

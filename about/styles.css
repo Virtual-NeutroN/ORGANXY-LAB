@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .fullpage {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .page {
+    flex: 1;
+    height: 100vh; /* 每一屏占满整个视口 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .page:nth-child(even) {
+    background-color: #333;
+    color: white;
+  }
+  
+  .content {
+    text-align: center;
+    max-width: 800px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+  }
+  
+  

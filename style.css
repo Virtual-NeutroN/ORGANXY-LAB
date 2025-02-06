@@ -1,25 +1,78 @@
 /* 全局CSS样式 */
+:root {
+    --primary: #6AA0EB;
+    --secondary: #C070B5;
+    --glass: rgba(255, 255, 255, 0.7);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .member {
+        width: calc(50% - 20px) !important;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .title {
+        font-size: 2.5rem !important;
+    }
+
+    .blog-item {
+        flex-direction: column;
+      }
+      
+      .blog-desc {
+        width: 100%;
+        padding-left: 1rem;
+      }
+      
+      .members {
+        grid-template-columns: repeat(2, 1fr);
+      }
+}
+body {
+    /* 移除原有的background-image */
+    background-image: none !important;
+    overflow-x: hidden;
+  }
+  
+  /* 内容区域增加景深效果 */
+  .main > * {
+    transform: translateZ(30px);
+    transition: transform 0.3s ease;
+  }
+  
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url("./img/b.png");
-    background-size: cover;      /* 使图片覆盖整个窗口 */
-    background-attachment: fixed; /* 使背景图片固定不动 */
-    background-position: center; /* 图片居中显示 */
-    background-repeat: no-repeat; /* 禁止图片重复 */ 
+
+    background-size: cover;
+    /* 使图片覆盖整个窗口 */
+    background-attachment: fixed;
+    /* 使背景图片固定不动 */
+    background-position: center;
+    /* 图片居中显示 */
+    background-repeat: no-repeat;
+    /* 禁止图片重复 */
     font-family: "Microsoft YaHei", sans-serif;
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
     margin: 0;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
 }
 
 /* 自定义整个滚动条 */
 ::-webkit-scrollbar {
-    width: 0px; /* 滚动条的宽度 */
+    width: 0px;
+    /* 滚动条的宽度 */
 }
 
 /* 将滚动条滑道移出视图 */
@@ -31,13 +84,41 @@ body {
 
 /* 自定义滚动条滑块（thumb） */
 ::-webkit-scrollbar-thumb {
-    background-color: #888; /* 滑块的颜色 */
+    background-color: #888;
+    /* 滑块的颜色 */
 }
 
 /* 滑块在悬停状态下的样式 */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* 悬停时滑块的颜色 */
+    background-color: #555;
+    /* 悬停时滑块的颜色 */
 }
+
+h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1rem;
+  }
+
+.member h2::after {
+    background: none
+}  
+  
+  h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(
+      to right,
+      var(--primary),
+      var(--secondary)
+    );
+    border-radius: 2px;
+  }
 
 
 a {
@@ -47,17 +128,22 @@ a {
 
 /* 头部导航栏样式 */
 .header {
-    background-color: transparent;
-    color: #fff;
+    backdrop-filter: blur(10px);
+    background: var(--glass);
+    border-radius: 0 0 16px 16px;
+    box-shadow: var(--shadow);
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
+
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 1.8rem;
+    background: linear-gradient(to right, var(--secondary), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav {
@@ -65,7 +151,19 @@ a {
 }
 
 .nav-item {
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
     margin-right: 20px;
+}
+
+.nav-item a {
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.354);
+}
+
+.nav-item:hover {
+    background: rgba(42, 92, 170, 0.1);
+    transform: translateY(-2px);
 }
 
 .nav-item:last-child {
@@ -95,12 +193,18 @@ a {
 }
 
 .title-page {
-    height: 100vh;
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: var(--shadow);
+    height: 50vh;
     text-align: center;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.548), rgba(209, 209, 209, 0));
-    border-bottom: 5px solid; 
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.717), rgba(255, 255, 255, 0.251));
+    border-bottom: 5px solid;
     border-image-slice: 1;
-    border-image-source: linear-gradient(to right, #C070B5, #6AA0EB); /* 页脚顶部添加渐变色边框 */
+    border-image-source: linear-gradient(to right, #C070B5, #6AA0EB);
+    /* 页脚顶部添加渐变色边框 */
 }
 
 /* 主体内容区域样式 */
@@ -112,17 +216,22 @@ a {
 }
 
 .title {
+    padding-top: 50px;
     font-size: 48px;
     font-weight: bold;
     margin-bottom: 40px;
-    text-shadow: 0 0 15px rgb(0, 0, 0); /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
     color: #fff;
+
 }
+
 
 .intro {
     font-size: 24px;
     margin-bottom: 30px;
-    text-shadow: 0 0 15px rgb(0, 0, 0); /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
     color: #fff;
 }
 
@@ -130,7 +239,8 @@ a {
 .intro p {
     font-size: 24px;
     margin-bottom: 30px;
-    text-shadow: 0 0 15px rgb(0, 0, 0); /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
+    text-shadow: 0 0 15px rgb(0, 0, 0);
+    /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
     color: #fff;
 }
 
@@ -141,18 +251,41 @@ a {
     background: linear-gradient(to right, #C070B5, #6AA0EB);
     color: #fff;
     padding: 15px 20px;
-    border-radius: 5px;
+    border-radius: 12px !important;
     font-size: 18px;
     text-decoration: none;
-    cursor: pointer; /* 增加指针样式 */
+    cursor: pointer;
+    /* 增加指针样式 */
     width: 100%;
     height: 100%;
-    box-sizing: border-box; /* 确保padding不会超出按钮的宽高 */
+    box-sizing: border-box;
+    /* 确保padding不会超出按钮的宽高 */
     position: relative;
-    overflow: hidden; /* 确保内容不超出按钮区域 */
-    z-index: 1; /* 确保按钮在最上面 */
-    transition: width 1s ease, margin-left 1s ease;
+    overflow: hidden;
+    /* 确保内容不超出按钮区域 */
+    z-index: 1;
+    /* 确保按钮在最上面 */
+    transition: all 0.3s ease !important;
 }
+
+.cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transition: 0.5s;
+}
+
+.cta-btn:hover::before {
+    left: 100%;
+}
+
 
 .chat {
     background-color: rgb(255, 255, 255);
@@ -161,16 +294,13 @@ a {
     padding: 15px 0px;
     outline: none;
     color: #000000;
-    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.514);
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.263);
     border-radius: 5px;
     font-size: 18px;
     width: 0%;
-    background-image: linear-gradient(to right, #C070B5, #6AA0EB);
-    background-size: 100% 6px;
-    background-repeat: no-repeat;
-    background-position: 0 105%;
+
     opacity: 0;
-    transition: opacity 1s ease, width 1s ease ,padding 1s ease;
+    transition: opacity 1s ease, width 1s ease, padding 1s ease;
 }
 
 .egg {
@@ -188,11 +318,12 @@ a {
 
 .cta-btn.expanded {
     margin-left: 10px;
-    width: 15%; /* 缩减 padding，以便 chat 元素显示 */
+    width: 15%;
+    /* 缩减 padding，以便 chat 元素显示 */
 }
 
 .messages.show {
-    height: 200px;
+    height: 100px;
     opacity: 1;
     width: 96.7%;
     padding: 15px 20px;
@@ -210,12 +341,9 @@ a {
     background-color: #f9f9f9;
     border-radius: 5px;
     text-align: left;
-    background-image: linear-gradient(to right, #C070B5, #6AA0EB);
-    background-size: 100% 16px;
-    background-repeat: no-repeat;
-    background-position: 0 105%;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.263);
     opacity: 0;
-    transition: opacity 1s ease, width 1s ease , height 1s ease;
+    transition: opacity 1s ease, width 1s ease, height 1s ease;
 }
 
 
@@ -226,66 +354,118 @@ a {
 }
 
 
-/* 菜单弹窗 */
-.popup-button{
-    position: relative; /*相对定位*/
-    padding: 10px 102.6px; /*内边距 上下5px 左右20px*/
-    display: inline-block;/*行内块元素*/
-    margin-top: 5px; /*外上边距*/
-    text-decoration: none; /*文本修饰（无下划线）*/
-    color: #fff;/*字体颜色*/
-    background: rgb(17, 17, 17);/*背景颜色*/
+/* 彩蛋弹窗 */
+.popup-button {
+    position: relative;
+    /*相对定位*/
+    padding: 10px 102.6px;
+    /*内边距 上下5px 左右20px*/
+    display: inline-block;
+    /*行内块元素*/
+    margin-top: 5px;
+    /*外上边距*/
+    text-decoration: none;
+    /*文本修饰（无下划线）*/
+    color: #fff;
+    /*字体颜色*/
+    background: rgb(17, 17, 17);
+    /*背景颜色*/
 }
-#popup{
-    position:fixed; /*绝对定位*/
-    top:50%; /*距上部*/
-    left: 50%; /*距左部*/
-    transform: translate(-50%,-50%); /*2D转换*/
-    width: 800px; /*宽度*/
-    padding: 50px; /*内边距*/
-    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.514); /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
-    background-color: #fff; /*背景颜色*/
-    visibility: hidden; /*隐藏元素*/
-    opacity: 0; /*不透明度*/
-    transition: 1s; /*过渡时间*/
+
+#popup {
+    position: fixed;
+    /*绝对定位*/
+    top: 50%;
+    /*距上部*/
+    left: 50%;
+    /*距左部*/
+    transform: translate(-50%, -50%);
+    /*2D转换*/
+    width: 800px;
+    /*宽度*/
+    padding: 50px;
+    /*内边距*/
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.514);
+    /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
+    background-color: #fff;
+    /*背景颜色*/
+    visibility: hidden;
+    /*隐藏元素*/
+    opacity: 0;
+    /*不透明度*/
+    transition: 1s;
+    /*过渡时间*/
 }
-.popup-title{
+
+.popup-title {
     margin-top: 0;
     margin-bottom: 30px;
 }
-#popup.active{
-    top:30%; /*距上部*/
-    visibility: visible; /*显示元素*/
-    opacity: 1; /*不透明度*/
-    transition: 0.5s; /*过渡时间*/
-}
-#blurA{
-    filter: none;
-    transition: filter 0.5s; /*过渡时间*/
-}
-#blurA.active{
-    filter: blur(7px); /* 初始模糊效果 */
-    transition: filter 0.5; /* 平滑过渡效果 */
-}
-#blurB{
-    filter: none;
-    transition: filter 0.5s; /*过渡时间*/
-}
-#blurB.active{
-    filter: blur(7px); /* 初始模糊效果 */
-    transition: filter 0.5s; /* 平滑过渡效果 */
+
+#popup.active {
+    top: 30%;
+    /*距上部*/
+    visibility: visible;
+    /*显示元素*/
+    opacity: 1;
+    /*不透明度*/
+    transition: 0.5s;
+    /*过渡时间*/
 }
 
-/* 关于我们区域样式 */
-.about-us {
-    background-color: #fff;
+#blurA {
+    filter: none;
+    transition: filter 0.5s;
+    /*过渡时间*/
+}
+
+#blurA.active {
+    filter: blur(7px);
+    /* 初始模糊效果 */
+    transition: filter 0.5;
+    /* 平滑过渡效果 */
+}
+
+#blurB {
+    filter: none;
+    transition: filter 0.5s;
+    /*过渡时间*/
+}
+
+#blurB.active {
+    filter: blur(7px);
+    /* 初始模糊效果 */
+    transition: filter 0.5s;
+    /* 平滑过渡效果 */
+}
+
+/* 现代卡片布局 */
+.about-us,
+.blog,
+.p-members {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem auto;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
     color: #333;
     padding: 50px;
     margin-top: 50px;
     text-align: center;
-    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.514); /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.514);
 }
 
+.about-us:hover,
+.blog:hover,
+.p-members:hover {
+    transform: translateY(-5px);
+}
+
+/* 关于我们区域样式 */
+
+  
 .about-us h2 {
     font-size: 36px;
     font-weight: bold;
@@ -299,50 +479,89 @@ a {
 }
 
 /* 团队介绍样式 */
-.p-members {
-    background-color: #fff;
-    color: #333;
-    margin-top: 50px;
-    text-align: center;
-    padding: 13px;
-    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.514); /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
-}
+  .member::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+      to right,
+      var(--primary),
+      var(--secondary)
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .member:hover {
+    transform: translateY(-8px) scale(1.03);
+  }
+  
+  .member:hover::after {
+    opacity: 1;
+  }
+  
+  .m-img {
+    transition: transform 0.3s ease;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+  
+  .member:hover .m-img {
+    transform: scale(1.05) translateY(-5px);
+  }
+  
+  /* 成员容器动效 */
+  .members-container {
+    perspective: 1500px;
+  }
+
 
 .members {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    transform-style: preserve-3d;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
 }
 
 .member {
+    position: relative;
+    transition: all 0.3s ease;
+    transform-origin: center bottom;
+    background: var(--glass) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
     width: calc(33.33% - 20px);
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
     transition: transform .3s;
     width: 200px;
-    overflow: hidden; /* 隐藏溢出的部分 */
+    overflow: hidden;
+    /* 隐藏溢出的部分 */
 }
 
-.member:hover {
-    transform: translateY(-10px);
-}
 
 .member h2 {
     color: #b3c377;
-    text-align: left; 
+    text-align: left;
     padding-left: 10px;
     padding-right: 10px;
 }
+
 .member .text {
     margin-top: 10px;
     font-size: 14px;
     line-height: 1.4;
-    overflow: hidden; /* 控制文字溢出 */
-    text-overflow: ellipsis; /* 超出部分用省略号表示 */
-    text-align: left; 
-    padding-left: 10px;    
+    overflow: hidden;
+    /* 控制文字溢出 */
+    text-overflow: ellipsis;
+    /* 超出部分用省略号表示 */
+    text-align: left;
+    padding-left: 10px;
     padding-right: 10px;
 }
 
@@ -352,7 +571,8 @@ a {
     max-width: 100%;
     height: auto;
     width: 100%;
-    object-fit: cover; /* 等比例缩放填充容器 */
+    object-fit: cover;
+    /* 等比例缩放填充容器 */
 }
 
 
@@ -385,19 +605,39 @@ p {
 
 /* 展开的成员列表容器 */
 .members-container.expanded {
-    max-height: 2000px; /* 根据实际内容高度调整 */
+    max-height: 2000px;
+    /* 根据实际内容高度调整 */
     transition: max-height 0.5s ease-in;
 }
 
 /* 博客文章列表区域样式 */
-.blog {
-    background-color: #fff;
-    color: #333;
-    padding: 50px;
-    margin-top: 50px;
-    text-align: center;
-    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.514); /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
-}
+.blog-item {
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .blog-item:hover {
+    transform: translateY(-8px) rotateX(5deg) rotateY(2deg);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  }
+  
+  .blog-item img {
+    transition: transform 0.4s ease;
+    border-radius: 8px;
+  }
+  
+  .blog-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  .blog-desc {
+    position: relative;
+    padding-left: 2rem;
+  }
+  
+
 
 .blog h2 {
     font-size: 36px;
@@ -415,22 +655,33 @@ p {
     display: flex;
     width: 100%;
     margin-bottom: 40px;
-    background-color: #fff; /* 背景颜色 */
-    border-radius: 10px; /* 圆角 */
-    overflow: hidden; /* 隐藏溢出的部分 */
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    overflow: hidden;
+    /* 隐藏溢出的部分 */
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+    /* 阴影效果 */
+    background: var(--glass) !important;
+    border-radius: 12px !important;
+    padding: 1.5rem;
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+}
+
+.blog-item:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .blog-item img {
     width: 100%;
-    height: 100%; /* 图片高度填满容器 */
+    height: 100%;
+    /* 图片高度填满容器 */
     object-fit: cover;
 }
 
 .blog-desc {
     padding: 20px;
     width: 60%;
-    text-align: left; /* 文字左对齐 */
+    text-align: left;
+    /* 文字左对齐 */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -439,20 +690,23 @@ p {
 .blog-desc h3 {
     font-size: 24px;
     font-weight: bold;
-    text-align: left; /* 文字左对齐 */
+    text-align: left;
+    /* 文字左对齐 */
     margin-bottom: 10px;
 }
 
 .blog-desc .date {
     font-size: 14px;
     color: #666;
-    text-align: left; /* 文字左对齐 */
+    text-align: left;
+    /* 文字左对齐 */
     margin-bottom: 10px;
 }
 
 .blog-desc .excerpt {
     font-size: 16px;
-    text-align: left; /* 文字左对齐 */
+    text-align: left;
+    /* 文字左对齐 */
     line-height: 24px;
 }
 
@@ -466,9 +720,10 @@ p {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
-    border-top: 5px solid; 
+    border-top: 5px solid;
     border-image-slice: 1;
-    border-image-source: linear-gradient(to right, #C070B5, #6AA0EB); /* 页脚顶部添加渐变色边框 */
+    border-image-source: linear-gradient(to right, #C070B5, #6AA0EB);
+    /* 页脚顶部添加渐变色边框 */
 }
 
 /* 文章封面样式 */

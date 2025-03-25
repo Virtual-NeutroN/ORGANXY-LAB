@@ -22320,6 +22320,46 @@
     }
   },
   {
+    "id": "10242",
+    "title": "ナミダと流星",
+    "type": "DX",
+    "ds": [4, 7.2, 11, 13.3],
+    "level": [
+      "4",
+      "7",
+      "11",
+      "13"
+    ],
+    "cids": [8395, 8396, 8397, 8398],
+    "charts": [
+      {
+        "notes": [169, 15, 3, 7, 3],
+        "charter": "-"
+      },
+      {
+        "notes": [216, 34, 9, 22, 4],
+        "charter": "-"
+      },
+      {
+        "notes": [349, 59, 44, 9, 34],
+        "charter": "みそかつ侍"
+      },
+      {
+        "notes": [475, 39, 126, 18, 20],
+        "charter": "Jack"
+      }
+    ],
+    "basic_info": {
+      "title": "ナミダと流星",
+      "artist": "芳川よしの",
+      "genre": "舞萌",
+      "bpm": 190,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
     "id": "10251",
     "title": "Monochrome Rainbow",
     "type": "DX",
@@ -22677,6 +22717,46 @@
       "release_date": "",
       "from": "maimai でらっくす",
       "is_new": false
+    }
+  },
+  {
+    "id": "10366",
+    "title": "oboro",
+    "type": "DX",
+    "ds": [4, 7.8, 11, 13.7],
+    "level": [
+      "4",
+      "7+",
+      "11",
+      "13+"
+    ],
+    "cids": [8399, 8400, 8401, 8402],
+    "charts": [
+      {
+        "notes": [132, 13, 4, 8, 3],
+        "charter": "-"
+      },
+      {
+        "notes": [256, 14, 8, 30, 6],
+        "charter": "-"
+      },
+      {
+        "notes": [258, 40, 41, 27, 42],
+        "charter": "Luxizhel"
+      },
+      {
+        "notes": [429, 43, 67, 78, 47],
+        "charter": "鳩ホルダー"
+      }
+    ],
+    "basic_info": {
+      "title": "oboro",
+      "artist": "ヒゲドライバー",
+      "genre": "舞萌",
+      "bpm": 175,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
     }
   },
   {
@@ -41655,6 +41735,46 @@
     }
   },
   {
+    "id": "11567",
+    "title": "I’m Here (feat. Merry Kirk-Holmes)",
+    "type": "DX",
+    "ds": [4, 7.5, 10, 13.2],
+    "level": [
+      "4",
+      "7",
+      "10",
+      "13"
+    ],
+    "cids": [8403, 8404, 8405, 8406],
+    "charts": [
+      {
+        "notes": [132, 12, 8, 16, 3],
+        "charter": "-"
+      },
+      {
+        "notes": [264, 22, 12, 14, 4],
+        "charter": "-"
+      },
+      {
+        "notes": [359, 78, 34, 22, 38],
+        "charter": "サファ太"
+      },
+      {
+        "notes": [538, 32, 118, 12, 41],
+        "charter": "はっぴー"
+      }
+    ],
+    "basic_info": {
+      "title": "I’m Here (feat. Merry Kirk-Holmes)",
+      "artist": "大谷智哉「ソニックフロンティア」",
+      "genre": "其他游戏",
+      "bpm": 187,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
     "id": "11568",
     "title": "INTERNET OVERDOSE",
     "type": "DX",
@@ -42049,6 +42169,86 @@
       "artist": "三枝明那",
       "genre": "流行&动漫",
       "bpm": 124,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11578",
+    "title": "PUPA",
+    "type": "DX",
+    "ds": [6, 7.7, 12.8, 14.5],
+    "level": [
+      "6",
+      "7+",
+      "12+",
+      "14"
+    ],
+    "cids": [8314, 8315, 8316, 8317],
+    "charts": [
+      {
+        "notes": [177, 16, 4, 14, 10],
+        "charter": "-"
+      },
+      {
+        "notes": [253, 28, 11, 27, 6],
+        "charter": "-"
+      },
+      {
+        "notes": [457, 61, 52, 43, 53],
+        "charter": "鳩ホルダー"
+      },
+      {
+        "notes": [714, 75, 76, 26, 73],
+        "charter": "じゃこレモン"
+      }
+    ],
+    "basic_info": {
+      "title": "PUPA",
+      "artist": "モリモリあつし",
+      "genre": "其他游戏",
+      "bpm": 202,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11580",
+    "title": "解けないように",
+    "type": "DX",
+    "ds": [4, 7.5, 9.8, 12.8],
+    "level": [
+      "4",
+      "7",
+      "9+",
+      "12+"
+    ],
+    "cids": [8318, 8319, 8320, 8321],
+    "charts": [
+      {
+        "notes": [140, 14, 3, 7, 5],
+        "charter": "-"
+      },
+      {
+        "notes": [235, 29, 3, 27, 5],
+        "charter": "-"
+      },
+      {
+        "notes": [272, 37, 22, 20, 41],
+        "charter": "アマリリス"
+      },
+      {
+        "notes": [479, 30, 69, 28, 22],
+        "charter": "Jack"
+      }
+    ],
+    "basic_info": {
+      "title": "解けないように",
+      "artist": "KIHOW from MYTH & ROID",
+      "genre": "东方Project",
+      "bpm": 112,
       "release_date": "",
       "from": "maimai でらっくす BUDDiES",
       "is_new": true
@@ -42575,6 +42775,46 @@
     }
   },
   {
+    "id": "11597",
+    "title": "ノンブレス・オブリージュ",
+    "type": "DX",
+    "ds": [3, 7.2, 10, 13],
+    "level": [
+      "3",
+      "7",
+      "10",
+      "13"
+    ],
+    "cids": [8407, 8408, 8409, 8410],
+    "charts": [
+      {
+        "notes": [109, 9, 4, 16, 3],
+        "charter": "-"
+      },
+      {
+        "notes": [227, 11, 8, 25, 8],
+        "charter": "-"
+      },
+      {
+        "notes": [241, 38, 26, 25, 15],
+        "charter": "鳩ホルダー"
+      },
+      {
+        "notes": [102, 281, 39, 15, 28],
+        "charter": "はっぴー"
+      }
+    ],
+    "basic_info": {
+      "title": "ノンブレス・オブリージュ",
+      "artist": "ピノキオピー",
+      "genre": "niconico & VOCALOID",
+      "bpm": 148,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
     "id": "11598",
     "title": "テオ",
     "type": "DX",
@@ -42975,6 +43215,1056 @@
     }
   },
   {
+    "id": "11608",
+    "title": "NOIZY BOUNCE",
+    "type": "DX",
+    "ds": [2, 6.5, 10, 13.4],
+    "level": [
+      "2",
+      "6",
+      "10",
+      "13"
+    ],
+    "cids": [8322, 8323, 8324, 8325],
+    "charts": [
+      {
+        "notes": [85, 11, 4, 26, 10],
+        "charter": "-"
+      },
+      {
+        "notes": [237, 14, 11, 24, 7],
+        "charter": "-"
+      },
+      {
+        "notes": [207, 109, 12, 32, 59],
+        "charter": "鳩ホルダー"
+      },
+      {
+        "notes": [556, 49, 67, 3, 33],
+        "charter": "はっぴー & サファ太"
+      }
+    ],
+    "basic_info": {
+      "title": "NOIZY BOUNCE",
+      "artist": "八王子P feat. ななひら・まめこ",
+      "genre": "舞萌",
+      "bpm": 150,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11609",
+    "title": "サンバディ！",
+    "type": "DX",
+    "ds": [2, 6.5, 9.7, 13.2],
+    "level": [
+      "2",
+      "6",
+      "9+",
+      "13"
+    ],
+    "cids": [8326, 8327, 8328, 8329],
+    "charts": [
+      {
+        "notes": [157, 9, 2, 12, 5],
+        "charter": "-"
+      },
+      {
+        "notes": [250, 24, 12, 13, 8],
+        "charter": "-"
+      },
+      {
+        "notes": [311, 19, 31, 31, 50],
+        "charter": "サファ太"
+      },
+      {
+        "notes": [586, 35, 103, 33, 32],
+        "charter": "Jack"
+      }
+    ],
+    "basic_info": {
+      "title": "サンバディ！",
+      "artist": "水野健治 feat.光吉猛修",
+      "genre": "舞萌",
+      "bpm": 136,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11610",
+    "title": "Horoscope Express",
+    "type": "DX",
+    "ds": [5, 8, 11.5, 13.9],
+    "level": [
+      "5",
+      "8",
+      "11",
+      "13+"
+    ],
+    "cids": [8330, 8331, 8332, 8333],
+    "charts": [
+      {
+        "notes": [140, 14, 5, 21, 1],
+        "charter": "-"
+      },
+      {
+        "notes": [296, 25, 8, 14, 4],
+        "charter": "-"
+      },
+      {
+        "notes": [411, 71, 36, 27, 14],
+        "charter": "はっぴー"
+      },
+      {
+        "notes": [506, 79, 81, 76, 30],
+        "charter": "あまくちジンジャー"
+      }
+    ],
+    "basic_info": {
+      "title": "Horoscope Express",
+      "artist": "pan",
+      "genre": "舞萌",
+      "bpm": 236,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11611",
+    "title": "Party☆People☆Princess",
+    "type": "DX",
+    "ds": [5, 7.8, 11.9, 14.3],
+    "level": [
+      "5",
+      "7+",
+      "11+",
+      "14"
+    ],
+    "cids": [8334, 8335, 8336, 8337],
+    "charts": [
+      {
+        "notes": [184, 12, 4, 12, 9],
+        "charter": "-"
+      },
+      {
+        "notes": [252, 13, 8, 27, 8],
+        "charter": "-"
+      },
+      {
+        "notes": [345, 91, 50, 52, 49],
+        "charter": "サファ太"
+      },
+      {
+        "notes": [590, 69, 80, 74, 72],
+        "charter": "鳩ホルダー & Luxizhel"
+      }
+    ],
+    "basic_info": {
+      "title": "Party☆People☆Princess",
+      "artist": "Sound Artz",
+      "genre": "舞萌",
+      "bpm": 152,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11612",
+    "title": "Latent Kingdom",
+    "type": "DX",
+    "ds": [6, 8.5, 12.8, 14.8],
+    "level": [
+      "6",
+      "8",
+      "12+",
+      "14+"
+    ],
+    "cids": [8338, 8339, 8340, 8341],
+    "charts": [
+      {
+        "notes": [205, 18, 9, 29, 8],
+        "charter": "-"
+      },
+      {
+        "notes": [377, 30, 12, 17, 4],
+        "charter": "-"
+      },
+      {
+        "notes": [530, 99, 39, 46, 68],
+        "charter": "Luxizhel"
+      },
+      {
+        "notes": [984, 45, 124, 64, 154],
+        "charter": "Safata.GHz"
+      }
+    ],
+    "basic_info": {
+      "title": "Latent Kingdom",
+      "artist": "Laur vs 大国奏音",
+      "genre": "舞萌",
+      "bpm": 201,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11613",
+    "title": "Mystic Parade",
+    "type": "DX",
+    "ds": [3, 7.5, 10, 13.5],
+    "level": [
+      "3",
+      "7",
+      "10",
+      "13"
+    ],
+    "cids": [8411, 8412, 8413, 8414],
+    "charts": [
+      {
+        "notes": [125, 13, 6, 13, 8],
+        "charter": "-"
+      },
+      {
+        "notes": [242, 18, 8, 27, 10],
+        "charter": "-"
+      },
+      {
+        "notes": [429, 44, 44, 15, 50],
+        "charter": "アマリリス"
+      },
+      {
+        "notes": [681, 46, 82, 24, 63],
+        "charter": "はっぴー"
+      }
+    ],
+    "basic_info": {
+      "title": "Mystic Parade",
+      "artist": "ひとしずく×やま△ feat.悠佑＆ないこ（いれいす）",
+      "genre": "舞萌",
+      "bpm": 133,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11614",
+    "title": "Cry Cry Cry",
+    "type": "DX",
+    "ds": [2, 6.2, 9.8, 12.8],
+    "level": [
+      "2",
+      "6",
+      "9+",
+      "12+"
+    ],
+    "cids": [8415, 8416, 8417, 8418],
+    "charts": [
+      {
+        "notes": [93, 10, 7, 18, 7],
+        "charter": "-"
+      },
+      {
+        "notes": [232, 12, 14, 27, 8],
+        "charter": "-"
+      },
+      {
+        "notes": [242, 88, 32, 38, 32],
+        "charter": "サファ太"
+      },
+      {
+        "notes": [523, 57, 68, 42, 16],
+        "charter": "アマリリス"
+      }
+    ],
+    "basic_info": {
+      "title": "Cry Cry Cry",
+      "artist": "FLG4 feat.Flower",
+      "genre": "舞萌",
+      "bpm": 123,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11615",
+    "title": "ぽわわん劇場",
+    "type": "DX",
+    "ds": [5, 7.8, 11.2, 13.4],
+    "level": [
+      "5",
+      "7+",
+      "11",
+      "13"
+    ],
+    "cids": [8419, 8420, 8421, 8422],
+    "charts": [
+      {
+        "notes": [176, 13, 8, 17, 5],
+        "charter": "-"
+      },
+      {
+        "notes": [314, 16, 16, 29, 6],
+        "charter": "-"
+      },
+      {
+        "notes": [461, 45, 65, 27, 19],
+        "charter": "はっぴー"
+      },
+      {
+        "notes": [498, 86, 112, 58, 46],
+        "charter": "鳩ホルダー"
+      }
+    ],
+    "basic_info": {
+      "title": "ぽわわん劇場",
+      "artist": "ぽわわん劇場",
+      "genre": "舞萌",
+      "bpm": 190,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11616",
+    "title": "my flow",
+    "type": "DX",
+    "ds": [4, 7.8, 11, 13.7],
+    "level": [
+      "4",
+      "7+",
+      "11",
+      "13+"
+    ],
+    "cids": [8423, 8424, 8425, 8426],
+    "charts": [
+      {
+        "notes": [123, 15, 6, 6, 6],
+        "charter": "-"
+      },
+      {
+        "notes": [256, 6, 10, 24, 8],
+        "charter": "-"
+      },
+      {
+        "notes": [323, 43, 62, 28, 37],
+        "charter": "Jack"
+      },
+      {
+        "notes": [443, 62, 58, 59, 61],
+        "charter": "サファ太"
+      }
+    ],
+    "basic_info": {
+      "title": "my flow",
+      "artist": "crayvxn",
+      "genre": "舞萌",
+      "bpm": 157,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11617",
+    "title": "POWER OF UNITY",
+    "type": "DX",
+    "ds": [5, 8.2, 12, 13.8],
+    "level": [
+      "5",
+      "8",
+      "12",
+      "13+"
+    ],
+    "cids": [8427, 8428, 8429, 8430],
+    "charts": [
+      {
+        "notes": [213, 15, 3, 6, 5],
+        "charter": "-"
+      },
+      {
+        "notes": [326, 18, 4, 29, 8],
+        "charter": "-"
+      },
+      {
+        "notes": [434, 35, 32, 17, 45],
+        "charter": "鳩ホルダー"
+      },
+      {
+        "notes": [651, 15, 93, 74, 80],
+        "charter": "Jack"
+      }
+    ],
+    "basic_info": {
+      "title": "POWER OF UNITY",
+      "artist": "Zekk",
+      "genre": "舞萌",
+      "bpm": 190,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11618",
+    "title": "Energizing Flame",
+    "type": "DX",
+    "ds": [6, 8, 12.8, 14.4],
+    "level": [
+      "6",
+      "8",
+      "12+",
+      "14"
+    ],
+    "cids": [8431, 8432, 8433, 8434],
+    "charts": [
+      {
+        "notes": [213, 11, 12, 7, 15],
+        "charter": "-"
+      },
+      {
+        "notes": [318, 20, 15, 22, 13],
+        "charter": "-"
+      },
+      {
+        "notes": [469, 103, 53, 55, 66],
+        "charter": "サファ太"
+      },
+      {
+        "notes": [666, 36, 104, 59, 101],
+        "charter": "Luxizhel"
+      }
+    ],
+    "basic_info": {
+      "title": "Energizing Flame",
+      "artist": "Artifact vs. Dualcast",
+      "genre": "舞萌",
+      "bpm": 201,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11619",
+    "title": "KHYMΞXΛ",
+    "type": "DX",
+    "ds": [6, 8.7, 12.9, 14.7],
+    "level": [
+      "6",
+      "8+",
+      "12+",
+      "14+"
+    ],
+    "cids": [8435, 8436, 8437, 8438],
+    "charts": [
+      {
+        "notes": [246, 13, 4, 7, 12],
+        "charter": "-"
+      },
+      {
+        "notes": [342, 21, 12, 22, 8],
+        "charter": "-"
+      },
+      {
+        "notes": [402, 73, 21, 24, 91],
+        "charter": "はっぴー"
+      },
+      {
+        "notes": [672, 84, 56, 19, 150],
+        "charter": "鳩サファzhel"
+      }
+    ],
+    "basic_info": {
+      "title": "KHYMΞXΛ",
+      "artist": "のらねこさい feat.ricono",
+      "genre": "舞萌",
+      "bpm": 220,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11624",
+    "title": "SQUAD-Phvntom-",
+    "type": "DX",
+    "ds": [5, 7.8, 12.8, 14.4],
+    "level": [
+      "5",
+      "7+",
+      "12+",
+      "14"
+    ],
+    "cids": [8439, 8440, 8441, 8442],
+    "charts": [
+      {
+        "notes": [167, 11, 4, 20, 6],
+        "charter": "-"
+      },
+      {
+        "notes": [284, 22, 12, 26, 5],
+        "charter": "-"
+      },
+      {
+        "notes": [545, 59, 47, 23, 43],
+        "charter": "Jack"
+      },
+      {
+        "notes": [708, 51, 88, 77, 140],
+        "charter": "Ruby"
+      }
+    ],
+    "basic_info": {
+      "title": "SQUAD-Phvntom-",
+      "artist": "Getty vs DJ DiA",
+      "genre": "音击&中二节奏",
+      "bpm": 200,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11625",
+    "title": "GEOMETRIC DANCE",
+    "type": "DX",
+    "ds": [4, 7.7, 12.5, 14.4],
+    "level": [
+      "4",
+      "7+",
+      "12",
+      "14"
+    ],
+    "cids": [8342, 8343, 8344, 8345],
+    "charts": [
+      {
+        "notes": [157, 14, 8, 12, 6],
+        "charter": "-"
+      },
+      {
+        "notes": [233, 42, 5, 26, 5],
+        "charter": "-"
+      },
+      {
+        "notes": [564, 46, 51, 39, 41],
+        "charter": "みそかつ侍"
+      },
+      {
+        "notes": [873, 36, 43, 92, 23],
+        "charter": "ロシェ@ペンギン"
+      }
+    ],
+    "basic_info": {
+      "title": "GEOMETRIC DANCE",
+      "artist": "山本真央樹",
+      "genre": "音击&中二节奏",
+      "bpm": 150,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11629",
+    "title": "熱異常",
+    "type": "DX",
+    "ds": [4, 7.7, 10.2, 11.8, 13.9],
+    "level": [
+      "4",
+      "7+",
+      "10",
+      "11+",
+      "13+"
+    ],
+    "cids": [8346, 8347, 8348, 8349, 8350],
+    "charts": [
+      {
+        "notes": [129, 13, 6, 32, 6],
+        "charter": "-"
+      },
+      {
+        "notes": [310, 27, 6, 13, 4],
+        "charter": "-"
+      },
+      {
+        "notes": [413, 53, 7, 14, 51],
+        "charter": "サファ太"
+      },
+      {
+        "notes": [441, 125, 74, 40, 23],
+        "charter": "緑風 犬三郎"
+      },
+      {
+        "notes": [693, 19, 137, 113, 34],
+        "charter": "はっぴー"
+      }
+    ],
+    "basic_info": {
+      "title": "熱異常",
+      "artist": "いよわ",
+      "genre": "niconico & VOCALOID",
+      "bpm": 183,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11630",
+    "title": "1000年生きてる",
+    "type": "DX",
+    "ds": [3, 7.8, 9, 13.4],
+    "level": [
+      "3",
+      "7+",
+      "9",
+      "13"
+    ],
+    "cids": [8351, 8352, 8353, 8354],
+    "charts": [
+      {
+        "notes": [119, 14, 4, 16, 3],
+        "charter": "-"
+      },
+      {
+        "notes": [256, 22, 4, 15, 5],
+        "charter": "-"
+      },
+      {
+        "notes": [271, 31, 10, 50, 25],
+        "charter": "サファ太"
+      },
+      {
+        "notes": [404, 46, 96, 38, 17],
+        "charter": "はっぴー"
+      }
+    ],
+    "basic_info": {
+      "title": "1000年生きてる",
+      "artist": "いよわ",
+      "genre": "niconico & VOCALOID",
+      "bpm": 100,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11631",
+    "title": "IMAWANOKIWA",
+    "type": "DX",
+    "ds": [3, 7.5, 10.8, 13.7],
+    "level": [
+      "3",
+      "7",
+      "10+",
+      "13+"
+    ],
+    "cids": [8355, 8356, 8357, 8358],
+    "charts": [
+      {
+        "notes": [124, 12, 6, 15, 4],
+        "charter": "-"
+      },
+      {
+        "notes": [277, 30, 12, 14, 2],
+        "charter": "-"
+      },
+      {
+        "notes": [385, 58, 44, 14, 41],
+        "charter": "鳩ホルダー"
+      },
+      {
+        "notes": [608, 158, 70, 21, 28],
+        "charter": "アマリリス"
+      }
+    ],
+    "basic_info": {
+      "title": "IMAWANOKIWA",
+      "artist": "いよわ",
+      "genre": "niconico & VOCALOID",
+      "bpm": 178,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11632",
+    "title": "Play merrily NEO",
+    "type": "DX",
+    "ds": [2, 7, 9.8, 12.9],
+    "level": [
+      "2",
+      "7",
+      "9+",
+      "12+"
+    ],
+    "cids": [8359, 8360, 8361, 8362],
+    "charts": [
+      {
+        "notes": [120, 8, 4, 13, 4],
+        "charter": "-"
+      },
+      {
+        "notes": [263, 12, 6, 29, 4],
+        "charter": "-"
+      },
+      {
+        "notes": [432, 30, 22, 8, 20],
+        "charter": "ミニミライト"
+      },
+      {
+        "notes": [524, 25, 73, 71, 46],
+        "charter": "はっぴー"
+      }
+    ],
+    "basic_info": {
+      "title": "Play merrily NEO",
+      "artist": "Shohei Tsuchiya (ZUNTATA) feat. Aimee B",
+      "genre": "其他游戏",
+      "bpm": 180,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11633",
+    "title": "OMAKENO Stroke",
+    "type": "DX",
+    "ds": [5, 8, 11.9, 13.8],
+    "level": [
+      "5",
+      "8",
+      "11+",
+      "13+"
+    ],
+    "cids": [8363, 8364, 8365, 8366],
+    "charts": [
+      {
+        "notes": [147, 10, 4, 22, 6],
+        "charter": "-"
+      },
+      {
+        "notes": [282, 27, 6, 14, 10],
+        "charter": "-"
+      },
+      {
+        "notes": [349, 76, 24, 10, 17],
+        "charter": "アマリリス"
+      },
+      {
+        "notes": [516, 35, 88, 57, 33],
+        "charter": "Luxizhel"
+      }
+    ],
+    "basic_info": {
+      "title": "OMAKENO Stroke",
+      "artist": "t+pazolite",
+      "genre": "其他游戏",
+      "bpm": 240,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11636",
+    "title": "さくゆいたいそう",
+    "type": "DX",
+    "ds": [2, 6.8, 9.7, 12.7],
+    "level": [
+      "2",
+      "6+",
+      "9+",
+      "12+"
+    ],
+    "cids": [8367, 8368, 8369, 8370],
+    "charts": [
+      {
+        "notes": [124, 16, 6, 14, 3],
+        "charter": "-"
+      },
+      {
+        "notes": [269, 24, 2, 26, 14],
+        "charter": "-"
+      },
+      {
+        "notes": [421, 50, 29, 15, 23],
+        "charter": "佑"
+      },
+      {
+        "notes": [381, 129, 69, 41, 61],
+        "charter": "メロンポップ"
+      }
+    ],
+    "basic_info": {
+      "title": "さくゆいたいそう",
+      "artist": "さくゆい",
+      "genre": "流行&动漫",
+      "bpm": 160,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11637",
+    "title": "バグ",
+    "type": "DX",
+    "ds": [4, 7.5, 10.2, 11.8, 13.9],
+    "level": [
+      "4",
+      "7",
+      "10",
+      "11+",
+      "13+"
+    ],
+    "cids": [8371, 8372, 8373, 8374, 8375],
+    "charts": [
+      {
+        "notes": [145, 17, 7, 8, 11],
+        "charter": "-"
+      },
+      {
+        "notes": [278, 50, 6, 24, 8],
+        "charter": "-"
+      },
+      {
+        "notes": [413, 80, 36, 19, 70],
+        "charter": "みそかつ侍"
+      },
+      {
+        "notes": [389, 134, 107, 28, 55],
+        "charter": "緑風 犬三郎"
+      },
+      {
+        "notes": [705, 71, 101, 23, 89],
+        "charter": "サファ太"
+      }
+    ],
+    "basic_info": {
+      "title": "バグ",
+      "artist": "かいりきベア",
+      "genre": "niconico & VOCALOID",
+      "bpm": 186,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11638",
+    "title": "星界ちゃんと可不ちゃんのおつかい合騒曲",
+    "type": "DX",
+    "ds": [5, 8, 11.9, 13.8],
+    "level": [
+      "5",
+      "8",
+      "11+",
+      "13+"
+    ],
+    "cids": [8443, 8444, 8445, 8446],
+    "charts": [
+      {
+        "notes": [189, 16, 6, 23, 5],
+        "charter": "-"
+      },
+      {
+        "notes": [314, 23, 6, 16, 10],
+        "charter": "-"
+      },
+      {
+        "notes": [475, 58, 80, 43, 51],
+        "charter": "Luxizhel"
+      },
+      {
+        "notes": [616, 75, 224, 62, 68],
+        "charter": "はっぴー"
+      }
+    ],
+    "basic_info": {
+      "title": "星界ちゃんと可不ちゃんのおつかい合騒曲",
+      "artist": "南ノ南",
+      "genre": "niconico & VOCALOID",
+      "bpm": 220,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11640",
+    "title": "with U",
+    "type": "DX",
+    "ds": [4, 7.8, 12, 13.4],
+    "level": [
+      "4",
+      "7+",
+      "12",
+      "13"
+    ],
+    "cids": [8447, 8448, 8449, 8450],
+    "charts": [
+      {
+        "notes": [164, 11, 8, 14, 20],
+        "charter": "-"
+      },
+      {
+        "notes": [228, 23, 8, 30, 6],
+        "charter": "-"
+      },
+      {
+        "notes": [481, 41, 19, 43, 33],
+        "charter": "サファ太"
+      },
+      {
+        "notes": [445, 162, 86, 60, 44],
+        "charter": "Luxizhel"
+      }
+    ],
+    "basic_info": {
+      "title": "with U",
+      "artist": "t+pazolite & Massive New Krew feat. リリィ(CV:青木志貴)",
+      "genre": "其他游戏",
+      "bpm": 155,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11641",
+    "title": "Love Kills U",
+    "type": "DX",
+    "ds": [3, 7.8, 10.7, 13.4],
+    "level": [
+      "3",
+      "7+",
+      "10+",
+      "13"
+    ],
+    "cids": [8451, 8452, 8453, 8454],
+    "charts": [
+      {
+        "notes": [102, 24, 4, 16, 14],
+        "charter": "-"
+      },
+      {
+        "notes": [276, 20, 8, 28, 6],
+        "charter": "-"
+      },
+      {
+        "notes": [396, 54, 34, 10, 19],
+        "charter": "アマリリス"
+      },
+      {
+        "notes": [469, 63, 42, 72, 130],
+        "charter": "鳩ホルダー"
+      }
+    ],
+    "basic_info": {
+      "title": "Love Kills U",
+      "artist": "EmoCosine",
+      "genre": "其他游戏",
+      "bpm": 160,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11642",
+    "title": "DANGEROOOOUS JUNGLE",
+    "type": "DX",
+    "ds": [4, 7.8, 11.8, 13.8],
+    "level": [
+      "4",
+      "7+",
+      "11+",
+      "13+"
+    ],
+    "cids": [8455, 8456, 8457, 8458],
+    "charts": [
+      {
+        "notes": [124, 14, 8, 32, 15],
+        "charter": "-"
+      },
+      {
+        "notes": [262, 23, 6, 27, 10],
+        "charter": "-"
+      },
+      {
+        "notes": [363, 66, 49, 13, 62],
+        "charter": "Luxizhel"
+      },
+      {
+        "notes": [711, 56, 96, 72, 57],
+        "charter": "はっぴー"
+      }
+    ],
+    "basic_info": {
+      "title": "DANGEROOOOUS JUNGLE",
+      "artist": "Laur",
+      "genre": "其他游戏",
+      "bpm": 160,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11643",
+    "title": "天使光輪",
+    "type": "DX",
+    "ds": [6, 8.2, 12.5, 14.4],
+    "level": [
+      "6",
+      "8",
+      "12",
+      "14"
+    ],
+    "cids": [8459, 8460, 8461, 8462],
+    "charts": [
+      {
+        "notes": [242, 14, 7, 21, 24],
+        "charter": "-"
+      },
+      {
+        "notes": [372, 16, 8, 16, 6],
+        "charter": "-"
+      },
+      {
+        "notes": [453, 79, 61, 15, 87],
+        "charter": "サファ太"
+      },
+      {
+        "notes": [749, 57, 116, 67, 75],
+        "charter": "じゃこレモン"
+      }
+    ],
+    "basic_info": {
+      "title": "天使光輪",
+      "artist": "REDALiCE & cosMo＠暴走P",
+      "genre": "其他游戏",
+      "bpm": 203,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
     "id": "11650",
     "title": "ずんだもんの朝食　〜目覚ましずんラップ〜",
     "type": "DX",
@@ -43055,6 +44345,171 @@
     }
   },
   {
+    "id": "11652",
+    "title": "HUMANBORG",
+    "type": "DX",
+    "ds": [4, 7, 12, 13.8],
+    "level": [
+      "4",
+      "7",
+      "12",
+      "13+"
+    ],
+    "cids": [8463, 8464, 8465, 8466],
+    "charts": [
+      {
+        "notes": [169, 17, 8, 21, 4],
+        "charter": "-"
+      },
+      {
+        "notes": [287, 32, 9, 29, 2],
+        "charter": "-"
+      },
+      {
+        "notes": [387, 124, 68, 3, 32],
+        "charter": "Luxizhel"
+      },
+      {
+        "notes": [651, 159, 1, 186, 30],
+        "charter": "Jack"
+      }
+    ],
+    "basic_info": {
+      "title": "HUMANBORG",
+      "artist": "SARUKANI",
+      "genre": "流行&动漫",
+      "bpm": 189,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11653",
+    "title": "ULTRA POWER",
+    "type": "DX",
+    "ds": [3, 6.2, 11.2, 13.5],
+    "level": [
+      "3",
+      "6",
+      "11",
+      "13"
+    ],
+    "cids": [8467, 8468, 8469, 8470],
+    "charts": [
+      {
+        "notes": [139, 15, 4, 7, 16],
+        "charter": "-"
+      },
+      {
+        "notes": [225, 19, 6, 30, 10],
+        "charter": "-"
+      },
+      {
+        "notes": [335, 24, 43, 59, 47],
+        "charter": "鳩ホルダー"
+      },
+      {
+        "notes": [485, 118, 65, 44, 68],
+        "charter": "サファ太"
+      }
+    ],
+    "basic_info": {
+      "title": "ULTRA POWER",
+      "artist": "SARUKANI",
+      "genre": "流行&动漫",
+      "bpm": 142,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11663",
+    "title": "系ぎて",
+    "type": "DX",
+    "ds": [7, 10.5, 13.8, 14.8, 15],
+    "level": [
+      "7",
+      "10",
+      "13+",
+      "14+",
+      "15"
+    ],
+    "cids": [8376, 8377, 8378, 8379, 8380],
+    "charts": [
+      {
+        "notes": [282, 26, 8, 14, 14],
+        "charter": "-"
+      },
+      {
+        "notes": [474, 28, 4, 25, 8],
+        "charter": "-"
+      },
+      {
+        "notes": [525, 43, 82, 53, 39],
+        "charter": "Luxizhel"
+      },
+      {
+        "notes": [862, 59, 73, 118, 88],
+        "charter": "maimai TEAM DX"
+      },
+      {
+        "notes": [1100, 40, 70, 90, 100],
+        "charter": "BEYOND THE MEMORiES"
+      }
+    ],
+    "basic_info": {
+      "title": "系ぎて",
+      "artist": "rintaro soma",
+      "genre": "舞萌",
+      "bpm": 88,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "11664",
+    "title": "アルカンシエル",
+    "type": "DX",
+    "ds": [4, 7.2, 10.7, 13],
+    "level": [
+      "4",
+      "7",
+      "10+",
+      "13"
+    ],
+    "cids": [8381, 8382, 8383, 8384],
+    "charts": [
+      {
+        "notes": [148, 18, 5, 12, 3],
+        "charter": "-"
+      },
+      {
+        "notes": [251, 32, 6, 26, 6],
+        "charter": "-"
+      },
+      {
+        "notes": [394, 57, 39, 18, 29],
+        "charter": "ロシェ@ペンギン"
+      },
+      {
+        "notes": [488, 51, 56, 31, 44],
+        "charter": "アマリリス"
+      }
+    ],
+    "basic_info": {
+      "title": "アルカンシエル",
+      "artist": "Yamajet",
+      "genre": "其他游戏",
+      "bpm": 176,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
     "id": "100018",
     "title": "[協]Love You",
     "type": "DX",
@@ -43072,6 +44527,156 @@
     "basic_info": {
       "title": "[協]Love You",
       "artist": "Q;indivi [cover]",
+      "genre": "宴会場",
+      "bpm": 135,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "100022",
+    "title": "[蔵]In Chaos",
+    "type": "DX",
+    "ds": [14.7],
+    "level": [
+      "14+?"
+    ],
+    "cids": [8385],
+    "charts": [
+      {
+        "notes": [824, 0, 110, 0, 9],
+        "charter": "-"
+      }
+    ],
+    "basic_info": {
+      "title": "[蔵]In Chaos",
+      "artist": "Hiro「Crackin’DJ」",
+      "genre": "宴会場",
+      "bpm": 140,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "100199",
+    "title": "[蛸]チルノのパーフェクトさんすう教室",
+    "type": "DX",
+    "ds": [12.7],
+    "level": [
+      "12+?"
+    ],
+    "cids": [8386],
+    "charts": [
+      {
+        "notes": [58, 217, 27, 0, 7],
+        "charter": "-"
+      }
+    ],
+    "basic_info": {
+      "title": "[蛸]チルノのパーフェクトさんすう教室",
+      "artist": "ARM＋夕野ヨシミ(IOSYS)feat. miko",
+      "genre": "宴会場",
+      "bpm": 175,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "100206",
+    "title": "[星]しゅわスパ大作戦☆",
+    "type": "DX",
+    "ds": [13],
+    "level": [
+      "13?"
+    ],
+    "cids": [8387],
+    "charts": [
+      {
+        "notes": [405, 54, 81, 0, 34],
+        "charter": "-"
+      }
+    ],
+    "basic_info": {
+      "title": "[星]しゅわスパ大作戦☆",
+      "artist": "SOUND HOLIC feat. Nana Takahashi",
+      "genre": "宴会場",
+      "bpm": 140,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "100220",
+    "title": "[宴]セガサターン起動音[H.][Remix]",
+    "type": "DX",
+    "ds": [13.7],
+    "level": [
+      "13+?"
+    ],
+    "cids": [8388],
+    "charts": [
+      {
+        "notes": [904, 0, 2, 0, 44],
+        "charter": "-"
+      }
+    ],
+    "basic_info": {
+      "title": "[宴]セガサターン起動音[H.][Remix]",
+      "artist": "Hiro",
+      "genre": "宴会場",
+      "bpm": 148,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "100227",
+    "title": "[宴]Garakuta Doll Play",
+    "type": "DX",
+    "ds": [14],
+    "level": [
+      "14?"
+    ],
+    "cids": [8389],
+    "charts": [
+      {
+        "notes": [659, 52, 202, 0, 20],
+        "charter": "-"
+      }
+    ],
+    "basic_info": {
+      "title": "[宴]Garakuta Doll Play",
+      "artist": "t+pazolite",
+      "genre": "宴会場",
+      "bpm": 256,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "100230",
+    "title": "[宴]CYCLES",
+    "type": "DX",
+    "ds": [13],
+    "level": [
+      "13?"
+    ],
+    "cids": [8390],
+    "charts": [
+      {
+        "notes": [357, 0, 361, 0, 62],
+        "charter": "-"
+      }
+    ],
+    "basic_info": {
+      "title": "[宴]CYCLES",
+      "artist": "Masayoshi Minoshima feat. 綾倉盟",
       "genre": "宴会場",
       "bpm": 135,
       "release_date": "",
@@ -43105,6 +44710,31 @@
     }
   },
   {
+    "id": "100327",
+    "title": "[狂]タカハせ！名人マン",
+    "type": "DX",
+    "ds": [14.7],
+    "level": [
+      "14+?"
+    ],
+    "cids": [8391],
+    "charts": [
+      {
+        "notes": [682, 564, 3, 0, 3],
+        "charter": "-"
+      }
+    ],
+    "basic_info": {
+      "title": "[狂]タカハせ！名人マン",
+      "artist": "ビートまりお + ARM feat. 高橋名人",
+      "genre": "宴会場",
+      "bpm": 150,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
     "id": "100363",
     "title": "[宴]Oshama Scramble!",
     "type": "DX",
@@ -43124,6 +44754,31 @@
       "artist": "t+pazolite",
       "genre": "宴会場",
       "bpm": 190,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "100456",
+    "title": "[蔵]Glorious Crown",
+    "type": "DX",
+    "ds": [14.7],
+    "level": [
+      "14+?"
+    ],
+    "cids": [8392],
+    "charts": [
+      {
+        "notes": [1192, 15, 56, 0, 19],
+        "charter": "-"
+      }
+    ],
+    "basic_info": {
+      "title": "[蔵]Glorious Crown",
+      "artist": "xi",
+      "genre": "宴会場",
+      "bpm": 225,
       "release_date": "",
       "from": "maimai でらっくす BUDDiES",
       "is_new": true
@@ -43155,6 +44810,31 @@
     }
   },
   {
+    "id": "100517",
+    "title": "[覚]東京リアルワールド",
+    "type": "DX",
+    "ds": [12],
+    "level": [
+      "12?"
+    ],
+    "cids": [8393],
+    "charts": [
+      {
+        "notes": [146, 46, 154, 0, 12],
+        "charter": "-"
+      }
+    ],
+    "basic_info": {
+      "title": "[覚]東京リアルワールド",
+      "artist": "out of service",
+      "genre": "宴会場",
+      "bpm": 150,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
     "id": "100524",
     "title": "[協]Hand in Hand",
     "type": "DX",
@@ -43174,6 +44854,31 @@
       "artist": "livetune",
       "genre": "宴会場",
       "bpm": 128,
+      "release_date": "",
+      "from": "maimai でらっくす BUDDiES",
+      "is_new": true
+    }
+  },
+  {
+    "id": "100548",
+    "title": "[宴]DETARAME ROCK&ROLL THEORY",
+    "type": "DX",
+    "ds": [13],
+    "level": [
+      "13?"
+    ],
+    "cids": [8394],
+    "charts": [
+      {
+        "notes": [475, 16, 150, 0, 22],
+        "charter": "-"
+      }
+    ],
+    "basic_info": {
+      "title": "[宴]DETARAME ROCK&ROLL THEORY",
+      "artist": "箱部 なる(CV:M・A・O)",
+      "genre": "宴会場",
+      "bpm": 140,
       "release_date": "",
       "from": "maimai でらっくす BUDDiES",
       "is_new": true

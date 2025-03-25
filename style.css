@@ -35,7 +35,6 @@
       }
 }
 body {
-    /* 移除原有的background-image */
     background-image: none !important;
     overflow-x: hidden;
   }

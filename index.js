@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 获取背景容器
+    // 获取背景容器并设置初始样式
     const background = document.createElement('div');
     background.style.cssText = `
       position: fixed;
@@ -7,46 +7,90 @@ document.addEventListener('DOMContentLoaded', () => {
       left: 0;
       width: 100vw;
       height: 100vh;
-      z-index: -1;
+      z-index: -2;
       background-image: url("./img/b.png");
       background-size: 110% auto;
       background-position: center;
       transition: transform 0.3s ease-out;
     `;
     document.body.prepend(background);
-  
+
     // 鼠标移动效果
     let mouseX = 0, mouseY = 0;
-    const sensitivity = 0.03; // 灵敏度调节
-  
+    var sensitivity = 0.02; // 灵敏度调节
+    var bgscale = 1.02;
+
     document.addEventListener('mousemove', (e) => {
-      mouseX = (e.clientX - window.innerWidth/2) * sensitivity;
-      mouseY = (e.clientY - window.innerHeight/2) * sensitivity;
-      updateBackground();
+        mouseX = (e.clientX - window.innerWidth / 2) * sensitivity;
+        mouseY = (e.clientY - window.innerHeight / 2) * sensitivity;
+        updateBackground();
     });
 
-  
     // 更新背景位置
     function updateBackground() {
-      const totalX = mouseX;
-      const totalY = mouseY;
-      background.style.transform = `
-        translate(${totalX}px, ${totalY}px)
-        scale(1.05)
-      `;
+        const totalX = mouseX;
+        const totalY = mouseY;
+        background.style.transform = `
+            translate(${totalX}px, ${totalY}px)
+            scale(${bgscale})
+        `;
     }
-  
+
     // 初始化重置
     window.addEventListener('resize', () => {
-      background.style.backgroundSize = '105% auto';
+        background.style.backgroundSize = '102% auto';
     });
-  });
 
-//展开人员
+    // 侧边栏点击事件
+    const sidebarItems = document.querySelectorAll('.sidebar-item');
+    sidebarItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // 移除所有激活状态
+            sidebarItems.forEach(i => i.classList.remove('active'));
+            // 添加当前激活状态
+            item.classList.add('active');
+
+            const target = item.getAttribute('data-target');
+            // 隐藏所有内容块
+            document.querySelectorAll('.content-block').forEach(block => {
+                block.style.display = 'none';
+            });
+            // 显示目标内容块
+            document.getElementById(target).style.display = 'block';
+            unlockContent()
+        });
+    });
+
+    // 初始化设置首页为激活状态
+    document.querySelector('.sidebar-item[data-target="home"]').classList.add('active');
+
+    // 监听灵敏度调节条的变化
+    const sensitivitySlider = document.getElementById('sensitivity-slider');
+    sensitivitySlider.addEventListener('input', () => {
+        sensitivity = parseFloat(sensitivitySlider.value);
+    });
+
+    // 监听缩放比例调节条的变化
+    const scaleSlider = document.getElementById('scale-slider');
+    scaleSlider.addEventListener('input', () => {
+        bgscale = parseFloat(scaleSlider.value);
+    });
+});
+
+var clickSI = 0
+function unlockContent() {
+    if (clickSI >= 5) {
+        document.getElementById('click-block').style.display = 'block';
+    }
+    clickSI++
+}
+
+
+
+// 展开人员
 document.addEventListener('DOMContentLoaded', function () {
     const toggleIcon = document.getElementById('toggle-icon');
     const membersContainer = document.getElementById('members-container');
-
     toggleIcon.addEventListener('click', function () {
         membersContainer.classList.toggle('expanded');
         toggleIcon.classList.toggle('expanded');
@@ -58,9 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-var click = 0
-
-
+var click = 0;
 function respond() {
     var input = document.getElementById("userInput").value;
     var messagesDiv = document.getElementById("messages");
@@ -87,6 +129,10 @@ function respond() {
     } else if (/不|没/.test(input)) {
         // 否定句回复“抱歉”
         response = "抱歉。";
+    } else if (input == "") {
+        // 不给发空格
+        response = "不许发空白！";
+
     } else {
         // 陈述句随机表示“赞同”
         var agreeResponses = ["我也是这么觉得的。", "确实如此。", "我完全同意。"];
@@ -111,33 +157,28 @@ function respond() {
 }
 
 
-//彩蛋弹窗
+// 彩蛋弹窗
 function popup() {
-
-    click++
+    click++;
     if (click == 1 || click == 2) {
         var blurA = document.getElementById("blurA"); // 根据id获取元素
-        blurA.classList.toggle("active"); // 切换指定id对应的class
+        blurA.classList.toggle("eactive"); // 切换指定id对应的class
         var blurB = document.getElementById("blurB"); // 根据id获取元素
-        blurB.classList.toggle("active"); // 切换指定id对应的class
+        blurB.classList.toggle("eactive"); // 切换指定id对应的class
         var popup = document.getElementById("popup"); // 同上
-        popup.classList.toggle("active"); // 同上
+        popup.classList.toggle("eactive"); // 同上
     }
-
     if (click == 2) {
         var chat = document.querySelector('.chat');
         var button = document.querySelector('.cta-btn');
         var messages = document.querySelector('.messages');
         // 扩展按钮，确保 chat 元素有位置
         button.classList.add('expanded');
-
         // 显示 chat 元素
         chat.classList.add('show');
         messages.classList.add('show');
         button.textContent = '发送🚀'
     } else if (click >= 3) {
-        respond()
+        respond();
     }
-
 }
-

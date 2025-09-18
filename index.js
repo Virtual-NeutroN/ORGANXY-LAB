@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
       width: 100vw;
       height: 100vh;
       z-index: -2;
-      background-image: ${savedBg};
+      background-image: url(/img/b.png);
       background-size: 100% auto;
       background-position: center;
       transition: transform 0.3s ease-out;

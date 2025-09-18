@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>示例条目 - ORGANXY百科</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .content-section {
+            background: rgba(255, 255, 255, 0.945);
+        }
+
+        .toc {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            max-width: 40%;
+        }
+
+        .toc-title {
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .toc-list {
+            list-style-type: none;
+            padding-left: 1rem;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-list a {
+            background: none;
+            box-shadow: none;
+            padding: 0;
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .reference-list {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+        }
+
+        .reference-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .gallery-caption {
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            background: var(--glass-bg);
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .info-table th,
+        .info-table td {
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            text-align: left;
+        }
+
+        .info-table th {
+            background: var(--glass-bg);
+            font-weight: bold;
+        }
+
+        .info-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .edit-section {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .edit-section a {
+            background: none;
+            box-shadow: none;
+            padding: 0;
+            color: var(--primary-color);
+        }
+
+        .disambiguation {
+            background: rgba(255, 251, 230, 0.8);
+            border-left: 4px solid #ffd700;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        /* 编辑模式样式 */
+        .edit-mode {
+            margin: 1rem 0;
+        }
+
+        .edit-textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            line-height: 1.6;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        .edit-buttons {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .save-btn,
+        .cancel-btn {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .save-btn {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .cancel-btn {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        /* 展开/折叠元素样式 */
+        .collapsible-section {
+            margin: 1.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .collapsible-header {
+            background: var(--glass-bg);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        .collapsible-header:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s;
+        }
+
+        .collapsible-content {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+
+        .collapsible-content.active {
+            padding: 1.5rem;
+            max-height: 2000px;
+            /* 足够大的值以容纳内容 */
+        }
+
+        .collapsible-icon.rotate {
+            transform: rotate(180deg);
+        }
+
+        /* 同类条目集合样式 */
+        .related-items {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--glass-bg);
+            border-radius: 12px;
+        }
+
+        .related-items h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+        }
+
+        .category-tree {
+            margin-top: 1rem;
+        }
+
+        .category-tree ul {
+            list-style-type: none;
+            padding-left: 1.5rem;
+        }
+
+        .category-tree li {
+            margin: 0.5rem 0;
+            position: relative;
+        }
+
+        .category-tree li::before {
+            content: "";
+            position: absolute;
+            left: -1rem;
+            top: 0.5rem;
+            width: 0.5rem;
+            height: 1px;
+            background-color: #ddd;
+        }
+
+        .category-tree li::after {
+            content: "";
+            position: absolute;
+            left: -1rem;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background-color: #ddd;
+        }
+
+        .category-tree li:last-child::after {
+            height: 0.5rem;
+        }
+
+        .category-tree .category-name {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部导航 -->
+    <header class="wiki-header">
+        <div class="nav-tools">
+            <div class="logo">ORGANXY Lab</div>
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="你要搜索什么呢？">
+            </div>
+            <div class="nav-action">
+                <div class="dropdown">
+                    <button class="dropdown-btn">▼ 分类</button>
+                    <div class="dropdown-content">
+                        <a href="#">主线</a>
+                        <a href="#">人物</a>
+                        <a href="#">其他</a>
+                    </div>
+                </div>
+                <a href="../index.html" class="nav-btn">返回主站</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- 主内容区 -->
+        <div class="content-section">
+            <div class="disambiguation">
+                <p><i class="fas fa-info-circle"></i> 本文介绍的是示例条目。关于其他用法，请参见<a href="#">示例 (消歧义)</a>。</p>
+            </div>
+
+            <h1>示例条目</h1>
+            <div class="edit-section">
+                <a class="edit-link" data-target="intro"><i class="fas fa-edit"></i> 编辑本段落</a>
+            </div>
+
+            <!-- 信息框 -->
+            <div class="infobox" style="float: right; width: 300px; margin-left: 1.5rem;">
+                <h3>基本信息</h3>
+                <table class="info-table">
+                    <tr>
+                        <th>名称</th>
+                        <td>示例条目</td>
+                    </tr>
+                    <tr>
+                        <th>类型</th>
+                        <td>模板示例</td>
+                    </tr>
+                    <tr>
+                        <th>创建时间</th>
+                        <td>2023年</td>
+                    </tr>
+                    <tr>
+                        <th>相关分类</th>
+                        <td>示例、模板</td>
+                    </tr>
+                </table>
+                <img src="https://via.placeholder.com/300x200" alt="示例图片"
+                    style="width: 100%; border-radius: 8px; margin-top: 1rem;">
+                <p style="font-size: 0.9rem; text-align: center; margin-top: 0.5rem;">示例图片说明文字</p>
+                <div class="edit-section">
+                    <a class="edit-link" data-target="infobox"><i class="fas fa-edit"></i> 编辑信息框</a>
+                </div>
+            </div>
+
+            <div id="intro-content">
+                <p>示例条目是用于展示ORGANXY百科条目的标准格式和结构的模板页面。本页面包含了百科全书中常见的各种元素，供编辑者参考和使用。</p>
+            </div>
+
+            <div class="toc">
+                <div class="toc-title"><i class="fas fa-list"></i> 目录</div>
+                <ul class="toc-list">
+                </ul>
+            </div>
+
+            <section id="section1">
+                <h2>1. 概述</h2>
+                <div class="edit-section">
+                    <a class="edit-link" data-target="section1"><i class="fas fa-edit"></i> 编辑本段落</a>
+                </div>
+                <p>这是示例条目的概述部分，通常简要介绍条目的核心内容和重要信息。概述部分应当简明扼要，让读者能够快速了解条目主题的基本情况。</p>
+                <p>对于人物条目，概述通常包括人物的生卒年、主要身份、重要贡献等；对于事物条目，概述通常包括定义、分类、重要性等。</p>
+            </section>
+
+            <section id="section2">
+                <h2>2. 历史背景</h2>
+                <div class="edit-section">
+                    <a class="edit-link" data-target="section2"><i class="fas fa-edit"></i> 编辑本段落</a>
+                </div>
+                <p>任何事物都有其发展演变的过程，历史背景部分用于介绍条目主题的起源、发展和演变过程。</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>2000年</h3>
+                        <p>示例主题的起源阶段，最初的形态和特征。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2010年</h3>
+                        <p>示例主题的发展阶段，开始形成规模和影响力。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2020年至今</h3>
+                        <p>示例主题的成熟阶段，形成了当前的形态和特征。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section3">
+                <h2>3. 主要特征</h2>
+                <div class="edit-section">
+                    <a class="edit-link" data-target="section3"><i class="fas fa-edit"></i> 编辑本段落</a>
+                </div>
+                <p>本部分详细描述条目主题的主要特征和属性，可以根据需要分为多个子部分。</p>
+
+                <section id="subsection3-1">
+                    <h3>3.1 特征一</h3>
+                    <p>详细描述第一个主要特征，包括具体表现、特点、影响等。</p>
+                    <p>可以使用列表进行详细说明：</p>
+                    <ul>
+                        <li>特征一的第一个方面</li>
+                        <li>特征一的第二个方面</li>
+                        <li>特征一的第三个方面</li>
+                    </ul>
+                </section>
+
+                <section id="subsection3-2">
+                    <h3>3.2 特征二</h3>
+                    <p>详细描述第二个主要特征，包括具体表现、特点、影响等。</p>
+                    <p>可以使用表格进行对比说明：</p>
+                    <table class="info-table">
+                        <tr>
+                            <th>比较项目</th>
+                            <th>特征二表现</th>
+                            <th>同类对比</th>
+                        </tr>
+                        <tr>
+                            <td>项目一</td>
+                            <td>特征表现</td>
+                            <td>对比情况</td>
+                        </tr>
+                        <tr>
+                            <td>项目二</td>
+                            <td>特征表现</td>
+                            <td>对比情况</td>
+                        </tr>
+                    </table>
+                </section>
+            </section>
+
+            <section id="section4">
+                <h2>4. 重要事件</h2>
+                <div class="edit-section">
+                    <a href="#"><i class="fas fa-edit"></i> 编辑本段落</a>
+                </div>
+                <p>本部分介绍与条目主题相关的重要事件，这些事件对主题的发展产生了重要影响。</p>
+                <p>重要事件应当按照时间顺序排列，详细说明事件的经过、影响和意义。</p>
+            </section>
+
+            <section id="section5">
+                <h2>5. 相关图片</h2>
+                <div class="edit-section">
+                    <a class="edit-link" data-target="section5"><i class="fas fa-edit"></i> 编辑本段落</a>
+                </div>
+                <p>图片能够直观地展示条目主题，本部分包含与主题相关的图片集。</p>
+
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=图片1" alt="相关图片1">
+                        <div class="gallery-caption">图片1说明文字</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=图片2" alt="相关图片2">
+                        <div class="gallery-caption">图片2说明文字</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/300x200?text=图片3" alt="相关图片3">
+                        <div class="gallery-caption">图片3说明文字</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section6">
+                <h2>6. 展开/折叠示例</h2>
+                <div class="edit-section">
+                    <a class="edit-link" data-target="section6"><i class="fas fa-edit"></i> 编辑本部分</a>
+                </div>
+                <div id="section6-content">
+                    <p>以下是可展开/折叠的内容块示例，可以用于组织大量信息：</p>
+
+                    <!-- 展开/折叠块1 -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header">
+                            <span>详细技术参数</span>
+                            <i class="fas fa-chevron-down collapsible-icon"></i>
+                        </div>
+                        <div class="collapsible-content tech-params">
+                            <table class="info-table">
+                                <tr>
+                                    <th>参数名称</th>
+                                    <th>数值</th>
+                                    <th>单位</th>
+                                </tr>
+                                <tr>
+                                    <td>长度</td>
+                                    <td>150</td>
+                                    <td>毫米</td>
+                                </tr>
+                                <tr>
+                                    <td>宽度</td>
+                                    <td>80</td>
+                                    <td>毫米</td>
+                                </tr>
+                                <tr>
+                                    <td>高度</td>
+                                    <td>25</td>
+                                    <td>毫米</td>
+                                </tr>
+                                <tr>
+                                    <td>重量</td>
+                                    <td>200</td>
+                                    <td>克</td>
+                                </tr>
+                            </table>
+                            <div class="edit-section">
+                                <a class="edit-link" data-target="tech-params"><i class="fas fa-edit"></i> 编辑技术参数</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 展开/折叠块2 -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header">
+                            <span>常见问题解答</span>
+                            <i class="fas fa-chevron-down collapsible-icon"></i>
+                        </div>
+                        <div class="collapsible-content faq">
+                            <p><strong>问：示例主题的主要应用领域是什么？</strong></p>
+                            <p>答：示例主题主要应用于教育、科研和工业生产等领域，具有广泛的适用性。</p>
+
+                            <p><strong>问：如何获取更多关于示例主题的信息？</strong></p>
+                            <p>答：可以通过参考资料中列出的文献，或访问相关的官方网站获取更多信息。</p>
+
+                            <p><strong>问：示例主题未来的发展方向是什么？</strong></p>
+                            <p>答：未来将朝着更高效、更环保、更智能的方向发展，预计在5-10年内会有重大突破。</p>
+                            <div class="edit-section">
+                                <a class="edit-link" data-target="faq"><i class="fas fa-edit"></i> 编辑常见问题</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section7">
+                <h2>7. 同类条目集合</h2>
+                <div class="edit-section">
+                    <a class="edit-link" data-target="section7"><i class="fas fa-edit"></i> 编辑本部分</a>
+                </div>
+                <div id="section7-content" class="related-items">
+                    <div class="category-tree">
+                        <ul>
+                            <li>
+                                <span class="category-name">百科模板</span>
+                                <ul>
+                                    <li>示例条目（当前页面）</li>
+                                    <li>人物条目模板</li>
+                                    <li>事件条目模板</li>
+                                    <li>
+                                        <span class="category-name">事物条目模板</span>
+                                        <ul>
+                                            <li>自然事物模板</li>
+                                            <li>人造事物模板</li>
+                                            <li>抽象概念模板</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="category-name">编辑指南</span>
+                                <ul>
+                                    <li>编辑规范</li>
+                                    <li>格式要求</li>
+                                    <li>参考资料标准</li>
+                                    <li>
+                                        <span class="category-name">进阶编辑技巧</span>
+                                        <ul>
+                                            <li>表格制作</li>
+                                            <li>图片处理</li>
+                                            <li>引用格式</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="category-name">帮助中心</span>
+                                <ul>
+                                    <li>新手指南</li>
+                                    <li>常见问题</li>
+                                    <li>联系支持</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section8">
+                <h2>8. 参考资料</h2>
+                <div class="edit-section">
+                    <a class="edit-link" data-target="section8"><i class="fas fa-edit"></i> 编辑本段落</a>
+                </div>
+                <p>参考资料是百科条目可信度的重要来源，所有事实性内容都应当有可靠的来源支持。</p>
+                <ul class="reference-list">
+                    <li>作者. (年份). 《书名》. 出版社. ISBN: 1234567890</li>
+                    <li>作者. (日期). 《文章标题》. 《期刊名称》, 卷(期), 页码. DOI:10.1234/xxx</li>
+                    <li>机构名称. (日期). 《网页标题》. 取自 <a href="#">https://example.com</a></li>
+                </ul>
+            </section>
+
+            <section id="section9">
+                <h2>9. 外部链接</h2>
+                <div class="edit-section">
+                    <a class="edit-link" data-target="section9"><i class="fas fa-edit"></i> 编辑本段落</a>
+                </div>
+                <ul>
+                    <li><a href="#"><i class="fas fa-external-link-alt"></i> 官方网站</a></li>
+                    <li><a href="#"><i class="fas fa-external-link-alt"></i> 相关数据库</a></li>
+                    <li><a href="#"><i class="fas fa-external-link-alt"></i> 相关资源库</a></li>
+                </ul>
+            </section>
+
+            <div class="notice-box">
+                <h3 id="notice-box"><i class="fas fa-lightbulb"></i> 编辑提示</h3>
+                <p>本条目是一个示例模板，欢迎编辑者参考此格式创建新条目。编辑时请确保内容准确、中立，并提供可靠的参考来源。</p>
+            </div>
+
+            <div class="category-section">
+                <h3>相关分类</h3>
+                <div>
+                    <a href="#">示例条目</a> |
+                    <a href="#">模板页面</a> |
+                    <a href="#">帮助指南</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 侧边栏 -->
+        <div class="sidebar">
+            <div class="portal">
+                <h2><i class="fas fa-wrench"></i> 页面工具</h2>
+                <ul class="portal-container">
+                    <li><a href="#"><i class="fas fa-edit"></i> 编辑本页</a></li>
+                    <li><a href="#"><i class="fas fa-history"></i> 查看历史</a></li>
+                    <li><a href="#"><i class="fas fa-share-alt"></i> 分享本页</a></li>
+                    <li><a href="#"><i class="fas fa-flag"></i> 举报问题</a></li>
+                </ul>
+            </div>
+
+            <div class="portal">
+                <h2><i class="fas fa-clock"></i> 页面信息</h2>
+                <ul class="portal-container">
+                    <li>创建于：2023年1月1日</li>
+                    <li>最后编辑：<span id="last-edit-time">2025年7月29日</span></li>
+                    <li>编辑次数：<span id="edit-count">1</span>次</li>
+                    <li>贡献者：5人</li>
+                </ul>
+            </div>
+
+            <div class="portal">
+                <h2><i class="fas fa-th-list"></i> 相关条目</h2>
+                <ul class="portal-container">
+                    <li><a href="#">示例条目二</a></li>
+                    <li><a href="#">模板使用指南</a></li>
+                    <li><a href="#">编辑规范</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚信息 -->
+    <footer class="wiki-footer">
+        <p>现代百科内容按照CC BY-SA 3.0协议提供，使用请注明来源</p>
+        <div class="footer-links">
+            <a href="#">关于我们</a> |
+            <a href="#">隐私政策</a> |
+            <a href="#">联系方式</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // 等待页面加载完成
+        document.addEventListener('DOMContentLoaded', function () {
+            // 修复编辑编辑功能bug并改进
+            initEditFunctionality();
+
+            // 初始化展开/折叠功能
+            initCollapsibleSections();
+
+            // 添加图片错误处理
+            handleImageErrors();
+
+            // 初始生成目录
+            generateToc();
+        });
+
+        // 生成目录
+        function generateToc() {
+            const tocList = document.querySelector('.toc-list');
+            if (!tocList) return;
+
+            // 清空现有目录
+            tocList.innerHTML = '';
+
+            // 获取所有标题元素
+            const headings = document.querySelectorAll('h2, h3');
+            const tocItems = [];
+
+            // 收集所有标题信息
+            headings.forEach(heading => {
+                const id = heading.id;
+                const text = heading.textContent.trim();
+                const level = parseInt(heading.tagName.replace('H', ''));
+
+                if (id !== "notice-box" && level >= 2 && level <= 3 && text !== "基本信息" && text !== "相关分类" && text !== "页面工具" && text !== "页面信息" && text !== "相关条目") {
+                    console.log("1")
+                    tocItems.push({ id, text, level });
+                }
+            });
+
+            // 构建目录结构
+            let currentLevel = 2;
+            let currentList = tocList;
+            const listStack = [tocList];
+            console.log(tocItems)
+
+            tocItems.forEach(item => {
+                // 创建列表项和链接
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${item.id}`;
+                a.textContent = item.text;
+                // 处理层级变化
+                if (item.level > currentLevel) {
+                    // 进入更深层级，创建新的嵌套列表
+                    const newList = document.createElement('ul');
+                    newList.className = 'toc-list';
+                    li.appendChild(newList);
+                    currentList.appendChild(li);
+                    listStack.push(newList);
+                    currentList = newList;
+                    currentLevel = item.level;
+                    li.appendChild(a);
+                } else if (item.level < currentLevel) {
+                    // 返回上层级
+                    while (item.level < currentLevel && listStack.length > 1) {
+                        listStack.pop();
+                        currentList = listStack[listStack.length - 1];
+                        currentLevel--;
+                    }
+                    currentList.appendChild(li);
+                    li.appendChild(a);
+                } else {
+                    // 同一层级
+                    currentList.appendChild(li);
+                    li.appendChild(a);
+                }
+
+            });
+        }
+
+        // 初始化编辑功能
+        function initEditFunctionality() {
+            // 获取所有编辑链接
+            const editLinks = document.querySelectorAll('.edit-link');
+
+            // 为每个编辑链接添加点击事件
+            editLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // 移除页面上可能存在的其他编辑区域
+                    document.querySelectorAll('.edit-mode').forEach(el => el.remove());
+
+                    // 获取目标区域ID
+                    const targetId = this.getAttribute('data-target');
+                    // 找到对应的内容区域
+                    const contentId = targetId + '-content';
+                    let contentElement = document.getElementById(contentId);
+
+                    // 如果没有专门的内容区域，就使用目标区域本身
+                    if (!contentElement) {
+                        contentElement = document.getElementById(targetId) ||
+                            document.querySelector('.' + targetId);
+                    }
+
+                    // 如果内容区域不存在，提示错误
+                    if (!contentElement) {
+                        alert('未找到可编辑的内容区域');
+                        return;
+                    }
+
+                    // 保存原始内容
+                    const originalContent = contentElement.innerHTML;
+
+                    // 创建编辑区域
+                    const editContainer = document.createElement('div');
+                    editContainer.className = 'edit-mode';
+                    editContainer.dataset.for = targetId;
+
+                    // 创建文本编辑器
+                    const textarea = document.createElement('textarea');
+                    textarea.className = 'edit-textarea';
+                    textarea.value = originalContent;
+
+                    // 创建按钮容器
+                    const buttonContainer = document.createElement('div');
+                    buttonContainer.className = 'edit-buttons';
+
+                    // 创建保存按钮
+                    const saveButton = document.createElement('button');
+                    saveButton.className = 'save-btn';
+                    saveButton.textContent = '保存修改';
+
+                    // 创建取消按钮
+                    const cancelButton = document.createElement('button');
+                    cancelButton.className = 'cancel-btn';
+                    cancelButton.textContent = '取消编辑';
+
+                    // 组装编辑区域
+                    buttonContainer.appendChild(saveButton);
+                    buttonContainer.appendChild(cancelButton);
+                    editContainer.appendChild(textarea);
+                    editContainer.appendChild(buttonContainer);
+
+                    // 隐藏原始内容，显示编辑区域
+                    contentElement.style.display = 'none';
+                    contentElement.parentNode.insertBefore(editContainer, contentElement.nextSibling);
+
+                    // 保存按钮事件
+                    saveButton.addEventListener('click', function () {
+                        // 获取编辑后的内容
+                        const newContent = textarea.value;
+
+                        // 更新内容区域
+                        contentElement.innerHTML = newContent;
+
+                        // 显示内容区域，移除编辑区域
+                        contentElement.style.display = '';
+                        editContainer.remove();
+
+                        // 更新页面信息
+                        updatePageInfo();
+
+                        // 在编辑保存后重新检查图片
+                        handleImageErrors();
+
+                        // 重新生成目录
+                        generateToc();
+
+                        // 提示保存成功
+                        alert('修改已保存');
+
+                        // 重新初始化折叠功能，确保新内容也能正常折叠
+                        resetCollapsibleSections();
+                        initEditFunctionality();
+                    });
+
+                    // 取消按钮事件
+                    cancelButton.addEventListener('click', function () {
+                        // 显示内容区域，移除编辑区域
+                        contentElement.style.display = '';
+                        editContainer.remove();
+                    });
+
+                    // 自动聚焦到文本框
+                    textarea.focus();
+                });
+            });
+        }
+
+
+        // 初始化展开/折叠功能
+        function initCollapsibleSections() {
+            // 先移除所有已存在的事件监听器，避免重复绑定
+            document.querySelectorAll('.collapsible-header').forEach(header => {
+                const newHeader = header.cloneNode(true);
+                header.parentNode.replaceChild(newHeader, header);
+            });
+
+            // 重新获取所有折叠面板头部并绑定事件
+            const headers = document.querySelectorAll('.collapsible-header');
+
+            headers.forEach(header => {
+                // 为每个头部添加点击事件
+                header.addEventListener('click', function () {
+                    // 获取对应的内容区域和图标
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.collapsible-icon');
+
+                    // 切换内容区域的显示状态
+                    content.classList.toggle('active');
+
+                    // 旋转图标
+                    icon.classList.toggle('rotate');
+                });
+
+                // 检查内容区域状态，同步图标状态
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.collapsible-icon');
+                if (content.classList.contains('active')) {
+                    icon.classList.add('rotate');
+                } else {
+                    icon.classList.remove('rotate');
+                }
+            });
+        }
+
+        // 在保存编辑后调用时强制重置所有折叠状态
+        function resetCollapsibleSections() {
+            // 关闭所有展开的内容
+            document.querySelectorAll('.collapsible-content.active').forEach(content => {
+                content.classList.remove('active');
+                const icon = content.previousElementSibling.querySelector('.collapsible-icon');
+                icon.classList.remove('rotate');
+            });
+            // 重新初始化
+            initCollapsibleSections();
+        }
+
+        // 更新页面编辑信息
+        function updatePageInfo() {
+            // 更新最后编辑时间为当前时间
+            const now = new Date();
+            const dateString = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日`;
+            document.getElementById('last-edit-time').textContent = dateString;
+
+            // 增加编辑次数
+            const editCountElement = document.getElementById('edit-count');
+            const currentCount = parseInt(editCountElement.textContent);
+            editCountElement.textContent = currentCount + 1;
+        }
+
+        // 图片加载失败时替换为预制图片
+        function handleImageErrors() {
+            // 获取所有图片元素
+            const images = document.querySelectorAll('img');
+
+            // 为每个图片添加错误处理事件
+            images.forEach(img => {
+                // 保存原始alt文本，用于预制图片
+                const originalAlt = img.alt || '图片';
+
+                // 设置错误处理函数
+                img.onerror = function () {
+                    const fallbackSrc = "../img404.png";
+
+                    // 替换图片源为预制图片
+                    this.src = fallbackSrc;
+
+                    // 更新alt文本说明
+                    this.alt = `${originalAlt}（图片无法加载，已显示替代图）`;
+
+                    // 添加视觉提示样式
+                    this.style.border = '2px dashed #e74c3c';
+                };
+
+                // 对于已设置src的图片，检查是否需要触发错误处理
+                if (img.complete && !img.naturalHeight) {
+                    img.onerror();
+                }
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>

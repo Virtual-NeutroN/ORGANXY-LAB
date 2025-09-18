@@ -5,17 +5,34 @@
   <meta charset="utf-8">
   <title>ORGANXY Lab</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="index.js"></script>
   <style>
     /* 临时样式，确保页面加载时的基本显示 */
-    .sidebar-item.active {
-      background-color: rgba(106, 160, 235, 0.2);
-      color: #6AA0EB;
-    }
   </style>
 </head>
 
 <body>
+  <!-- 暗色模式切换按钮 -->
+  <div class="theme-toggle" id="themeToggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <!-- 在index.html的主题切换按钮附近添加 -->
+  <div class="theme-toggle" id="themeToggle">
+    <i class="fas fa-moon"></i>
+  </div>
+  <!-- 新增壁纸切换按钮 -->
+  <div class="bg-toggle" id="bgToggle">
+    <i class="fas fa-image"></i>
+  </div>
+
+  <!-- 背景选择面板 (放在body结束前) -->
+  <div class="bg-selector" id="bgSelector">
+    <div class="bg-option" data-bg="url('img/b.png')" style="background-image: url('img/b.png')"></div>
+    <div class="bg-option" data-bg="url('img/b2.png')" style="background-image: url('img/b2.png')"></div>
+    <div class="bg-option" data-bg="url('img/b3.png')" style="background-image: url('img/b3.png')"></div>
+  </div>
   <!-- 侧边栏导航 -->
   <aside class="sidebar" id="blurB">
     <div class="logo">ORGANXY LAB</div>
@@ -37,6 +54,7 @@
     <div class="sidebar-section">
       <h3>主页</h3>
       <div class="sidebar-item" data-target="about">关于ORGANXY</div>
+      <div class="sidebar-item" data-target="rules">创作声明以及条款</div>
       <div class="sidebar-item" data-target="tools">方便的工具</div>
       <div class="sidebar-item" data-target="members">ORGANXY成员</div>
     </div>
@@ -46,13 +64,15 @@
   <main class="main-content">
 
     <!-- 内容容器 -->
-    <div class="content-container" >
+    <div class="content-container">
       <!-- 首页内容 -->
       <div class="hero" style="height: 150px;"></div>
-      <div class="content-block" id="home">
+      <div class="content-block" id="home" style="background-color: none;">
+        <div class="hero" style="height: 500px;"></div>
+        <div class="title">一个有点小工具的页面</div>
+        <div class="intro">这是ORGANXY Lab官方主页，目前是一个网页工具测试页面。</div>
+                <div class="hero" style="height: 300px; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.623), rgba(0, 0, 0, 0));"></div>
         <div class="title-page" id="blurA">
-          <div class="title">一个有点小工具的页面</div>
-          <div class="intro">这是ORGANXY Lab官方主页，目前是一个网页工具测试页面。</div>
           <div class="egg">
             <div style="display: flex;">
               <input type="text" class="chat" id="userInput"></input>
@@ -76,6 +96,7 @@
       </div>
 
       <!-- 产品内容（原导航中的产品链接） -->
+      <div class="hero" style="height: 200px;"></div>
       <div class="content-block" id="product" style="display: none;">
         <div class="about-us">
           <h2>产品区域</h2>
@@ -103,6 +124,7 @@
       </div>
 
       <!-- 关于我们内容 -->
+
       <div class="content-block" id="about" style="display: none;">
         <div class="about-us">
           <h2>关于ORGANXY</h2>
@@ -112,7 +134,43 @@
         </div>
       </div>
 
+      <!-- 创作声明以及条款 -->
+
+      <div class="content-block" id="rules" style="display: none;">
+        <div class="rules">
+          <h2>原创设定版权声明</h2>
+          <p>依据《中华人民共和国著作权法》、《网络信息内容生态治理规定》及相关法律法规，就原创设定"ORGANXY Lab"以及本设定下的世界观（以下简称本设定）规范声明如下：</p>
+
+          <h3>一、人物属性严正定性</h3>
+          <p>本设定中所有人物角色（含生平履历、社会关系、行为逻辑）均属完全虚构的政治无害化文学形象。其存在不映射现实世界任何自然人、法人或社会组织，不承载现实意识形态立场。</p>
+
+          <h3>二、地理政治实体声明</h3>
+          <p>设定所述疆域版图、行政区划、政权架构、法律体系及宗教形态，系经严格审查的虚构政治实体。该实体：</p>
+          <p><span>①</span> 未关联现实主权国家及地区</p>
+          <p><span>②</span> 未影射现行政治制度</p>
+          <p><span>③</span> 未涉及现实宗教团体</p>
+          <p>其存在仅服务于叙事逻辑需求。</p>
+
+          <h3>三、专有标识与标识之原创声明</h3>
+          <p>所有地理称谓（城市/山脉/河流）、机构名称（政府/实验室/企业）、交通工具编号及视觉标识（徽章/旗帜/代码），均系创作者独创之虚构命名系统。其设计与现实世界现存名称、标志不存在对应关系，亦不构成对现实实体之影射。
+          </p>
+
+          <h3>四、雷同事项处置规程</h3>
+          <p>倘有创作内容与现实世界人、事、物存在表面相似性，皆属不可预见之偶然巧合。创作者在此明确声明：此类相似绝非主观刻意为之，亦不承载任何现实指向意义。</p>
+
+          <h3>五、知识产权保护禁令</h3>
+          <p>未经著作权人书面授权：</p>
+          <p><span>①</span> 严禁转载、摘编、不结合设定的改编</p>
+          <p><span>②</span> 禁止商业性使用（含周边挂件等商业性活动）</p>
+
+          <h3>六、人工智能管控条款</h3>
+          <p>根据《生成式人工智能服务管理暂行办法》，创作者保证，绝不使用Stable
+            Diffusion、Midjourney等生成工具创作人物形象设定。同时，任何人不得以将原创插画、设定要素等相关涉及本人著作权的内容输入AI训练系统，违反者将按《著作权法》第十条追究法律责任。</p>
+
+        </div>
+      </div>
       <!-- 工具内容 -->
+
       <div class="content-block" id="tools" style="display: none;">
         <div class="blog">
           <h2>一些方便的工具</h2>
@@ -134,7 +192,8 @@
               <div class="blog-desc">
                 <h3><a href="#">文章标题</a></h3>
                 <p class="date">发表于 2023-04-08</p>
-                <p class="excerpt">这是一篇测试文章的摘要内容。Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                <p class="excerpt">这是一篇测试文章的摘要内容。Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod
                   tempor incididunt ut labore et dolore magna aliqua...</p>
               </div>
             </div>
@@ -145,7 +204,8 @@
               <div class="blog-desc">
                 <h3><a href="#">文章标题</a></h3>
                 <p class="date">发表于 2023-04-07</p>
-                <p class="excerpt">这是一篇测试文章的摘要内容。Lorem ipsasdum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                <p class="excerpt">这是一篇测试文章的摘要内容。Lorem ipsasdum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod
                   tempor incididunt ut labore et dolore magna aliqua...</p>
               </div>
             </div>
@@ -154,6 +214,7 @@
       </div>
 
       <!-- 成员内容 -->
+
       <div class="content-block" id="members" style="display: none;">
         <div class="p-members">
           <h2 style="font-size: 36px; display: flex; align-items: center; justify-content: center;">
@@ -163,6 +224,11 @@
           <p>单击可展开</p>
           <div class="members-container" id="members-container">
             <div class="members">
+              <div class="member">
+                <img src="img/members/Cedrene.png" alt="Cedrene" class="m-img">
+                <h2>C̸e҉d̴r̸e҉n̴e҉</h2>
+                <p class="text">“��”</p>
+              </div>
               <div class="member">
                 <img src="img/members/Patchoulene.png" alt="patchoulene" class="m-img">
                 <h2>Patchoulene</h2>
@@ -276,17 +342,22 @@
               <div class="member">
                 <img src="img/members/Vincristine.png" alt="成员23" class="m-img">
                 <h2>Vincristine</h2>
-                <p class="text">“好冷静的瞄准啊”</p>
+                <p class="text">“ctrl键在哪来着...”</p>
               </div>
               <div class="member">
                 <img src="img/members/Ryanodine.png" alt="成员24" class="m-img">
                 <h2>Ryanodine</h2>
-                <p class="text">“go学长这招太狠了！”</p>
+                <p class="text">“你们猫是不是都傲娇啊”</p>
               </div>
               <div class="member">
                 <img src="img/members/Zoanthamine.png" alt="成员25" class="m-img">
                 <h2>Zoanthamine</h2>
                 <p class="text">“耶~，，欸？”</p>
+              </div>
+              <div class="member">
+                <img src="img/members/Ginkgolide B.png" alt="成员26" class="m-img">
+                <h2>Ginkgolide B</h2>
+                <p class="text">“你能别这样看我吗？”</p>
               </div>
             </div>
           </div>
@@ -312,7 +383,7 @@
 
   <!-- 页脚 -->
   <footer class="footer">
-    &copy; 2024 Virtual-NeutroN & ORGANXY LAB，保留所有权利。
+    &copy; 2022-2025 Virtual-NeutroN & ORGANXY LAB，保留所有权利。
   </footer>
 </body>
 

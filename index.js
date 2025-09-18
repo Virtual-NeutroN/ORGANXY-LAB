@@ -1,6 +1,82 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 主题切换功能
+    const themeToggle = document.createElement('div');
+    themeToggle.id = 'themeToggle';
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    themeToggle.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: 
+            transform 0.3s ease,
+            background-color 0.5s ease,
+            box-shadow 0.5s ease;
+    `;
+    document.body.appendChild(themeToggle);
+
+    // 主题切换功能
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+        // 添加临时类以启用过渡
+        document.body.classList.add('theme-transition');
+
+        setTimeout(() => {
+            document.body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+
+            // 移除临时类
+            setTimeout(() => {
+                document.body.classList.remove('theme-transition');
+            }, 500);
+        }, 10);
+    });
+
+    // 更新主题图标
+    function updateThemeIcon(theme) {
+        const icon = themeToggle.querySelector('i');
+        if (theme === 'dark') {
+            icon.className = 'fas fa-moon';
+            themeToggle.style.background = 'rgba(40, 40, 40, 0.85)';
+        } else {
+            icon.className = 'fas fa-sun';
+            themeToggle.style.background = 'rgba(255, 255, 255, 0.7)';
+        }
+    }
+
+    // 初始化主题
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.body.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    // 添加临时类以启用初始过渡
+    document.body.classList.add('theme-transition');
+    setTimeout(() => {
+        document.body.classList.remove('theme-transition');
+    }, 500);
+
     // 获取背景容器并设置初始样式
+    const savedBg = localStorage.getItem('background');
+    console.log(localStorage.getItem('background'))
+
     const background = document.createElement('div');
+    if (savedBg == null) {
+        savedBg = 'url(/img/b.png)';
+    }
     background.style.cssText = `
       position: fixed;
       top: 0;
@@ -8,8 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
       width: 100vw;
       height: 100vh;
       z-index: -2;
-      background-image: url("./img/b.png");
-      background-size: 110% auto;
+      background-image: ${savedBg};
+      background-size: 100% auto;
       background-position: center;
       transition: transform 0.3s ease-out;
     `;
@@ -18,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 鼠标移动效果
     let mouseX = 0, mouseY = 0;
     var sensitivity = 0.02; // 灵敏度调节
-    var bgscale = 1.02;
+    var bgscale = 1.03;
 
     document.addEventListener('mousemove', (e) => {
         mouseX = (e.clientX - window.innerWidth / 2) * sensitivity;
@@ -75,6 +151,35 @@ document.addEventListener('DOMContentLoaded', () => {
     scaleSlider.addEventListener('input', () => {
         bgscale = parseFloat(scaleSlider.value);
     });
+
+
+    // 在index.js中添加
+    // 壁纸切换功能
+    const bgToggle = document.getElementById('bgToggle');
+    const bgSelector = document.getElementById('bgSelector');
+    const bgOptions = document.querySelectorAll('.bg-option');
+
+
+    // 切换壁纸选择面板显示/隐藏
+    bgToggle.addEventListener('click', () => {
+        bgSelector.classList.toggle('show');
+    });
+
+    // 选择壁纸
+    bgOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const bgValue = option.getAttribute('data-bg');
+            document.body.firstElementChild.style.backgroundImage = bgValue;
+
+            // 保存到本地存储
+            localStorage.setItem('background', bgValue);
+
+            // 关闭选择面板
+            bgSelector.classList.remove('show');
+        });
+    });
+
+
 });
 
 var clickSI = 0
@@ -84,6 +189,7 @@ function unlockContent() {
     }
     clickSI++
 }
+
 
 
 

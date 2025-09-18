@@ -70,13 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
 
     // 获取背景容器并设置初始样式
-    const savedBg = localStorage.getItem('background');
     console.log(localStorage.getItem('background'))
 
     const background = document.createElement('div');
-    if (savedBg == null) {
-        savedBg = 'url(/img/b.png)';
-    }
     background.style.cssText = `
       position: fixed;
       top: 0;

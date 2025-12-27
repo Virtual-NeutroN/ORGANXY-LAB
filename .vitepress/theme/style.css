@@ -1,0 +1,98 @@
+
+/* =========================================
+   0. 主题配色 (黄绿色系 - Organxy Style)
+   把这段代码放在 style.css 的最前面
+   ========================================= */
+
+:root {
+  /* Brand 1: 主色 (用于链接、按钮、Logo)
+     Brand 2: 悬停色 (Hover)
+     Brand 3: 点击色 (Active)
+  */
+  --vp-c-brand-1: #a5cc16; /* 鲜亮的黄绿色 (Lime-500) */
+  --vp-c-brand-2: #6ea30d; /* 稍深一点 (Lime-600) */
+  --vp-c-brand-3: #6b7262; /* 更深一点 (Lime-700) */
+
+  /* 首页大标题的渐变色 
+     如果你希望首页那个巨大的 "Organxy Lab" 也是黄绿渐变，用这行
+  */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #dae635 10%, #5f7c0f 90%);
+  
+  /* (可选) 选中文字时的背景色 
+     让用户复制文字时也感受到这个颜色
+  */
+  --vp-c-brand-soft: rgba(132, 204, 22, 0.14);
+
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #b7f7e325 50%, #eaff9f2f 50%);
+  --vp-home-hero-image-filter: blur(100px); /* 模糊程度，越大越朦胧 */
+}
+
+/* (可选) 深色模式下的微调 
+   如果觉得在黑底上太刺眼，可以在这里调暗一点，或者保持一致
+*/
+.dark {
+  --vp-c-brand-1: #b1e635; /* 深色模式下用更亮一点的荧光绿 */
+  --vp-c-brand-2: #abcc16;
+  --vp-c-brand-3: #6d816b;
+}
+
+
+
+/* =========================================
+   1. 基础动画设置 (全局丝滑补丁)
+   ========================================= */
+/* 给所有可能涉及宽度变化的布局元素都加上过渡动画 */
+.VPDoc .container,
+.VPDoc .content,
+.VPDoc .aside,
+.VPDoc .content-container,
+.VPDoc .main,
+.VPContent,            /* 页面主内容容器 (控制左侧边距) */
+.VPSidebar,            /* 左侧侧边栏 (控制位置) */
+.VPNavBar,             /* 顶部导航栏 */
+.VPNavBar .container,  /* 顶部导航栏内部容器 */
+.nav,             /* 导航组件包裹层 */
+.contain-body
+{
+  /* 0.4秒的平滑过渡，cubic-bezier 让开始和结束更自然 */
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* =========================================
+   2. 宽屏模式样式 (Wide Mode)
+   ========================================= */
+
+/* 只有在屏幕足够宽（电脑端）时才生效，手机端保持原样 */
+@media (min-width: 960px) {
+  
+  /* 核心：把全局最大宽度限制解除 */
+  .wide-mode {
+    --vp-layout-max-width: 100% !important;
+  }
+
+  /* 1. 撑开最外层容器 */
+  .wide-mode .VPDoc .container .content-container{
+    max-width: 95vw !important; 
+    padding: 0 32px; 
+  }
+
+  /* 2. 撑开文章内容区域 */
+  .wide-mode .VPDoc .content .content-container .curtain{
+    max-width: 100% !important;
+    min-width: 100% !important;
+  }
+
+
+
+  /* 4. 修正内容区域右边距 */
+  .wide-mode .VPDoc .content-container {
+    padding-right: 0 !important;
+  }
+  
+  /* 5. (可选) 让顶部导航栏内容也跟随变宽，与正文对齐 */
+  .wide-mode .VPNavBar .container .contain-body{
+    max-width: 95vw !important;
+    padding: 0 32px;
+  }
+}

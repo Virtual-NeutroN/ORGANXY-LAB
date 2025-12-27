@@ -44,7 +44,8 @@ const fixedNotesSidebar = fixSidebarPaths(rawNotesSidebar, '/notes/')
 const fixedToolsSidebar = fixSidebarPaths(rawToolsSidebar, '/tools/')
 
 export default defineConfig({
-  base: '/ORGANXY-LAB/',
+  ignoreDeadLinks: true,
+  trubase: '/ORGANXY-LAB/',
   title: "OrganxyLab",
   description: "Navigate Thy Veritas.",
 

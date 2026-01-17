@@ -39,9 +39,20 @@ const rawToolsSidebar = generateSidebar({
   excludeFiles: ['index.md']
 })
 
-// C. 分别修复路径
+// C. 生成 [工具] 的原始数据 【新增部分】
+const rawBotsSidebar = generateSidebar({
+  documentRootPath: '.',
+  scanStartPath: 'bots',     // 扫描 bots 文件夹
+  useTitleFromFileHeading: true,
+  collapsed: false,           // 工具通常不多，建议默认展开
+  excludeFiles: ['index.md']
+})
+
+
+// D. 分别修复路径
 const fixedNotesSidebar = fixSidebarPaths(rawNotesSidebar, '/notes/')
 const fixedToolsSidebar = fixSidebarPaths(rawToolsSidebar, '/tools/')
+const fixedBotsSidebar = fixSidebarPaths(rawBotsSidebar, '/bots/')
 
 export default defineConfig({
   ignoreDeadLinks: true,
@@ -81,7 +92,8 @@ export default defineConfig({
 
     sidebar: {
       '/notes/': fixedNotesSidebar,
-      '/tools/': fixedToolsSidebar
+      '/tools/': fixedToolsSidebar,
+      '/bots/': fixedBotsSidebar
     },
 
     search: {

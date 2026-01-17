@@ -27,6 +27,10 @@ features:
     details: 有用吗？我不知道喵。
     link: /tools/
     linkText: 查看列表
+  - title: 📄 某个bot的文档
+    details: 感觉随时会挂
+    link: /bots/
+    linkText: 查看说明
 ---
 <div style="height: 200px; width: 100%">
 </div>

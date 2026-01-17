@@ -56,7 +56,7 @@ const fixedBotsSidebar = fixSidebarPaths(rawBotsSidebar, '/bots/')
 
 export default defineConfig({
   ignoreDeadLinks: true,
-  base: '/ORGANXY-LAB/',
+  base: '/',
   title: "OrganxyLab",
   description: "Navigate Thy Veritas.",
 
